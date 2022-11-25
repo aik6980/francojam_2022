@@ -58,3 +58,30 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# REAPER Media Files
+/raw_data/audio/reaper/Music/Media Files/*
+/raw_data/audio/reaper/Music/Rendered Files/*
+/raw_data/audio/reaper/Sound Design/Media Files/*
+/raw_data/audio/reaper/Sound Design/Rendered Files/*
+/raw_data/audio/reaper/Dialogue/Media Files/*
+/raw_data/audio/reaper/Dialogue/Rendered Files/*
+
+# FMOD
+# Never ignore DLLs in the FMOD subfolder.
+!/master/[Aa]ssets/Plugins/FMOD/**/lib/*
+
+# Don't ignore images and gizmos used by FMOD in the Unity Editor.
+!/master/[Aa]ssets/Gizmos/FMOD/*
+!/master/[Aa]ssets/Editor Default Resources/FMOD/*
+                    
+# Ignore the Cache folder since it is updated locally.
+/master/[Aa]ssets/Plugins/FMOD/Cache/*
+                    
+# Ignore bank files in the StreamingAssets folder.
+/master/[Aa]ssets/StreamingAssets/**/*.bank
+/master/[Aa]ssets/StreamingAssets/**/*.bank.meta
+                    
+# If the source bank files are kept outside of the StreamingAssets folder then these can be ignored.
+# Log files can be ignored.
+fmod_editor.log
+
