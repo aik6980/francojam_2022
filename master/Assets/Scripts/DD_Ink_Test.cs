@@ -92,7 +92,7 @@ public class DD_Ink_Test : MonoBehaviour
 
             currentDialog.Callback = () => Check_Choice();
 
-            dialogTexts.Add(currentDialog);
+            //dialogTexts.Add(currentDialog);
         }
         // If we've read all the content and there's no choices, the story is finished!
         else

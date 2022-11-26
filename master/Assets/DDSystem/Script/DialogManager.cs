@@ -259,7 +259,7 @@ namespace Doublsb.Dialog
             foreach (var Data in DataList)
             {
                 Show(Data);
-                _init_selector();
+                //_init_selector();
 
                 while (state != State.Deactivate) { yield return null; }
             }
@@ -313,7 +313,9 @@ namespace Doublsb.Dialog
                 }
             }
 
-            state = State.Wait;
+			_init_selector();
+
+			state = State.Wait;
         }
 
         private IEnumerator _waitInput()
