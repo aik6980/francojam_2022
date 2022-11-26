@@ -1018,7 +1018,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8121d7b3e483c544aa2b850418772c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  element: {fileID: 0}
+  element: {fileID: 1233832893}
   fadeType: 0
   fadeTime: 3
 --- !u!114 &1233832892
