@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{ed87db96-2d97-46ac-95bc-e276e5aebd89}">
+		<property name="name">
+			<value>Dog_Ref</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7c38f708-bea6-4017-91ed-c8f7ffed740d}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{7db83b91-bbe6-413d-aeab-d89108528b73}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{7db83b91-bbe6-413d-aeab-d89108528b73}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>21</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

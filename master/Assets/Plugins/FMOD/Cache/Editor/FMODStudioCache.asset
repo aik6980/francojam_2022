@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7334563426782390975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI_DogBark
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI_DogBark
+  Guid:
+    Data1: 1161701021
+    Data2: 1105704925
+    Data3: -348811098
+    Data4: -822631443
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7047892007718214267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +42,10 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638049221688850311
+  lastModified: 638050264879679730
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 47072
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -35,13 +62,14 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 9019890182134457837}
   - {fileID: -7047892007718214267}
-  EditorEvents: []
+  EditorEvents:
+  - {fileID: -7334563426782390975}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7047892007718214267}
   StringsBanks:
   - {fileID: 9019890182134457837}
-  cacheTime: 638049221688893058
+  cacheTime: 638050264879735063
   cacheVersion: 131593
 --- !u!114 &9019890182134457837
 MonoBehaviour:
@@ -58,8 +86,8 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638049221688893058
+  lastModified: 638050264879735063
   FileSizes:
   - Name: Desktop
-    Value: 712
+    Value: 764
   Exists: 1
