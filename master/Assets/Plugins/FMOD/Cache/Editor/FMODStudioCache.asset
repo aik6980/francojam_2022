@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7945517582484067544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Track0_BowWow
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Track0_BowWow
+  Guid:
+    Data1: -1281489489
+    Data2: 1297773684
+    Data3: -1986801767
+    Data4: 1378301894
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 19293
 --- !u!114 &-7334563426782390975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,10 +70,10 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638050319581570884
+  lastModified: 638050335207694304
   FileSizes:
   - Name: Desktop
-    Value: 47296
+    Value: 203392
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -65,12 +92,13 @@ MonoBehaviour:
   - {fileID: -7047892007718214267}
   EditorEvents:
   - {fileID: -7334563426782390975}
+  - {fileID: -7945517582484067544}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7047892007718214267}
   StringsBanks:
   - {fileID: 9019890182134457837}
-  cacheTime: 638050319581651424
+  cacheTime: 638050335207739719
   cacheVersion: 131593
 --- !u!114 &1754063466746169999
 MonoBehaviour:
@@ -111,8 +139,8 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638050319581651424
+  lastModified: 638050335207739719
   FileSizes:
   - Name: Desktop
-    Value: 812
+    Value: 874
   Exists: 1
