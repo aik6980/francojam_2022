@@ -5,24 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-	public void PlayGame()
-	{
-		// Play the scene that are assigned in the Build Setttings "ctrl + shift + b" to open in order. 
-		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); 
-	}
+    public void PlayGame()
+    {
+        // Play the scene that are assigned in the Build Setttings "ctrl + shift + b" to open in order.
+        SceneManager.LoadScene("Scene_selection");
+    }
 
-	public void QuitGame()
-	{
-		Application.Quit();
-	}
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
-	public void Settings()
-	{
-		SceneManager.LoadScene("Scene_UI_Settings");
-	}
+    public void Settings()
+    {
+        SceneManager.LoadScene("Scene_UI_Settings");
+    }
 
-	public void BackButton()
-	{
-		SceneManager.LoadScene("Scene_UI_TitleScreen");
-	}
+    public void BackButton()
+    {
+        SceneManager.LoadScene("Scene_UI_TitleScreen");
+    }
 }

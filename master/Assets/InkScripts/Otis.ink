@@ -27,7 +27,7 @@ There's only so many times you can read White Fang before you start looking for 
  ~ affinity = affinity - 2
  -> round_2
  * [Not yet]I've been meaning to read that one! #Name_Me
- You really should! It's so good it makes me want to bark! -> round_2 #Name_Otis
+ You really should! It's so good it makes me want to bark! #Name_Otis -> round_2
  * {smart > 5}[Love it!]I love that story, but Beauty Smith is a monster. \>\:\| #Name_Me
  But Scott is such a good person, you need a terrible villian to show him against. #Name_Otis
  ~ affinity = affinity + 2

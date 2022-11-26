@@ -60,8 +60,8 @@ If I'm frank, I can't keep up with them at all. #Name_Rusty
  
  === round_3 ===
  Goodness me, it's like looking into a mirror! #Name_Rusty
- {affinity > 7}Welcome back, old friend. #Name_Rusty
- {affinity <= 7}Welcome back. #Name_Rusty
+ {affinity > 7: Welcome back, old friend.} #Name_Rusty
+ {affinity <= 7: Welcome back.} #Name_Rusty
  * How's life? #Name_Me
  
  -It continues. #Name_Rusty
