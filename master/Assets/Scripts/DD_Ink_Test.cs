@@ -24,6 +24,12 @@ public class DD_Ink_Test : MonoBehaviour
             DialogManager = GameObject.FindObjectOfType<DialogManager>();
         }
 
+        // override the story if there is one
+        if (Story_selection_mgr.Instance.m_curr_text_asset != null)
+        {
+            inkJSONAsset = Story_selection_mgr.Instance.m_curr_text_asset;
+        }
+
         if (inkJSONAsset != null)
         {
             story = new Story(inkJSONAsset.text);
