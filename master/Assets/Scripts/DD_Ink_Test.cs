@@ -4,6 +4,7 @@ using UnityEngine;
 using Doublsb.Dialog;
 using Ink.Runtime;
 using UnityEditor.Experimental.Rendering;
+using FMOD;
 
 public class DD_Ink_Test : MonoBehaviour
 {
@@ -97,7 +98,7 @@ public class DD_Ink_Test : MonoBehaviour
 
             currentDialog.Callback = () => Check_Choice();
 
-            //dialogTexts.Add(currentDialog);
+            // dialogTexts.Add(currentDialog);
         }
         // If we've read all the content and there's no choices, the story is finished!
         else
@@ -117,7 +118,7 @@ public class DD_Ink_Test : MonoBehaviour
 
     private string Find_speaker_name(List<string> tags)
     {
-        var tag_name = "";
+        string tag_name = null;
         if (tags.Count > 0)
         {
             tag_name = tags.Find(x => x.Contains("Name_"));
@@ -128,7 +129,7 @@ public class DD_Ink_Test : MonoBehaviour
         }
 
         if (tag_name == null)
-            return "";
+            return "Blank";
 
         // Fixme: hack for #Player tag
         if (tag_name == "Me")
