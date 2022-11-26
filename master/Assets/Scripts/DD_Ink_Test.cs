@@ -4,112 +4,109 @@ using UnityEngine;
 using Doublsb.Dialog;
 using Ink.Runtime;
 
-
 public class DD_Ink_Test : MonoBehaviour
 {
-	public DialogManager DialogManager;
+    public DialogManager DialogManager;
 
-	//just to check if the dialog system is not blocking (so we can animate, play VFX, etc)
-	public float test_time;
+    // just to check if the dialog system is not blocking (so we can animate, play VFX, etc)
+    public float test_time;
 
-	[SerializeField]
-	private TextAsset inkJSONAsset = null;
-	public Story story;
+    [SerializeField]
+    private TextAsset inkJSONAsset = null;
+    public Story story;
 
-
-	private void Awake()
-	{
-		if (DialogManager == null)
-		{
-			DialogManager = GameObject.FindObjectOfType<DialogManager>();
-		}
-
-		if (inkJSONAsset != null)
-		{
-			story = new Story(inkJSONAsset.text);
-		}
-	}
-
-	void Start()
+    private void Awake()
     {
-		StartStory();
-	}
+        if (DialogManager == null)
+        {
+            DialogManager = GameObject.FindObjectOfType<DialogManager>();
+        }
 
-	void Update()
-    {
-		test_time = Time.time;
+        if (inkJSONAsset != null)
+        {
+            story = new Story(inkJSONAsset.text);
+        }
     }
 
-	// Creates a new Story object with the compiled story which we can then play!
-	void StartStory()
-	{
-		story = new Story(inkJSONAsset.text);
-		//if (OnCreateStory != null) OnCreateStory(story);
-		RefreshView();
-	}
+    void Start()
+    {
+        StartStory();
+    }
 
-	// This is the main function called every time the story changes. It does a few things:
-	// Destroys all the old content and choices.
-	// Continues over all the lines of text, then displays all the choices. If there are no choices, the story is finished!
-	void RefreshView()
-	{
-		// Remove all the UI on screen
-		//RemoveChildren();
+    void Update()
+    {
+        test_time = Time.time;
+    }
 
-		var dialogTexts = new List<DialogData>();
+    // Creates a new Story object with the compiled story which we can then play!
+    void StartStory()
+    {
+        story = new Story(inkJSONAsset.text);
+        // if (OnCreateStory != null) OnCreateStory(story);
+        RefreshView();
+    }
 
-		DialogData currentDialog = null;
+    // This is the main function called every time the story changes. It does a few things:
+    // Destroys all the old content and choices.
+    // Continues over all the lines of text, then displays all the choices. If there are no choices, the story is
+    // finished!
+    void RefreshView()
+    {
+        // Remove all the UI on screen
+        // RemoveChildren();
 
-		// Read all the content until we can't continue any more
-		while (story.canContinue)
-		{
-			// Continue gets the next line of the story
-			string text = story.Continue();
-			// This removes any white space from the text.
-			text = text.Trim();
-			// Display the text on screen!
-			//CreateContentView(text);
+        var dialogTexts = new List<DialogData>();
 
-			currentDialog = new DialogData(text, "Dawg", null /*() => OnClickChoiceButton()*/);
-		}
+        DialogData currentDialog = null;
 
-		
-		// Display all the choices, if there are any!
-		if (story.currentChoices.Count > 0)
-		{
-			for (int i = 0; i < story.currentChoices.Count; i++)
-			{
-				Choice choice = story.currentChoices[i];
+        // Read all the content until we can't continue any more
+        while (story.canContinue)
+        {
+            // Continue gets the next line of the story
+            string text = story.Continue();
+            // This removes any white space from the text.
+            text = text.Trim();
+            // Display the text on screen!
+            // CreateContentView(text);
 
-				string text = choice.text.Trim();
-				currentDialog.SelectList.Add(choice.index.ToString(), text);
+            currentDialog = new DialogData(text, "Dawg", null /*() => OnClickChoiceButton()*/);
+            dialogTexts.Add(currentDialog);
+        }
 
-				//Button button = CreateChoiceView(choice.text.Trim());
-				// Tell the button what to do when we press it
-				//button.onClick.AddListener(delegate {
-				//	OnClickChoiceButton(choice);
-				//});
-			}
+        // Display all the choices, if there are any!
+        if (story.currentChoices.Count > 0)
+        {
+            for (int i = 0; i < story.currentChoices.Count; i++)
+            {
+                Choice choice = story.currentChoices[i];
 
-			currentDialog.Callback = () => Check_Choice();
+                string text = choice.text.Trim();
+                currentDialog.SelectList.Add(choice.index.ToString(), text);
 
-			dialogTexts.Add(currentDialog);
-		}
-		// If we've read all the content and there's no choices, the story is finished!
-		else
-		{
-			dialogTexts.Add(new DialogData("End of story.\nRestart?", "Li", () => StartStory()));
-		}
+                // Button button = CreateChoiceView(choice.text.Trim());
+                //  Tell the button what to do when we press it
+                // button.onClick.AddListener(delegate {
+                //	OnClickChoiceButton(choice);
+                // });
+            }
 
-		DialogManager.Show(dialogTexts);
+            currentDialog.Callback = () => Check_Choice();
 
-	}
+            dialogTexts.Add(currentDialog);
+        }
+        // If we've read all the content and there's no choices, the story is finished!
+        else
+        {
+            dialogTexts.Add(new DialogData("End of story.\nRestart?", "Li", () => StartStory()));
+        }
 
-	private void Check_Choice()
-	{
-		int index = int.Parse(DialogManager.Result);
-		story.ChooseChoiceIndex(index);
-		RefreshView();
-	}
+        DialogManager.Show(dialogTexts);
+    }
 
+    private void Check_Choice()
+    {
+        int index = int.Parse(DialogManager.Result);
+        story.ChooseChoiceIndex(index);
+        RefreshView();
+    }
 }

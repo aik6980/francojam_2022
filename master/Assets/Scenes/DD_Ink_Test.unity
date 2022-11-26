@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogManager: {fileID: 0}
   test_time: 0
-  inkJSONAsset: {fileID: 4900000, guid: 6cf48bb6d89824cc69e35b43f9a1aca6, type: 3}
+  inkJSONAsset: {fileID: 4900000, guid: be01acddf51bae74c8038c05bd34839f, type: 3}
 --- !u!1 &76003758
 GameObject:
   m_ObjectHideFlags: 0
