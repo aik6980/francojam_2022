@@ -33,9 +33,11 @@ namespace Doublsb.Dialog
 {
     public class DialogManager : MonoBehaviour
     {
-        //================================================
-        //Public Variable
-        //================================================
+		//================================================
+		//Public Variable
+		//================================================
+		public bool UseChat = false;		//instead of printer, feed dialog into Chat
+
         [Header("Game Objects")]
         public GameObject Printer;
         public GameObject Characters;
@@ -55,7 +57,13 @@ namespace Doublsb.Dialog
         public GameObject SelectorItem;
         public Text SelectorItemText;
 
-        [HideInInspector]
+		[Header("Chat")]
+		public GameObject Chat;
+		public GameObject ChatItem;
+		public Text ChatItemText;
+		public ScrollRect ChatScroll;
+
+		[HideInInspector]
         public State state;
 
         [HideInInspector]
@@ -92,7 +100,24 @@ namespace Doublsb.Dialog
             StartCoroutine(Activate_List(Data));
         }
 
-        public void Click_Window()
+		public void Reset()
+		{
+			if (UseChat)
+			{
+				_clear_chat();
+				ChatItem.SetActive(false);
+				Chat.SetActive(true);
+				if (Printer)
+					Printer.SetActive(false);
+			} else
+			{
+				Printer.SetActive(true);
+			}
+
+			Selector.SetActive(false);
+		}
+
+		public void Click_Window()
         {
             switch (state)
             {
@@ -115,6 +140,8 @@ namespace Doublsb.Dialog
             Printer.SetActive(false);
             Characters.SetActive(false);
             Selector.SetActive(false);
+			if (Chat)
+				Chat.SetActive(false);
 
             state = State.Deactivate;
 
@@ -209,11 +236,25 @@ namespace Doublsb.Dialog
             _lastDelay = 0.1f;
             Printer_Text.text = string.Empty;
 
-            Printer.SetActive(true);
+			if (UseChat)
+			{
+				//_clear_chat();
+				ChatItem.SetActive(false);
+				Chat.SetActive(true);
+				if (Printer)
+					Printer.SetActive(false);
+			} else
+			{
+				Printer.SetActive(true);
+			}
 
             Characters.SetActive(_current_Character != null);
-            foreach (Transform item in Characters.transform) item.gameObject.SetActive(false);
-            if(_current_Character != null) _current_Character.gameObject.SetActive(true);
+			foreach (Transform item in Characters.transform)
+			{
+				item.gameObject.SetActive(false);
+			}
+            if(_current_Character != null)
+				_current_Character.gameObject.SetActive(true);
         }
 
         private void _init_selector()
@@ -250,9 +291,55 @@ namespace Doublsb.Dialog
             NewItem.SetActive(true);
         }
 
-        #region Show Text
+		#region Show Text
 
-        private IEnumerator Activate_List(List<DialogData> DataList)
+		private void _clear_chat()
+		{
+			//backup the original
+			ChatItem.transform.SetParent(null, false);
+
+			for (int i = 1; i < Chat.transform.childCount; i++)
+			{
+				Destroy(Chat.transform.GetChild(i).gameObject);
+			}
+			//restore
+			ChatItem.transform.SetParent(Chat.transform, false);
+		}
+
+		private void _add_chatItem(string text)
+		{
+			ChatItemText.text = text;
+			//ChatItemText.GetComponent<ContentSizeFitter>().SetLayoutVertical();
+
+			var NewItem = Instantiate(ChatItem, Chat.transform);
+			//NewItem.GetComponent<Button>().onClick.AddListener(() => Select(index));
+			//NewItem.SetActive(false);
+			NewItem.SetActive(false);
+			NewItem.transform.SetParent(null, false);
+			NewItem.transform.SetParent(ChatItem.transform.parent, false);
+			NewItem.SetActive(true);
+
+			//ToDo: force update the layout groups
+			Canvas.ForceUpdateCanvases();
+			//NewItem.GetComponent<ContentSizeFitter>().SetLayoutVertical();
+			//Chat.GetComponent<ContentSizeFitter>().SetLayoutVertical();
+
+			NewItem.GetComponent<VerticalLayoutGroup>().enabled = false;
+			NewItem.GetComponent<VerticalLayoutGroup>().enabled = true;
+
+			Canvas.ForceUpdateCanvases();
+
+			Chat.GetComponent<VerticalLayoutGroup>().enabled = false;
+			Chat.GetComponent<VerticalLayoutGroup>().enabled = true;
+
+			Canvas.ForceUpdateCanvases();
+
+			//scroll to bottom
+			//ChatScroll.normalizedPosition = new Vector2(0, -1);
+			ChatScroll.velocity = new Vector2(0, 1000);
+		}
+
+		private IEnumerator Activate_List(List<DialogData> DataList)
         {
             state = State.Active;
 
@@ -276,7 +363,13 @@ namespace Doublsb.Dialog
                 switch (item.Command)
                 {
                     case Command.print:
-                        yield return _printingRoutine = StartCoroutine(_print(item.Context));
+						if (UseChat)
+						{
+							_add_chatItem(item.Context);
+						} else
+						{
+							yield return _printingRoutine = StartCoroutine(_print(item.Context));
+						}
                         break;
 
                     case Command.color:
