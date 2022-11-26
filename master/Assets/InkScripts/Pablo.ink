@@ -14,64 +14,64 @@ VAR affinity=4
 -> round_1
 
 === round_1 ===
-omg hi!!!
-im pablo n im HYPED TO MEET YOU :DDD
-its not every day u get to make a new friend <3333
-*[You seem happy]You seem happy!
+omg hi!!! #Name_Pablo
+im pablo n im HYPED TO MEET YOU :DDD #Name_Pablo
+its not every day u get to make a new friend <3333 #Name_Pablo
+*[You seem happy]You seem happy! #Name_Me
 
-- u would be too if u sniffed a few things around here!!
-u wouldnt believe what kinds of things happen!!
-like... uh,,,
-*{likes_kids > 5}[Visitors?]You get people visiting you?
-YEAH n its the BEST!!! ^_^ i <3 humans!! specially the little ones!
+- u would be too if u sniffed a few things around here!! #Name_Pablo
+u wouldnt believe what kinds of things happen!! #Name_Pablo
+like... uh,,, #Name_Pablo
+*{likes_kids > 5}[Visitors?]You get people visiting you? #Name_Me
+YEAH n its the BEST!!! ^_^ i <3 humans!! specially the little ones! #Name_Pablo
 ~ affinity = affinity + 2
 -> round_2
-*[Food?]You get to eat food?
-FOOD???? WHERE???????
+*[Food?]You get to eat food? #Name_Me
+FOOD???? WHERE??????? #Name_Pablo
 -> round_2
-*[Dog... things?]Like... dog things? That dogs do?
-yh i guess
+*[Dog... things?]Like... dog things? That dogs do? #Name_Me
+yh i guess #Name_Pablo
 ~affinity = affinity - 2
 -> round_2
 
 === round_2 ===
-ur back!! <3
-how r u doin friend???
-i cant wait to talk about ur day!!
-*[It's been good]It's been good! How about yours?
+ur back!! <3 #Name_Pablo
+how r u doin friend??? #Name_Pablo
+i cant wait to talk about ur day!! #Name_Pablo
+*[It's been good]It's been good! How about yours? #Name_Me
 
--HELL YEAH!!! :DDDD
-mines been good too!
-i did almost see a cat but now ur here its SO much better!!
-*{likes_cats >= 5}[Cats are the best]But cats are the best!
-??? y r u here then??
+-HELL YEAH!!! :DDDD #Name_Pablo
+mines been good too! #Name_Pablo
+i did almost see a cat but now ur here its SO much better!! #Name_Pablo
+*{likes_cats >= 5}[Cats are the best]But cats are the best! #Name_Me
+??? y r u here then?? #Name_Pablo
 ~ affinity = affinity - 2
 ->round_3
-*{likes_cats < 5}[Cats are the worst]I'd be mad if I saw a cat!
-RIGHT?!??!? humans >>>> cats imo
+*{likes_cats < 5}[Cats are the worst]I'd be mad if I saw a cat! #Name_Me
+RIGHT?!??!? humans >>>> cats imo #Name_Pablo
 ~ affinity = affinity + 2
 ->round_3
-*[Cats are fine]At least it was only almost!
-yh it was actually just a mirror :/ but i know now!
+*[Cats are fine]At least it was only almost! #Name_Me
+yh it was actually just a mirror :/ but i know now! #Name_Pablo
 ->round_3
 
 === round_3 ===
-:OOO OMG ITS U
-lets talk lets talk!!
-im always happy to see u <3
-*[You too]The feeling's mutual!
+:OOO OMG ITS U #Name_Pablo
+lets talk lets talk!! #Name_Pablo
+im always happy to see u <3 #Name_Pablo
+*[You too]The feeling's mutual! #Name_Me
 
--<3333
-ive been playing fetch with the wall!
-now ur here you can play!!
-*[Soon]I've got more dogs to visit, but soon we'll play!
-ok! they deserve time with u too <33
+-<3333 #Name_Pablo
+ive been playing fetch with the wall! #Name_Pablo
+now ur here you can play!! #Name_Pablo
+*[Soon]I've got more dogs to visit, but soon we'll play! #Name_Me
+ok! they deserve time with u too <33 #Name_Pablo
 ->END
-*{playful > 7}[Sure]Let's do it!
-!!!! <3<3<3<3
+*{playful > 7}[Sure]Let's do it! #Name_Me
+!!!! <3<3<3<3 #Name_Pablo
 ~ affinity = affinity + 2
 ->END
-*[I'm tired]Maybe another day?
-oh... ok
+*[I'm tired]Maybe another day? #Name_Me
+oh... ok #Name_Pablo
 ~ affinity = affinity - 2
 ->END
