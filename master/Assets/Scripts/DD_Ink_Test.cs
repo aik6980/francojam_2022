@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Doublsb.Dialog;
 using Ink.Runtime;
+using UnityEditor.Experimental.Rendering;
 
 public class DD_Ink_Test : MonoBehaviour
 {
@@ -69,7 +70,11 @@ public class DD_Ink_Test : MonoBehaviour
             // Display the text on screen!
             // CreateContentView(text);
 
-            currentDialog = new DialogData(text, "Dawg", null /*() => OnClickChoiceButton()*/);
+            // Find speaker name from tags
+            var tags = story.currentTags;
+            var tag_name = Find_speaker_name(tags);
+
+            currentDialog = new DialogData(text, tag_name, null /*() => OnClickChoiceButton()*/);
             dialogTexts.Add(currentDialog);
         }
 
@@ -108,5 +113,29 @@ public class DD_Ink_Test : MonoBehaviour
         int index = int.Parse(DialogManager.Result);
         story.ChooseChoiceIndex(index);
         RefreshView();
+    }
+
+    private string Find_speaker_name(List<string> tags)
+    {
+        var tag_name = "";
+        if (tags.Count > 0)
+        {
+            tag_name = tags.Find(x => x.Contains("Name_"));
+            if (tag_name != null && tag_name.Length > 0)
+            {
+                tag_name = tag_name.Remove(0, "Name_".Length);
+            }
+        }
+
+        if (tag_name == null)
+            return "";
+
+        // Fixme: hack for #Player tag
+        if (tag_name == "Me")
+        {
+            tag_name = "Li";
+        }
+
+        return tag_name;
     }
 }
