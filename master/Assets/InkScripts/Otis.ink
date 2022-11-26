@@ -17,7 +17,7 @@ VAR affinity=4
 - Heya! How are you? My name's Otis! It's great to meet you! #Name_Otis
 I like your profile pic, you look super nice. #Name_Me
 It's a real shame these phones don't have smell too. You can learn a lot about someone that way y'know? #Name_Otis
- * :) #Name_Me
+ * :) #Name_Me #Emote_Happy
 
 - Hey, so would you like to chat for a bit? #Name_Otis
 It's so good to get to speak to someone new, I get a little stir crazy sometimes! #Name_Otis

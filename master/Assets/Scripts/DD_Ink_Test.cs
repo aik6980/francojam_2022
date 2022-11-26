@@ -75,6 +75,9 @@ public class DD_Ink_Test : MonoBehaviour
             var tags = story.currentTags;
             var tag_name = Find_speaker_name(tags);
 
+            var tag_emote = Find_emote_name(tags);
+            text = tag_emote + text;
+
             currentDialog = new DialogData(text, tag_name, null /*() => OnClickChoiceButton()*/);
             dialogTexts.Add(currentDialog);
         }
@@ -138,5 +141,23 @@ public class DD_Ink_Test : MonoBehaviour
         }
 
         return tag_name;
+    }
+
+    private string Find_emote_name(List<string> tags)
+    {
+        string tag_name = null;
+        if (tags.Count > 0)
+        {
+            tag_name = tags.Find(x => x.Contains("Emote_"));
+            if (tag_name != null && tag_name.Length > 0)
+            {
+                tag_name = tag_name.Remove(0, "Emote_".Length);
+            }
+        }
+
+        if (tag_name == null)
+            return "";
+
+        return "/emote:" + tag_name + "/";
     }
 }
