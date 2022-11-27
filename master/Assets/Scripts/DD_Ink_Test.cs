@@ -51,13 +51,25 @@ public class DD_Ink_Test : MonoBehaviour
     void StartStory()
     {
         story = new Story(inkJSONAsset.text);
+        if (Story_selection_mgr.Instance.m_curr_text_asset != null)
+        {
+            story.ChoosePathString(Story_selection_mgr.Instance.m_round_index.ToString());
+        }
         // if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();
     }
 
     void EndStory()
     {
-        SceneManager.LoadScene("Scene_ending");
+        if (Story_selection_mgr.Instance.m_round_index < Round_enum.round_3)
+        {
+            Story_selection_mgr.Instance.m_round_index += 1;
+            SceneManager.LoadScene("Scene_selection");
+        }
+        else
+        {
+            SceneManager.LoadScene("Scene_ending");
+        }
     }
 
     // This is the main function called every time the story changes. It does a few things:
