@@ -61,15 +61,7 @@ public class DD_Ink_Test : MonoBehaviour
 
     void EndStory()
     {
-        if (Story_selection_mgr.Instance.m_round_index < Round_enum.round_3)
-        {
-            Story_selection_mgr.Instance.m_round_index += 1;
-            SceneManager.LoadScene("Scene_selection");
-        }
-        else
-        {
-            SceneManager.LoadScene("Scene_ending");
-        }
+        Story_selection_mgr.Instance.Finishing_round();
     }
 
     // This is the main function called every time the story changes. It does a few things:
