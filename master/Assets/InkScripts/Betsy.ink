@@ -14,7 +14,7 @@ VAR affinity=4
 -> round_1
 
 === round_1 ===
-Howdy, stranger! #Name_Betsy
+Howdy, stranger! The name's Betsy. #Name_Betsy
 Mighty kind of you to drop by. #Name_Betsy
 You're speaking to the finest belle this side of the Arun! #Name_Betsy
 *[Howdy]And a howdy right back to you! #Name_Me
@@ -28,15 +28,15 @@ Oh ain't that the truth, partner! #Name_Betsy
 *[Does it matter?]I don't really pay attention to it... #Name_Me
 Trust me hun, I can tell. #Name_Betsy
 ~affinity = affinity - 2
-*[Function over form]I wear what's appropriate to the situation. #Name_Me
+*[Function over form]I wear what's appropriate to the situation. Can't go for a hike in heels, can you? #Name_Me
 Nothin' wrong with that! #Name_Betsy
 
 - -> DONE
 
 === round_2 ===
 Fancy seeing you 'round these parts! #Name_Betsy
-Glad to have ya return to my humble abode. #Name_Betsy
-Whatcha think of my new look? #Name_Betsy
+Glad to have ya back in town. #Name_Betsy
+Whatcha think of today's look? #Name_Betsy
 *[Fabulous as always]You're looking fabulous, and I expect nothing less! #Name_Me
 
 -Hoho, there's that southern charm! #Name_Betsy
@@ -58,7 +58,7 @@ Look what the cat dragged in! #Name_Betsy
 Aw, I'm jus' teasin' you, partner. #Name_Betsy
 {affinity > 7: It's a fine day with you around!} #Name_Betsy
 {affinity <=7: ...or am I?} #Name_Betsy
-*[Cat? Here?]I can't imagine a cat would be too happy here! #Name_Me
+*[Cat? Here?]I can't imagine a cat dragging anything around here! #Name_Me
 
 -You're quite right, and it's a darn shame. #Name_Betsy
 I've long admired the effort cats put into their appearance. #Name_Betsy
