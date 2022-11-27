@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -40,14 +41,32 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         Reset_round(Round_enum.round_1);
     }
 
+    private static Story_selection_mgr persistence_obj;
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+
+        if (persistence_obj == null)
+        {
+            persistence_obj = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        // update display
+        var text_display_obj = GameObject.FindGameObjectWithTag("UI_Round_chat");
+        if (text_display_obj != null)
+        {
+            var text_display_comp = text_display_obj.GetComponent<TMP_Text>();
+            var text_display = "Day = " + m_round_index.ToString() + "\nRemaining chat = " + m_num_date_counter;
+            text_display_comp.text = text_display;
+        }
     }
 
     public void Finishing_round()
