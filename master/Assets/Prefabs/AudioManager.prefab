@@ -65,9 +65,9 @@ MonoBehaviour:
       Data3: -716138072
       Data4: 1276038557
     Path: event:/Music/Music_Dogxcited
-  bowWowScene: {fileID: 102900000, guid: 9fc0d4010bbf28b4594072e72b8655ab, type: 3}
-  doggoAdventureScene: {fileID: 102900000, guid: 5f0a61dc0e5a8a64e9a2553431969f3b, type: 3}
-  dogxcitedScene: {fileID: 102900000, guid: b38046e796773c14696c436a9a84d97f, type: 3}
+  bowWowScene: DD_Ink_Chat_test
+  doggoAdventureScene: Scene_UI_TitleScreen
+  dogxcitedScene: DD_Ink_Test
   dogBarkUI:
     Guid:
       Data1: 1161701021

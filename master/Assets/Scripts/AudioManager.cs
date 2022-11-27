@@ -19,10 +19,9 @@ public class AudioManager : MonoBehaviour
     public static EventInstance currentMusic;
 
     //[Header("Music - Scene matching")]
-    //[SerializeField]
-    // SceneAsset is *Editor only* cannot use from the release game, need to figure a way, let me know. Aik
-    // SceneAsset bowWowScene, doggoAdventureScene, dogxcitedScene;
-    // Dictionary<SceneAsset, EventReference> sceneMusic;
+    [SerializeField]
+    string bowWowScene, doggoAdventureScene, dogxcitedScene;        //Could insead do: foreach (scene.name) to add eventref for ever scene
+    Dictionary<string, EventReference> sceneMusic;
 
     //[Header("UI SFX Events")]
     [SerializeField]
@@ -64,9 +63,9 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        // sceneMusic = new Dictionary<SceneAsset, EventReference>() { { bowWowScene, bowWowMusic },
-        //                                                             { doggoAdventureScene, doggoAdventureMusic },
-        //                                                             { dogxcitedScene, dogxcitedMusic } };
+        sceneMusic = new Dictionary<string, EventReference>() { { bowWowScene, bowWowMusic },
+                                                                { doggoAdventureScene, doggoAdventureMusic },
+                                                                { dogxcitedScene, dogxcitedMusic } };
 
         CheckSceneMusic();
     }
@@ -178,14 +177,13 @@ public class AudioManager : MonoBehaviour
     {
         var currentScene = SceneManager.GetActiveScene();
 
-        // Need fixing: release build error. Aik
-        // foreach (var pair in sceneMusic)
-        //{
-        //    if (pair.Key.name == currentScene.name)
-        //    {
-        //        PlayMusic(pair.Value);
-        //    }
-        //}
+        foreach (var pair in sceneMusic)
+        {
+            if (pair.Key == currentScene.name)
+            {
+                PlayMusic(pair.Value);
+            }
+        }
     }
 
     void DrawSoundDistance(EventInstance instance, GameObject soundSource)
