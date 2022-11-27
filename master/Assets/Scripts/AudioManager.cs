@@ -14,22 +14,29 @@ public class AudioManager : MonoBehaviour
     static AudioManager _instance;
 
     //[Header("Music Events")]
-    [SerializeField] EventReference bowWowMusic, doggoAdventureMusic, dogxcitedMusic;
+    [SerializeField]
+    EventReference bowWowMusic, doggoAdventureMusic, dogxcitedMusic;
     public static EventInstance currentMusic;
 
     //[Header("Music - Scene matching")]
-    [SerializeField] SceneAsset bowWowScene, doggoAdventureScene, dogxcitedScene;
-    Dictionary<SceneAsset, EventReference> sceneMusic;
+    //[SerializeField]
+    // SceneAsset is *Editor only* cannot use from the release game, need to figure a way, let me know. Aik
+    // SceneAsset bowWowScene, doggoAdventureScene, dogxcitedScene;
+    // Dictionary<SceneAsset, EventReference> sceneMusic;
 
     //[Header("UI SFX Events")]
-    [SerializeField] EventReference dogBarkUI;
+    [SerializeField]
+    EventReference dogBarkUI;
 
     //[Header("UI SFX OneShot Events")]
-    [SerializeField] EventReference woodClickUI, woodClickDownUI, woodClickUpUI, stoneClickDownUI, stoneClickUpUI, popClickUI, hoverUI01, hoverUI02, notificationUI01, notificationUI02, squeakToyUI;
-    
+    [SerializeField]
+    EventReference woodClickUI, woodClickDownUI, woodClickUpUI, stoneClickDownUI, stoneClickUpUI, popClickUI, hoverUI01,
+        hoverUI02, notificationUI01, notificationUI02, squeakToyUI;
+
     //[Header("UI SFX Parameters")]
-    [SerializeField] ParamRef dogRef;
-    
+    [SerializeField]
+    ParamRef dogRef;
+
     public enum ButtonType
     {
         Stone01,
@@ -39,16 +46,14 @@ public class AudioManager : MonoBehaviour
         Writing01
     }
 
-
     public static AudioManager Instance
     {
-        get 
-        { 
+        get {
             if (_instance == null)
             {
                 Debug.LogError("Audio Manager is NULL");
             }
-            return _instance; 
+            return _instance;
         }
     }
 
@@ -59,12 +64,9 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        sceneMusic = new Dictionary<SceneAsset, EventReference>()
-        {
-            { bowWowScene, bowWowMusic },
-            { doggoAdventureScene, doggoAdventureMusic },
-            { dogxcitedScene, dogxcitedMusic }
-        };
+        // sceneMusic = new Dictionary<SceneAsset, EventReference>() { { bowWowScene, bowWowMusic },
+        //                                                             { doggoAdventureScene, doggoAdventureMusic },
+        //                                                             { dogxcitedScene, dogxcitedMusic } };
 
         CheckSceneMusic();
     }
@@ -73,21 +75,21 @@ public class AudioManager : MonoBehaviour
     {
         switch (type)
         {
-            case ButtonType.Stone01: 
-                RuntimeManager.PlayOneShot(stoneClickDownUI);
-                break;
-            case ButtonType.Wood01:
-                RuntimeManager.PlayOneShot(woodClickDownUI);
-                break;
-            case ButtonType.Wood02:
-                RuntimeManager.PlayOneShot(woodClickUI);
-                break;
-            case ButtonType.Phone01:
-                RuntimeManager.PlayOneShot(popClickUI);
-                break;
-            default:
-                RuntimeManager.PlayOneShot(woodClickDownUI);
-                break;
+        case ButtonType.Stone01:
+            RuntimeManager.PlayOneShot(stoneClickDownUI);
+            break;
+        case ButtonType.Wood01:
+            RuntimeManager.PlayOneShot(woodClickDownUI);
+            break;
+        case ButtonType.Wood02:
+            RuntimeManager.PlayOneShot(woodClickUI);
+            break;
+        case ButtonType.Phone01:
+            RuntimeManager.PlayOneShot(popClickUI);
+            break;
+        default:
+            RuntimeManager.PlayOneShot(woodClickDownUI);
+            break;
         }
     }
 
@@ -95,14 +97,14 @@ public class AudioManager : MonoBehaviour
     {
         switch (type)
         {
-            case ButtonType.Stone01:
-                RuntimeManager.PlayOneShot(stoneClickUpUI);
-                break;
-            case ButtonType.Wood01:
-                RuntimeManager.PlayOneShot(woodClickUpUI);
-                break;
-            default:
-                break;
+        case ButtonType.Stone01:
+            RuntimeManager.PlayOneShot(stoneClickUpUI);
+            break;
+        case ButtonType.Wood01:
+            RuntimeManager.PlayOneShot(woodClickUpUI);
+            break;
+        default:
+            break;
         }
     }
 
@@ -110,23 +112,30 @@ public class AudioManager : MonoBehaviour
     {
         switch (type)
         {
-            case ButtonType.Stone01:
-                RuntimeManager.PlayOneShot(hoverUI01);
-                break;
-            case ButtonType.Wood01:
-                RuntimeManager.PlayOneShot(hoverUI02);
-                break;
-            default:
-                RuntimeManager.PlayOneShot(hoverUI02);
-                break;
+        case ButtonType.Stone01:
+            RuntimeManager.PlayOneShot(hoverUI01);
+            break;
+        case ButtonType.Wood01:
+            RuntimeManager.PlayOneShot(hoverUI02);
+            break;
+        default:
+            RuntimeManager.PlayOneShot(hoverUI02);
+            break;
         }
     }
 
-    public void PlayNotificationUI01() { RuntimeManager.PlayOneShot(notificationUI01); }
-    public void PlayNotificationUI02() { RuntimeManager.PlayOneShot(notificationUI02); }
-    public void PlaySqueakToyUI() { RuntimeManager.PlayOneShot(squeakToyUI); }
-
-    
+    public void PlayNotificationUI01()
+    {
+        RuntimeManager.PlayOneShot(notificationUI01);
+    }
+    public void PlayNotificationUI02()
+    {
+        RuntimeManager.PlayOneShot(notificationUI02);
+    }
+    public void PlaySqueakToyUI()
+    {
+        RuntimeManager.PlayOneShot(squeakToyUI);
+    }
 
     public EventInstance PlayMusic(EventReference musicTrack)
     {
@@ -142,7 +151,7 @@ public class AudioManager : MonoBehaviour
             currentMusic = RuntimeManager.CreateInstance(musicTrack);
             currentMusic.start();
         }
-        
+
         return currentMusic;
     }
 
@@ -156,7 +165,7 @@ public class AudioManager : MonoBehaviour
 
     EventInstance CreateEmitter(EventReference eventRef, GameObject soundSource)
     {
-        //gizmo for min/max dist?
+        // gizmo for min/max dist?
         var instance = RuntimeManager.CreateInstance(eventRef);
         RuntimeManager.AttachInstanceToGameObject(instance, soundSource.transform);
         instance.start();
@@ -169,13 +178,14 @@ public class AudioManager : MonoBehaviour
     {
         var currentScene = SceneManager.GetActiveScene();
 
-        foreach (var pair in sceneMusic)
-        {
-            if (pair.Key.name == currentScene.name)
-            {
-                PlayMusic(pair.Value);
-            }
-        }
+        // Need fixing: release build error. Aik
+        // foreach (var pair in sceneMusic)
+        //{
+        //    if (pair.Key.name == currentScene.name)
+        //    {
+        //        PlayMusic(pair.Value);
+        //    }
+        //}
     }
 
     void DrawSoundDistance(EventInstance instance, GameObject soundSource)

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Doublsb.Dialog;
 using Ink.Runtime;
-using UnityEditor.Experimental.Rendering;
 using FMOD;
 using UnityEngine.SceneManagement;
 
