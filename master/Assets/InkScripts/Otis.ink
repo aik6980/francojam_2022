@@ -30,8 +30,9 @@ There's only so many times you can read White Fang before you start looking for 
  ~ affinity = affinity - 2
  -> DONE
  * [Not yet]I've been meaning to read that one! #Name_Me
- You really should! It's so good it makes me want to bark! #Name_Otis -> round_2
- * {smart > 5}[Love it!]I love that story, but Beauty Smith is a monster. \>\:\| #Name_Me
+ You really should! It's so good it makes me want to bark! #Name_Otis
+ -> DONE
+ * {smart > 5}[Love it!]I love that story, but Beauty Smith is a monster. #Name_Me #Emote_Angry
  But Scott is such a good person, you need a terrible villian to show him against. #Name_Otis
  ~ affinity = affinity + 2
  -> DONE
@@ -69,10 +70,10 @@ Oh hey! It's so good to see you! I { affinity > 5 : really } enjoyed our chat to
     * [Find a spot to sit] 
         It's nice to sit and chat. I've only got these little legs, sometimes I get a little worn out. #Name_Otis
 - So, do you go for lots of longer walks?
-    * { likes_walks > 6 } [Who doesn't!?]
+    * { likes_walks > 6 && active > 4 } [Who doesn't!?]
         ~ affinity = affinity - 3
         -> DONE
-    * [Yeah.]Oh, yeah.
+    * [Yeah.]Oh, yeah. I guess so, I hadn't really thought about it.
         ~ likes_walks = likes_walks + 1
         ~affinity = affinity - 1
         -> DONE
