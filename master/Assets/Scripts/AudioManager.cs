@@ -8,6 +8,8 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class AudioManager : MonoBehaviour
 {
@@ -36,9 +38,13 @@ public class AudioManager : MonoBehaviour
     EventReference dogDialogue;
     EventInstance dogDialogueEvent;
 
-    //[Header("UI SFX Parameters")]
+    //[Header("Parameters")]
     [SerializeField]
     ParamRef dogRef;
+
+    EventInstance masterMuteSnapshot;
+
+    public static GameObject volumeSliderObject;
 
     public enum ButtonType
     {
@@ -73,7 +79,30 @@ public class AudioManager : MonoBehaviour
                                                                 { dogxcitedScene, dogxcitedMusic } };
 
         dogDialogueEvent = RuntimeManager.CreateInstance(dogDialogue);
+        volumeSliderObject = GameObject.FindGameObjectWithTag("UI_Master_Volume");
+        Debug.Log("Volume slider object: " + volumeSliderObject);
+
         CheckSceneMusic();
+    }
+
+    public void SetMasterVolume()
+    {
+        var volume = volumeSliderObject.GetComponent<UnityEngine.UI.Slider>().value;
+        RuntimeManager.StudioSystem.setParameterByName("Master_Volume", volume);
+    }
+
+    public void MuteMasterVolume()
+    {
+        if (GetPlaybackState(masterMuteSnapshot) != PLAYBACK_STATE.PLAYING)
+        {
+            masterMuteSnapshot = RuntimeManager.CreateInstance("snapshot:/Master_Mute");
+            masterMuteSnapshot.start();
+        }
+        else
+        {
+            masterMuteSnapshot.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            masterMuteSnapshot.release();
+        }
     }
 
     public void PlayClickDownUI(ButtonType type)

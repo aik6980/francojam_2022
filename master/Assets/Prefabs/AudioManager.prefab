@@ -162,3 +162,7 @@ MonoBehaviour:
   dogRef:
     Name: Dog_Ref
     Value: 0
+  Master_Volume:
+    Name: Master_Volume
+    Value: 1
+  volumeSliderGO: {fileID: 0}
