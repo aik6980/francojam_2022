@@ -168,14 +168,20 @@ namespace Doublsb.Dialog
 
                     // Substring /CommandSyntex/
                     var nextSlashIndex = originalString.IndexOf('/', i + 1);
-                    string commandSyntex = originalString.Substring(i + 1, nextSlashIndex - i - 1);
+					if (nextSlashIndex > 0)
+					{
+						string commandSyntex = originalString.Substring(i + 1, nextSlashIndex - i - 1);
 
-                    // Add converted command
-                    var com = _convert_Syntex_To_Command(commandSyntex);
-                    if (com != null) Commands.Add(com);
+						// Add converted command
+						var com = _convert_Syntex_To_Command(commandSyntex);
+						if (com != null) Commands.Add(com);
 
-                    // Move i
-                    i = nextSlashIndex;
+						// Move i
+						i = nextSlashIndex;
+					} else
+					{
+						printText += originalString[i];
+					}
                 }
             }
 
