@@ -92,8 +92,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 240, y: 0}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 161.5, y: 1.1}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &849999284696093816
 CanvasRenderer:
@@ -176,7 +176,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 849999284696093815}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 996926284393908483, guid: 43c97bbd12b58eb49ba3971a13f71fd7, type: 3}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: MuteMasterVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5760415566502894543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Picture: {fileID: 0}
   buttonType: 0
+  doggoName: 
 --- !u!1 &849999284889025309
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,8 +230,8 @@ GameObject:
   - component: {fileID: 5419348816540409165}
   - component: {fileID: 8527719398700275479}
   m_Layer: 5
-  m_Name: Slider
-  m_TagString: Untagged
+  m_Name: MasterVolumeSlider
+  m_TagString: UI_Master_Volume
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,7 +245,7 @@ RectTransform:
   m_GameObject: {fileID: 849999284889025309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.44, y: 3.44, z: 3.44}
+  m_LocalScale: {x: 2.38, y: 2.38, z: 2.38}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 849999285084166882}
@@ -243,7 +256,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -90, y: 0}
+  m_AnchoredPosition: {x: -49.7, y: 0}
   m_SizeDelta: {x: 130, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &849999284889025311
@@ -293,10 +306,22 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 996926284393908483, guid: 43c97bbd12b58eb49ba3971a13f71fd7, type: 3}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: SetMasterVolume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5419348816540409165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Picture: {fileID: 0}
   buttonType: 2
+  doggoName: 
 --- !u!114 &8527719398700275479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,7 +386,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 800}
+  m_SizeDelta: {x: 500, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &849999284948943206
 CanvasRenderer:
@@ -589,8 +615,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 800, y: 400}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 853.8, y: 432.7}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &849999285303724023
 CanvasRenderer:
@@ -713,6 +739,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Picture: {fileID: 0}
   buttonType: 0
+  doggoName: 
 --- !u!1 &849999285542314424
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,7 +1037,7 @@ RectTransform:
   m_GameObject: {fileID: 849999286526234583}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.61, y: 0.61, z: 0.61}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 849999285114552118}
