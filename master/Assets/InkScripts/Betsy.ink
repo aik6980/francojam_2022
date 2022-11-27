@@ -25,14 +25,13 @@ How'dya like ~fashion~? #Name_Betsy
 *{active < 5}[Form over function]Gotta dress to impress! #Name_Me
 Oh ain't that the truth, partner! #Name_Betsy
 ~affinity = affinity + 2
--> round_2
 *[Does it matter?]I don't really pay attention to it... #Name_Me
 Trust me hun, I can tell. #Name_Betsy
 ~affinity = affinity - 2
--> round_2
 *[Function over form]I wear what's appropriate to the situation. #Name_Me
 Nothin' wrong with that! #Name_Betsy
--> round_2
+
+- -> DONE
 
 === round_2 ===
 Fancy seeing you 'round these parts! #Name_Betsy
@@ -46,14 +45,13 @@ Yer ancestors certainly had an eye for architecture! You got a favourite type? #
 *[Nope]As long as it's got four walls and a roof, I'm content. #Name_Me
 Heavens above, you gotta take pride in yer heritage! #Name_Betsy
 ~affinity = affinity - 2
-->round_3
 *[Castles]Can't go wrong with the old castles! #Name_Me
 Ain't they just the prettiest things? #Name_Betsy
-->round_3
 *{smart >= 7}[Can't pick just one]It's impossible to pick just one! Everything from the great Gothic cathedrals to the peasant's wattle and daub! #Name_Me
 Oh I just know I could rack your brains for hours, partner! #Name_Betsy
 ~affinity = affinity + 2
-->round_3
+
+- -> DONE
 
 === round_3 ===
 Look what the cat dragged in! #Name_Betsy
