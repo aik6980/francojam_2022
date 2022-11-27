@@ -162,6 +162,9 @@ public class DD_Ink_Test : MonoBehaviour
 
     private string Find_emote_name(List<string> tags)
     {
+        // disable Emote to prevent crash
+        return null;
+
         string tag_name = null;
         if (tags.Count > 0)
         {
