@@ -1515,6 +1515,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 05f8dab3cd694904e919c43d23ba9c97, type: 3}
+    - target: {fileID: 6541578254067275329, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
+      propertyPath: doggoName
+      value: Rusty
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
 --- !u!224 &728071480 stripped
@@ -2422,6 +2426,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: b20a46ad684ce8044a46337e99276faf, type: 3}
+    - target: {fileID: 6541578254067275329, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
+      propertyPath: doggoName
+      value: Otis
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
 --- !u!224 &1234732211 stripped
@@ -2549,6 +2557,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 90419bca1773ecf448970048f28e001c, type: 3}
+    - target: {fileID: 6541578254067275329, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
+      propertyPath: doggoName
+      value: Pablo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
 --- !u!224 &1336260426 stripped
@@ -3648,6 +3660,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a0781c75cf5ccc344a5f787755223ab6, type: 3}
+    - target: {fileID: 6541578254067275329, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
+      propertyPath: doggoName
+      value: Betsy
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
 --- !u!224 &1782811342 stripped
@@ -3791,6 +3807,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 0f5052c68148aa64baacc19919119346, type: 3}
+    - target: {fileID: 6541578254067275329, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
+      propertyPath: doggoName
+      value: Vega
+      objectReference: {fileID: 0}
     - target: {fileID: 8349243362690047267, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.0639988
