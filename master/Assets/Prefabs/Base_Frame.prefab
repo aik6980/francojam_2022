@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 6500828608577961511}
   - component: {fileID: 733303816961719315}
   - component: {fileID: 6541578254067275329}
+  - component: {fileID: 4120037581050073063}
   m_Layer: 5
   m_Name: Base_Frame
   m_TagString: Untagged
@@ -330,6 +331,19 @@ MonoBehaviour:
   Picture: {fileID: 0}
   buttonType: 5
   doggoName: 
+--- !u!114 &4120037581050073063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500828608577961505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66c67651ed7c34479c1f836a8e2598c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _: 0
 --- !u!1 &6500828609346146290
 GameObject:
   m_ObjectHideFlags: 0
