@@ -1670,8 +1670,9 @@ GameObject:
   - component: {fileID: 484404901}
   - component: {fileID: 484404900}
   - component: {fileID: 484404899}
+  - component: {fileID: 484404902}
   m_Layer: 5
-  m_Name: Button (4)
+  m_Name: Spencer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1754,6 +1755,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1898250384}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayDogBarkUI
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Spencer
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &484404900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1792,6 +1805,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484404897}
   m_CullTransparentMesh: 1
+--- !u!114 &484404902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484404897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0084651cb69ced544ab1e6a29548cff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Picture: {fileID: 0}
+  buttonType: 2
 --- !u!1 &519200635
 GameObject:
   m_ObjectHideFlags: 0
@@ -2284,8 +2311,9 @@ GameObject:
   - component: {fileID: 1030750325}
   - component: {fileID: 1030750324}
   - component: {fileID: 1030750323}
+  - component: {fileID: 1030750326}
   m_Layer: 5
-  m_Name: Button (5)
+  m_Name: Ted
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2368,6 +2396,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1898250384}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayDogBarkUI
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Ted
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1030750324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2406,6 +2446,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030750321}
   m_CullTransparentMesh: 1
+--- !u!114 &1030750326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030750321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0084651cb69ced544ab1e6a29548cff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Picture: {fileID: 0}
+  buttonType: 2
 --- !u!1 &1112189755
 GameObject:
   m_ObjectHideFlags: 0
@@ -2581,8 +2635,9 @@ GameObject:
   - component: {fileID: 1271003925}
   - component: {fileID: 1271003924}
   - component: {fileID: 1271003923}
+  - component: {fileID: 189870571597977030}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Pablo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2663,6 +2718,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1898250384}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayDogBarkUI
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Pablo
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1271003924
@@ -2983,8 +3050,9 @@ GameObject:
   - component: {fileID: 1624095209}
   - component: {fileID: 1624095208}
   - component: {fileID: 1624095207}
+  - component: {fileID: 1624095210}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: Betsy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3067,6 +3135,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1898250384}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayDogBarkUI
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Betsy
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1624095208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3105,6 +3185,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624095205}
   m_CullTransparentMesh: 1
+--- !u!114 &1624095210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624095205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0084651cb69ced544ab1e6a29548cff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Picture: {fileID: 0}
+  buttonType: 2
 --- !u!1 &1656584178
 GameObject:
   m_ObjectHideFlags: 0
@@ -3117,8 +3211,9 @@ GameObject:
   - component: {fileID: 1656584182}
   - component: {fileID: 1656584181}
   - component: {fileID: 1656584180}
+  - component: {fileID: 3622868692372001910}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Otis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3199,6 +3294,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1898250384}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayDogBarkUI
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Otis
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1656584181
@@ -3408,8 +3515,9 @@ GameObject:
   - component: {fileID: 1771832673}
   - component: {fileID: 1771832672}
   - component: {fileID: 1771832671}
+  - component: {fileID: 1771832674}
   m_Layer: 5
-  m_Name: Button (6)
+  m_Name: Vega
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3492,6 +3600,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1898250384}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayDogBarkUI
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Vega
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1771832672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3530,6 +3650,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771832669}
   m_CullTransparentMesh: 1
+--- !u!114 &1771832674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771832669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0084651cb69ced544ab1e6a29548cff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Picture: {fileID: 0}
+  buttonType: 2
 --- !u!1001 &1898250383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3587,6 +3721,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43c97bbd12b58eb49ba3971a13f71fd7, type: 3}
+--- !u!114 &1898250384 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 996926284393908483, guid: 43c97bbd12b58eb49ba3971a13f71fd7, type: 3}
+  m_PrefabInstance: {fileID: 1898250383}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b585c1e6c5cb8d4ca3051f6a94a4b68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1929074794
 GameObject:
   m_ObjectHideFlags: 0
@@ -3967,8 +4112,9 @@ GameObject:
   - component: {fileID: 2105298753}
   - component: {fileID: 2105298752}
   - component: {fileID: 2105298751}
+  - component: {fileID: 2105298754}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Rusty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4051,6 +4197,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1898250384}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayDogBarkUI
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Rusty
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2105298752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4089,6 +4247,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2105298749}
   m_CullTransparentMesh: 1
+--- !u!114 &2105298754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2105298749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0084651cb69ced544ab1e6a29548cff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Picture: {fileID: 0}
+  buttonType: 2
 --- !u!1 &2113750507
 GameObject:
   m_ObjectHideFlags: 0
@@ -4166,3 +4338,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113750507}
   m_CullTransparentMesh: 0
+--- !u!114 &189870571597977030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271003921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0084651cb69ced544ab1e6a29548cff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Picture: {fileID: 0}
+  buttonType: 2
+--- !u!114 &3622868692372001910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656584178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0084651cb69ced544ab1e6a29548cff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Picture: {fileID: 0}
+  buttonType: 2

@@ -6,15 +6,20 @@ using UnityEngine.EventSystems;
 public class UI_mouse_over : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Transform Picture;
+    [SerializeField] AudioManager.ButtonType buttonType;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Picture.gameObject.SetActive(true);
+        if (Picture != null)
+            Picture.gameObject.SetActive(true);
+
+        AudioManager.Instance.PlayHoverUI(buttonType);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Picture.gameObject.SetActive(false);
+        if (Picture != null)
+            Picture.gameObject.SetActive(false);
     }
 
     // Start is called before the first frame update

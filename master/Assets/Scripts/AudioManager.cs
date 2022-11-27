@@ -1,26 +1,43 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using FMOD.Studio;
 using FMODUnity;
+using Ink.Runtime;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     static AudioManager _instance;
 
-    [Header("Music Events")]
+    //[Header("Music Events")]
     [SerializeField] EventReference bowWowMusic, doggoAdventureMusic, dogxcitedMusic;
-    EventInstance currentMusic;
+    public static EventInstance currentMusic;
 
-    [Header("UI SFX Events")]
+    //[Header("Music - Scene matching")]
+    [SerializeField] SceneAsset bowWowScene, doggoAdventureScene, dogxcitedScene;
+    Dictionary<SceneAsset, EventReference> sceneMusic;
+
+    //[Header("UI SFX Events")]
     [SerializeField] EventReference dogBarkUI;
 
-    [Header("UI SFX OneShot Events")]
-    [SerializeField] public EventReference woodClickUI, woodClickDownUI, woodClickUpUI, stoneClickDownUI, stoneClickUpUI, popClickUI;
-    [SerializeField] public EventReference hoverUI01, hoverUI02, notificationUI01, notificationUI02, squeakToyUI;
-
-    [Header("UI SFX Parameters")]
+    //[Header("UI SFX OneShot Events")]
+    [SerializeField] EventReference woodClickUI, woodClickDownUI, woodClickUpUI, stoneClickDownUI, stoneClickUpUI, popClickUI, hoverUI01, hoverUI02, notificationUI01, notificationUI02, squeakToyUI;
+    
+    //[Header("UI SFX Parameters")]
     [SerializeField] ParamRef dogRef;
+    
+    public enum ButtonType
+    {
+        Stone01,
+        Wood01,
+        Wood02,
+        Phone01,
+        Writing01
+    }
 
 
     public static AudioManager Instance
@@ -40,18 +57,99 @@ public class AudioManager : MonoBehaviour
         _instance = this;
     }
 
+    private void Start()
+    {
+        sceneMusic = new Dictionary<SceneAsset, EventReference>()
+        {
+            { bowWowScene, bowWowMusic },
+            { doggoAdventureScene, doggoAdventureMusic },
+            { dogxcitedScene, dogxcitedMusic }
+        };
+
+        CheckSceneMusic();
+    }
+
+    public void PlayClickDownUI(ButtonType type)
+    {
+        switch (type)
+        {
+            case ButtonType.Stone01: 
+                RuntimeManager.PlayOneShot(stoneClickDownUI);
+                break;
+            case ButtonType.Wood01:
+                RuntimeManager.PlayOneShot(woodClickDownUI);
+                break;
+            case ButtonType.Wood02:
+                RuntimeManager.PlayOneShot(woodClickUI);
+                break;
+            case ButtonType.Phone01:
+                RuntimeManager.PlayOneShot(popClickUI);
+                break;
+            default:
+                RuntimeManager.PlayOneShot(woodClickDownUI);
+                break;
+        }
+    }
+
+    public void PlayClickUpUI(ButtonType type)
+    {
+        switch (type)
+        {
+            case ButtonType.Stone01:
+                RuntimeManager.PlayOneShot(stoneClickUpUI);
+                break;
+            case ButtonType.Wood01:
+                RuntimeManager.PlayOneShot(woodClickUpUI);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void PlayHoverUI(ButtonType type)
+    {
+        switch (type)
+        {
+            case ButtonType.Stone01:
+                RuntimeManager.PlayOneShot(hoverUI01);
+                break;
+            case ButtonType.Wood01:
+                RuntimeManager.PlayOneShot(hoverUI02);
+                break;
+            default:
+                RuntimeManager.PlayOneShot(hoverUI02);
+                break;
+        }
+    }
+
+    public void PlayNotificationUI01() { RuntimeManager.PlayOneShot(notificationUI01); }
+    public void PlayNotificationUI02() { RuntimeManager.PlayOneShot(notificationUI02); }
+    public void PlaySqueakToyUI() { RuntimeManager.PlayOneShot(squeakToyUI); }
+
+    
+
     public EventInstance PlayMusic(EventReference musicTrack)
     {
-        currentMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        currentMusic = RuntimeManager.CreateInstance(musicTrack);
-        currentMusic.start();
+        currentMusic.getDescription(out EventDescription currentMusicDesc);
+        var newMusicDesc = RuntimeManager.GetEventDescription(musicTrack);
+
+        currentMusicDesc.getID(out FMOD.GUID currentMusicGUID);
+        newMusicDesc.getID(out FMOD.GUID newMusicGUID);
+
+        if (currentMusicGUID != newMusicGUID)
+        {
+            currentMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            currentMusic = RuntimeManager.CreateInstance(musicTrack);
+            currentMusic.start();
+        }
+        
         return currentMusic;
     }
 
-    public void PlayDogBarkUI(int dogReference)
+    public void PlayDogBarkUI(string DoggoName)
     {
         var instance = RuntimeManager.CreateInstance(dogBarkUI);
-        instance.setParameterByID(dogRef.ID, dogReference);
+        instance.setParameterByIDWithLabel(dogRef.ID, DoggoName);
         instance.start();
         instance.release();
     }
@@ -67,6 +165,18 @@ public class AudioManager : MonoBehaviour
 
         return instance;
     }
+    void CheckSceneMusic()
+    {
+        var currentScene = SceneManager.GetActiveScene();
+
+        foreach (var pair in sceneMusic)
+        {
+            if (pair.Key.name == currentScene.name)
+            {
+                PlayMusic(pair.Value);
+            }
+        }
+    }
 
     void DrawSoundDistance(EventInstance instance, GameObject soundSource)
     {
@@ -77,7 +187,7 @@ public class AudioManager : MonoBehaviour
         Gizmos.DrawWireSphere(soundSource.transform.position, maxDist);
     }
 
-    PLAYBACK_STATE GetPlaybackState(EventInstance instance)
+    public PLAYBACK_STATE GetPlaybackState(EventInstance instance)
     {
         PLAYBACK_STATE playbackState;
         instance.getPlaybackState(out playbackState);

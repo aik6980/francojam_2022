@@ -97,10 +97,10 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638051082610251005
+  lastModified: 638051169212761358
   FileSizes:
   - Name: Desktop
-    Value: 1208704
+    Value: 1209216
   Exists: 1
 --- !u!114 &-3888426378386613496
 MonoBehaviour:
@@ -246,7 +246,7 @@ MonoBehaviour:
   - {fileID: -7047892007718214267}
   StringsBanks:
   - {fileID: 9019890182134457837}
-  cacheTime: 638051082610306343
+  cacheTime: 638051169212816807
   cacheVersion: 131593
 --- !u!114 &756931168733237713
 MonoBehaviour:
@@ -503,7 +503,7 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638051082610306343
+  lastModified: 638051169212816807
   FileSizes:
   - Name: Desktop
     Value: 1490
