@@ -53,7 +53,7 @@ If I'm frank, I can't keep up with them at all. #Name_Rusty
 - -> DONE
  
  === round_3 ===
- Goodness me, it's like looking into a mirror! #Name_Rusty
+ Greetings. #Name_Rusty
  Time's arrow marches onwards, does it not? #Name_Rusty
  {affinity > 7: Welcome back, old friend.} #Name_Rusty
  {affinity <= 7: Welcome back.} #Name_Rusty

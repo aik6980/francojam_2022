@@ -17,7 +17,7 @@ VAR affinity=4
 omg hi!!! #Name_Pablo
 im pablo n im HYPED TO MEET YOU :DDD #Name_Pablo
 its not every day u get to make a new friend <3333 #Name_Pablo
-*[You seem happy]You seem happy! #Name_Me
+*[You seem happy]Whoa, you seem happy! #Name_Me
 
 - u would be too if u sniffed a few things around here!! #Name_Pablo
 u wouldnt believe what kinds of things happen!! #Name_Pablo
