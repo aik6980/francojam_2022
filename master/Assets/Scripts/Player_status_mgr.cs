@@ -16,6 +16,8 @@ public class Player_status_mgr : MonoSingleton<Player_status_mgr>
     // global persistent variable
     private static Player_status_mgr persistence_obj;
 
+    List<string> m_adopted_dogs;
+
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
@@ -34,6 +36,7 @@ public class Player_status_mgr : MonoSingleton<Player_status_mgr>
     void Start()
     {
         m_curr_player_age = Player_age.low;
+        m_adopted_dogs = new List<string>();
     }
 
     // Update is called once per frame
@@ -43,5 +46,13 @@ public class Player_status_mgr : MonoSingleton<Player_status_mgr>
     public void Increase_player_age()
     {
         m_curr_player_age++;
+    }
+
+    public void Add_dog(string name)
+    {
+        if (m_adopted_dogs.Contains(name) == false)
+        {
+            m_adopted_dogs.Add(name);
+        }
     }
 }

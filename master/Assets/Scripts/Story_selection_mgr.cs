@@ -129,4 +129,9 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
 
         return doggo_enum;
     }
+
+    public string Get_round_progression_string()
+    {
+        return "Day - " + (int)(m_round_index + 1) + "\nRemaining ,meets - " + m_num_date_counter;
+    }
 }
