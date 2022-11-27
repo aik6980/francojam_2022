@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{86648ad8-953d-47b7-9eca-9aa8fae97f08}">
+		<property name="assetPath">
+			<value>Music_DoggoAdventure_Drums.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>37.416666666666664</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5b1fb0ac-5b9b-4d0f-96e8-739c1f41d6b0}</destination>
+		</relationship>
+	</object>
+</objects>

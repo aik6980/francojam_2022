@@ -67,6 +67,7 @@ MonoBehaviour:
     Path: event:/Music/Music_Dogxcited
   bowWowScene: DD_Ink_Chat_test
   doggoAdventureScene: Scene_UI_TitleScreen
+  doggoAdventureProgress: Scene_player_profile
   dogxcitedScene: DD_Ink_Test
   dogBarkUI:
     Guid:
@@ -162,7 +163,3 @@ MonoBehaviour:
   dogRef:
     Name: Dog_Ref
     Value: 0
-  Master_Volume:
-    Name: Master_Volume
-    Value: 1
-  volumeSliderGO: {fileID: 0}

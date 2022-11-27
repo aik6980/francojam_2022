@@ -376,6 +376,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6541578254067275329, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
+      propertyPath: doggoName
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
 --- !u!224 &28501991 stripped
@@ -420,10 +424,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 148379167}
-    - target: {fileID: 733303816961719315, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlayGame
-      objectReference: {fileID: 0}
     - target: {fileID: 6500828608577961504, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -510,30 +510,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6500828608577961505, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
       propertyPath: m_Name
-      value: Ted
-      objectReference: {fileID: 0}
-    - target: {fileID: 6500828609346146289, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.3860135
-      objectReference: {fileID: 0}
-    - target: {fileID: 6500828609346146289, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.3860135
-      objectReference: {fileID: 0}
-    - target: {fileID: 6500828609346146289, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.3860137
-      objectReference: {fileID: 0}
-    - target: {fileID: 6500828609346146289, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 78
-      objectReference: {fileID: 0}
-    - target: {fileID: 6500828609346146289, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -129
-      objectReference: {fileID: 0}
-    - target: {fileID: 6541578254067275329, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
-      propertyPath: doggoName
       value: Ted
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -913,26 +889,7 @@ MonoBehaviour:
   doggo_enum: 0
   available: 1
   images: []
---- !u!1 &361246163 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6500828608577961505, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
-  m_PrefabInstance: {fileID: 34039792}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &361246164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361246163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c10bccd73126884d99c56ff8cab2989, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  doggo_enum: 0
-  available: 1
-  images: []
+  emoji: {fileID: 0}
 --- !u!1 &449391509
 GameObject:
   m_ObjectHideFlags: 0
@@ -1463,6 +1420,7 @@ MonoBehaviour:
   doggo_enum: 0
   available: 1
   images: []
+  emoji: {fileID: 0}
 --- !u!1001 &1174555314
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1589,6 +1547,7 @@ MonoBehaviour:
   doggo_enum: 0
   available: 1
   images: []
+  emoji: {fileID: 0}
 --- !u!1001 &1215402282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2016,6 +1975,7 @@ MonoBehaviour:
   doggo_enum: 0
   available: 1
   images: []
+  emoji: {fileID: 0}
 --- !u!224 &1364712368 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1426430853427600086, guid: b468c5a8bb8412548ae46e361cec90eb, type: 3}
@@ -2046,6 +2006,7 @@ MonoBehaviour:
   doggo_enum: 0
   available: 1
   images: []
+  emoji: {fileID: 0}
 --- !u!224 &1448996611 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5823599376678184775, guid: a3a4e7527fcfa2548b5de985870fa772, type: 3}
@@ -2158,6 +2119,7 @@ MonoBehaviour:
   doggo_enum: 0
   available: 1
   images: []
+  emoji: {fileID: 0}
 --- !u!1 &1628656656
 GameObject:
   m_ObjectHideFlags: 0

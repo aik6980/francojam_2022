@@ -22,7 +22,7 @@ public class AudioManager : MonoBehaviour
 
     //[Header("Music - Scene matching")]
     [SerializeField]
-    string bowWowScene, doggoAdventureScene, dogxcitedScene;        //Could insead do: foreach (scene.name) to add eventref for every scene
+    string bowWowScene, doggoAdventureScene, doggoAdventureProgress, dogxcitedScene;        //Could insead do: foreach (scene.name) to add eventref for every scene
     Dictionary<string, EventReference> sceneMusic;
 
     //[Header("UI SFX Events")]
@@ -73,17 +73,37 @@ public class AudioManager : MonoBehaviour
         _instance = this;
     }
 
-    private void Start()
+    private void OnEnable()
     {
         sceneMusic = new Dictionary<string, EventReference>() { { bowWowScene, bowWowMusic },
                                                                 { doggoAdventureScene, doggoAdventureMusic },
                                                                 { dogxcitedScene, dogxcitedMusic } };
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        //var currentScene = SceneManager.GetActiveScene();
+
+        if (scene.name == doggoAdventureProgress)
+        {
+            currentMusic.setParameterByName("Music_Progress", +1);
+        }
+
+        foreach (var pair in sceneMusic)
+        {
+            if (pair.Key == scene.name)
+            {
+                PlayMusic(pair.Value);
+            }
+        }
+    }
+
+    private void Start()
+    {
         dogDialogueEvent = RuntimeManager.CreateInstance(dogDialogue);
         volumeSliderObject = GameObject.FindGameObjectWithTag("UI_Master_Volume");
         Debug.Log("Volume slider object: " + volumeSliderObject);
-
-        CheckSceneMusic();
     }
 
     public void SetMasterVolume()
@@ -196,13 +216,13 @@ public class AudioManager : MonoBehaviour
         return currentMusic;
     }
 
-    public void PlayDogBarkUI(string DoggoName)
+    public void PlayDogBarkUI(string doggoName)
     {
-        if (DoggoName == null)
+        if (doggoName == null)
             return;
 
         var instance = RuntimeManager.CreateInstance(dogBarkUI);
-        instance.setParameterByIDWithLabel(dogRef.ID, DoggoName);
+        instance.setParameterByIDWithLabel(dogRef.ID, doggoName);
         instance.start();
         instance.release();
     }
@@ -223,18 +243,6 @@ public class AudioManager : MonoBehaviour
         DrawSoundDistance(instance, soundSource);
 
         return instance;
-    }
-    void CheckSceneMusic()
-    {
-        var currentScene = SceneManager.GetActiveScene();
-
-        foreach (var pair in sceneMusic)
-        {
-            if (pair.Key == currentScene.name)
-            {
-                PlayMusic(pair.Value);
-            }
-        }
     }
 
     void DrawSoundDistance(EventInstance instance, GameObject soundSource)
