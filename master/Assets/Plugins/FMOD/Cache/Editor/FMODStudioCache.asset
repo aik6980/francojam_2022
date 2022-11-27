@@ -27,7 +27,7 @@ MonoBehaviour:
   - {fileID: -355839403954365357}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1350
 --- !u!114 &-9164669546036531869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,10 +178,10 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638051644471335094
+  lastModified: 638051666584024327
   FileSizes:
   - Name: Desktop
-    Value: 6834272
+    Value: 6837280
   Exists: 1
 --- !u!114 &-6946933533761872161
 MonoBehaviour:
@@ -573,14 +573,22 @@ MonoBehaviour:
   Name: Dog_Ref
   StudioPath: 
   Min: 0
-  Max: 20
-  Default: 0
+  Max: 7
+  Default: 7
   ID:
     data1: 4091816336
     data2: 4049725934
-  Type: 1
+  Type: 2
   IsGlobal: 0
-  Labels: []
+  Labels:
+  - Player
+  - Ted
+  - Pablo
+  - Spencer
+  - Otis
+  - Betsy
+  - Vega
+  - Rusty
   Exists: 1
 --- !u!114 &-293727085555718121
 MonoBehaviour:
@@ -651,7 +659,7 @@ MonoBehaviour:
   - {fileID: -7047892007718214267}
   StringsBanks:
   - {fileID: 9019890182134457837}
-  cacheTime: 638051644471401400
+  cacheTime: 638051666584094916
   cacheVersion: 131593
 --- !u!114 &571027207702609418
 MonoBehaviour:
@@ -892,7 +900,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 124560
+  Length: 124502
 --- !u!114 &4724361549114946735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,7 +1105,7 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638051644471401400
+  lastModified: 638051666584094916
   FileSizes:
   - Name: Desktop
     Value: 1890

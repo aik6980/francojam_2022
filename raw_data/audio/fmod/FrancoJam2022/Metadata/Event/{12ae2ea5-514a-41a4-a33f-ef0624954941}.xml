@@ -118,7 +118,7 @@
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>124.56</value>
+			<value>124.50202083333333</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{cdc6d924-6598-4b99-9e67-9693e0d20aaf}</destination>
@@ -130,6 +130,7 @@
 	<object class="MixerBusEffectChain" id="{c85485ad-8ef4-49d0-b316-d6ee3cf3fd2c}">
 		<relationship name="effects">
 			<destination>{1224af97-3668-44a5-a3dc-634effc74d24}</destination>
+			<destination>{ba06cfd2-9852-4941-9da6-de6f47f1700e}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{7b8d63ba-6dbb-494b-8741-16298a7f9971}" />
@@ -141,5 +142,13 @@
 	</object>
 	<object class="MixerBusPanner" id="{b07bd5da-508c-466e-a232-0dba58788790}" />
 	<object class="MixerBusFader" id="{1224af97-3668-44a5-a3dc-634effc74d24}" />
+	<object class="ThreeEQEffect" id="{ba06cfd2-9852-4941-9da6-de6f47f1700e}">
+		<property name="lowGain">
+			<value>-12.5</value>
+		</property>
+		<property name="midGain">
+			<value>-5</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{030ba29f-4725-4e26-a0aa-4eb420002443}" />
 </objects>
