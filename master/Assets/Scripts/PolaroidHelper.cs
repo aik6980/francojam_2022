@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+#if UNITY_EDITOR
+
 public class PolaroidHelper : MonoBehaviour
 {
 	[InspectorButton("Randomise")]
@@ -24,3 +26,5 @@ public class PolaroidHelper : MonoBehaviour
 		}
 	}
 }
+
+#endif
