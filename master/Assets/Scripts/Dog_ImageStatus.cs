@@ -9,15 +9,23 @@ public class Dog_ImageStatus : MonoBehaviour
 	public bool available = true;
 
 	public List<Image> images;
+	public Image emoji;
 
 	void Start()
     {
 		System.Enum.TryParse(name, out doggo_enum);
 
-		images.AddRange(GetComponentsInChildren<Image>());
+		images.AddRange(GetComponentsInChildren<Image>(true));
+		emoji = images.Find(i => i.name == "Emoji");
+
 		images.RemoveAll(i => i.name == "mask");
 		images.RemoveAll(i => i.gameObject == this.gameObject);
+		images.RemoveAll(i => i.name == "Pin");
+		images.RemoveAll(i => i.name == "Emoji");
 	}
+
+	//ToDo: we'll need some callback or broadcast event after each "round", so we can update our status
+	//ToDo: display more thank just on/off; an emoji for example.
 
     void Update()
     {
