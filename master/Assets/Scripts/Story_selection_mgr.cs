@@ -38,7 +38,7 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         m_round_available = new bool[(int)Doggo.Nums];
         Array.Fill(m_round_available, true);
 
-        Reset_round(Round_enum.round_1);
+        Reset_round(Round_enum.round_2);
     }
 
     private static Story_selection_mgr persistence_obj;
@@ -94,7 +94,7 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         }
     }
 
-    private void Reset_round(Round_enum round)
+    public void Reset_round(Round_enum round)
     {
         m_round_index = round;
         switch (round)

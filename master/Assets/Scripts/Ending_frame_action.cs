@@ -23,6 +23,7 @@ public class Ending_frame_action : MonoBehaviour
     }
     public void Activate_newbegining()
     {
+        Story_selection_mgr.Instance.Reset_round(Round_enum.round_1);
         SceneManager.LoadScene("Scene_selection");
     }
 }
