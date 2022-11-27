@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Doublsb.Dialog;
 using Ink.Runtime;
-using UnityEditor.Experimental.Rendering;
 using FMOD;
 using UnityEngine.SceneManagement;
 
@@ -51,13 +50,17 @@ public class DD_Ink_Test : MonoBehaviour
     void StartStory()
     {
         story = new Story(inkJSONAsset.text);
+        if (Story_selection_mgr.Instance.m_curr_text_asset != null)
+        {
+            story.ChoosePathString(Story_selection_mgr.Instance.m_round_index.ToString());
+        }
         // if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();
     }
 
     void EndStory()
     {
-        SceneManager.LoadScene("Scene_ending");
+        Story_selection_mgr.Instance.Finishing_round();
     }
 
     // This is the main function called every time the story changes. It does a few things:
@@ -159,6 +162,9 @@ public class DD_Ink_Test : MonoBehaviour
 
     private string Find_emote_name(List<string> tags)
     {
+        // disable Emote to prevent crash
+        return null;
+
         string tag_name = null;
         if (tags.Count > 0)
         {

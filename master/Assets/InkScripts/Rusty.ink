@@ -25,16 +25,13 @@ If I'm frank, I can't keep up with them at all. #Name_Rusty
  * [You'd love my kids]I'm sure you'll be able to keep up with my kids! #Name_Me
  I'd much rather not. #Name_Rusty
  ~ affinity = affinity - 2
- -> round_2
  * [I understand]I understand; I'm an old soul myself. #Name_Me
  I'm glad we're on the same proverbial page. #Name_Rusty
- -> round_2
  * {likes_kids < 3}[I've got no kids]No rugrats, no regrets - that's my motto. #Name_Me
  Not the words I would have used... but I like it. :-) #Name_Rusty
  ~ affinity = affinity + 2
- -> round_2
 
--> round_2
+- -> DONE
 
 === round_2 ===
  Ah, you've returned. #Name_Rusty
@@ -47,16 +44,13 @@ If I'm frank, I can't keep up with them at all. #Name_Rusty
  * {likes_walks > 7}{active > 7}[One walk to see them all?]Imagine seeing them all in one walk! #Name_Me
  Oho, what a treat that would be! :-D #Name_Rusty
  ~ affinity = affinity + 2
- -> round_3
  * [I bet you've seen a lot]You sound very well travelled. #Name_Me
  When you reach my age, you've seen everything. #Name_Rusty
- -> round_3
  * [Home is where the heart is]There's nothing quite like home though, right? #Name_Me
  ...I suppose. #Name_Rusty
  ~ affinity = affinity - 2
--> round_3
 
--> round_3
+- -> DONE
  
  === round_3 ===
  Goodness me, it's like looking into a mirror! #Name_Rusty
