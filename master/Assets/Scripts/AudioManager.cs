@@ -52,6 +52,7 @@ public class AudioManager : MonoBehaviour
         Wood01,
         Wood02,
         Phone01,
+        Phone02,
         Writing01,
         Dog01
     }
@@ -120,6 +121,9 @@ public class AudioManager : MonoBehaviour
             break;
         case ButtonType.Phone01:
             RuntimeManager.PlayOneShot(popClickUI);
+            break;
+        case ButtonType.Phone02:
+            RuntimeManager.PlayOneShot(notificationUI01);
             break;
         default:
             RuntimeManager.PlayOneShot(woodClickDownUI);
