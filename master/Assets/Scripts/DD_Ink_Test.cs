@@ -13,6 +13,9 @@ public class DD_Ink_Test : MonoBehaviour
     // just to check if the dialog system is not blocking (so we can animate, play VFX, etc)
     public float test_time;
 
+    // a hack to check if we are in the intro screen :[
+    public bool Is_intro_scene;
+
     [SerializeField]
     private TextAsset inkJSONAsset = null;
     public Story story;
@@ -60,7 +63,14 @@ public class DD_Ink_Test : MonoBehaviour
 
     void EndStory()
     {
-        Story_selection_mgr.Instance.Finishing_round();
+        if (Is_intro_scene)
+        {
+            SceneManager.LoadScene("Scene_selection");
+        }
+        else
+        {
+            Story_selection_mgr.Instance.Finishing_round();
+        }
     }
 
     // This is the main function called every time the story changes. It does a few things:
