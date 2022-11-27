@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 6500828608577961510}
   - component: {fileID: 6500828608577961511}
   - component: {fileID: 733303816961719315}
+  - component: {fileID: 6541578254067275329}
   m_Layer: 5
   m_Name: Base_Frame
   m_TagString: Untagged
@@ -302,6 +303,33 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 996926284393908483, guid: 43c97bbd12b58eb49ba3971a13f71fd7, type: 3}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySqueakToyUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6541578254067275329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6500828608577961505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0084651cb69ced544ab1e6a29548cff8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Picture: {fileID: 0}
+  buttonType: 5
+  doggoName: 
 --- !u!1 &6500828609346146290
 GameObject:
   m_ObjectHideFlags: 0
