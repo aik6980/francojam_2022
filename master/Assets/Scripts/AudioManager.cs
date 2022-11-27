@@ -8,8 +8,16 @@ public class AudioManager : MonoBehaviour
 {
     static AudioManager _instance;
 
+    [Header("Music Events")]
+    [SerializeField] EventReference bowWowMusic, doggoAdventureMusic, dogxcitedMusic;
+    EventInstance currentMusic;
+
     [Header("UI SFX Events")]
     [SerializeField] EventReference dogBarkUI;
+
+    [Header("UI SFX OneShot Events")]
+    [SerializeField] public EventReference woodClickUI, woodClickDownUI, woodClickUpUI, stoneClickDownUI, stoneClickUpUI, popClickUI;
+    [SerializeField] public EventReference hoverUI01, hoverUI02, notificationUI01, notificationUI02, squeakToyUI;
 
     [Header("UI SFX Parameters")]
     [SerializeField] ParamRef dogRef;
@@ -30,6 +38,14 @@ public class AudioManager : MonoBehaviour
     void Awake()
     {
         _instance = this;
+    }
+
+    public EventInstance PlayMusic(EventReference musicTrack)
+    {
+        currentMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        currentMusic = RuntimeManager.CreateInstance(musicTrack);
+        currentMusic.start();
+        return currentMusic;
     }
 
     public void PlayDogBarkUI(int dogReference)
