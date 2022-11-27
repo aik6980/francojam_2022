@@ -85,3 +85,7 @@ crashlytics-build.properties
 # Log files can be ignored.
 fmod_editor.log
 
+raw_data/audio/fmod/FrancoJam2022/.cache/fsbcache/Desktop/F973FB25.fobj
+*.fobj
+*.pdc
+master/UserSettings/EditorUserSettings.asset

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7945517582484067544
+--- !u!114 &-8903151157486587981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,23 +10,50 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Track0_BowWow
+  m_Name: event:/SFX/UIClickUp_Stone01
   m_EditorClassIdentifier: 
-  Path: event:/Music/Track0_BowWow
+  Path: event:/SFX/UIClickUp_Stone01
   Guid:
-    Data1: -1281489489
-    Data2: 1297773684
-    Data3: -1986801767
-    Data4: 1378301894
+    Data1: -1794853790
+    Data2: 1148161597
+    Data3: 1358420625
+    Data4: -107390105
   Banks:
   - {fileID: -7047892007718214267}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 19293
+  Length: 0
+--- !u!114 &-8152919070011596472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UIClick_Wood01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UIClick_Wood01
+  Guid:
+    Data1: -478444713
+    Data2: 1325145318
+    Data3: -1870084475
+    Data4: -29014692
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7334563426782390975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,11 +97,119 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638050335207694304
+  lastModified: 638051082610251005
   FileSizes:
   - Name: Desktop
-    Value: 203392
+    Value: 1208704
   Exists: 1
+--- !u!114 &-3888426378386613496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music_DoggoAdventure
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music_DoggoAdventure
+  Guid:
+    Data1: 87755303
+    Data2: 1245984809
+    Data3: -2116184903
+    Data4: -1272932042
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 29285
+--- !u!114 &-2695476703283064772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UINotification01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UINotification01
+  Guid:
+    Data1: -2038252376
+    Data2: 1111274449
+    Data3: 2038594236
+    Data4: 348042788
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-2318370768614667333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UIClick_Pop01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UIClick_Pop01
+  Guid:
+    Data1: -963353910
+    Data2: 1219769782
+    Data3: -511548507
+    Data4: -2032128668
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-1860181284160835162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UIClickUp_Wood01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UIClickUp_Wood01
+  Guid:
+    Data1: 2103890927
+    Data2: 1233390335
+    Data3: -120936775
+    Data4: 162777083
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,14 +227,81 @@ MonoBehaviour:
   - {fileID: -7047892007718214267}
   EditorEvents:
   - {fileID: -7334563426782390975}
-  - {fileID: -7945517582484067544}
+  - {fileID: 1825776203847459103}
+  - {fileID: -3888426378386613496}
+  - {fileID: -8152919070011596472}
+  - {fileID: -8903151157486587981}
+  - {fileID: 2297165274565995267}
+  - {fileID: 862874811296649657}
+  - {fileID: -2695476703283064772}
+  - {fileID: 5269492521183303355}
+  - {fileID: 5285264011804005300}
+  - {fileID: 756931168733237713}
+  - {fileID: 5072019153529638015}
+  - {fileID: -2318370768614667333}
+  - {fileID: 8411913537462590431}
+  - {fileID: -1860181284160835162}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7047892007718214267}
   StringsBanks:
   - {fileID: 9019890182134457837}
-  cacheTime: 638050335207739719
+  cacheTime: 638051082610306343
   cacheVersion: 131593
+--- !u!114 &756931168733237713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UIHover01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UIHover01
+  Guid:
+    Data1: 1768834243
+    Data2: 1319306814
+    Data3: 534141838
+    Data4: 1448897724
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &862874811296649657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UIClickDown_Wood01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UIClickDown_Wood01
+  Guid:
+    Data1: 180161945
+    Data2: 1122024122
+    Data3: -1428089159
+    Data4: 2136967250
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1754063466746169999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +326,168 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &1825776203847459103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UINotification02
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UINotification02
+  Guid:
+    Data1: -76949211
+    Data2: 1223830416
+    Data3: 1833354373
+    Data4: 1291328347
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2297165274565995267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UISqueakToy01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UISqueakToy01
+  Guid:
+    Data1: 821078158
+    Data2: 1171366051
+    Data3: -1192917119
+    Data4: 1709528366
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5072019153529638015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UIHover02
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UIHover02
+  Guid:
+    Data1: -1711860792
+    Data2: 1083209065
+    Data3: 1140817072
+    Data4: -1899559870
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5269492521183303355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music_Dogxcited
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music_Dogxcited
+  Guid:
+    Data1: 772008875
+    Data2: 1174197735
+    Data3: -716138072
+    Data4: 1276038557
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 32678
+--- !u!114 &5285264011804005300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music_BowWow
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music_BowWow
+  Guid:
+    Data1: -1281489489
+    Data2: 1297773684
+    Data3: -1986801767
+    Data4: 1378301894
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 19293
+--- !u!114 &8411913537462590431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UIClickDown_Stone01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UIClickDown_Stone01
+  Guid:
+    Data1: 1906788813
+    Data2: 1088571131
+    Data3: -508173923
+    Data4: -1572282234
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &9019890182134457837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,8 +503,8 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638050335207739719
+  lastModified: 638051082610306343
   FileSizes:
   - Name: Desktop
-    Value: 874
+    Value: 1490
   Exists: 1
