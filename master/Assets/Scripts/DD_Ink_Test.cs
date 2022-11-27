@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Doublsb.Dialog;
 using Ink.Runtime;
-using UnityEditor.Experimental.Rendering;
 using FMOD;
+using UnityEngine.SceneManagement;
 
 public class DD_Ink_Test : MonoBehaviour
 {
@@ -12,6 +12,9 @@ public class DD_Ink_Test : MonoBehaviour
 
     // just to check if the dialog system is not blocking (so we can animate, play VFX, etc)
     public float test_time;
+
+    // a hack to check if we are in the intro screen :[
+    public bool Is_intro_scene;
 
     [SerializeField]
     private TextAsset inkJSONAsset = null;
@@ -22,6 +25,12 @@ public class DD_Ink_Test : MonoBehaviour
         if (DialogManager == null)
         {
             DialogManager = GameObject.FindObjectOfType<DialogManager>();
+        }
+
+        // override the story if there is one
+        if (Story_selection_mgr.Instance.m_curr_text_asset != null)
+        {
+            inkJSONAsset = Story_selection_mgr.Instance.m_curr_text_asset;
         }
 
         if (inkJSONAsset != null)
@@ -44,8 +53,24 @@ public class DD_Ink_Test : MonoBehaviour
     void StartStory()
     {
         story = new Story(inkJSONAsset.text);
+        if (Story_selection_mgr.Instance.m_curr_text_asset != null)
+        {
+            story.ChoosePathString(Story_selection_mgr.Instance.m_round_index.ToString());
+        }
         // if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();
+    }
+
+    void EndStory()
+    {
+        if (Is_intro_scene)
+        {
+            SceneManager.LoadScene("Scene_selection");
+        }
+        else
+        {
+            Story_selection_mgr.Instance.Finishing_round();
+        }
     }
 
     // This is the main function called every time the story changes. It does a few things:
@@ -106,7 +131,9 @@ public class DD_Ink_Test : MonoBehaviour
         // If we've read all the content and there's no choices, the story is finished!
         else
         {
-            dialogTexts.Add(new DialogData("End of story.\nRestart?", "Li", () => StartStory()));
+            // insert ending condition here
+            dialogTexts.Add(new DialogData("That's all for today..", "Blank", null));
+            dialogTexts.Add(new DialogData("Only time will tell \n...", "Blank", () => EndStory()));
         }
 
         DialogManager.Show(dialogTexts);
@@ -145,6 +172,9 @@ public class DD_Ink_Test : MonoBehaviour
 
     private string Find_emote_name(List<string> tags)
     {
+        // disable Emote to prevent crash
+        return "";
+
         string tag_name = null;
         if (tags.Count > 0)
         {

@@ -17,7 +17,7 @@ VAR affinity=4
 omg hi!!! #Name_Pablo
 im pablo n im HYPED TO MEET YOU :DDD #Name_Pablo
 its not every day u get to make a new friend <3333 #Name_Pablo
-*[You seem happy]You seem happy! #Name_Me
+*[You seem happy]Whoa, you seem happy! #Name_Me
 
 - u would be too if u sniffed a few things around here!! #Name_Pablo
 u wouldnt believe what kinds of things happen!! #Name_Pablo
@@ -25,14 +25,12 @@ like... uh,,, #Name_Pablo
 *{likes_kids > 5}[Visitors?]You get people visiting you? #Name_Me
 YEAH n its the BEST!!! ^_^ i <3 humans!! specially the little ones! #Name_Pablo
 ~ affinity = affinity + 2
--> round_2
 *[Food?]You get to eat food? #Name_Me
 FOOD???? WHERE??????? #Name_Pablo
--> round_2
 *[Dog... things?]Like... dog things? That dogs do? #Name_Me
 yh i guess #Name_Pablo
 ~affinity = affinity - 2
--> round_2
+- -> DONE
 
 === round_2 ===
 ur back!! <3 #Name_Pablo
@@ -46,14 +44,12 @@ i did almost see a cat but now ur here its SO much better!! #Name_Pablo
 *{likes_cats >= 5}[Cats are the best]But cats are the best! #Name_Me
 ??? y r u here then?? #Name_Pablo
 ~ affinity = affinity - 2
-->round_3
 *{likes_cats < 5}[Cats are the worst]I'd be mad if I saw a cat! #Name_Me
 RIGHT?!??!? humans >>>> cats imo #Name_Pablo
 ~ affinity = affinity + 2
-->round_3
 *[Cats are fine]At least it was only almost! #Name_Me
 yh it was actually just a mirror :/ but i know now! #Name_Pablo
-->round_3
+- -> DONE
 
 === round_3 ===
 :OOO OMG ITS U #Name_Pablo

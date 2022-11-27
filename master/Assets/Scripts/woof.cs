@@ -9,7 +9,7 @@ public class woof : MonoBehaviour
 
     private void OnEnable()
     {
-        AudioManager.Instance.PlayDogBarkUI(0);
+        AudioManager.Instance.PlayDogBarkUI("");
 
         goodBoy.SetActive(true);
         dogButton.SetActive(false);

@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - UI_Round_chat
+  - UI_Master_Volume
   layers:
   - Default
   - TransparentFX
