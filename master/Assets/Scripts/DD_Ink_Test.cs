@@ -5,6 +5,7 @@ using Doublsb.Dialog;
 using Ink.Runtime;
 using UnityEditor.Experimental.Rendering;
 using FMOD;
+using UnityEngine.SceneManagement;
 
 public class DD_Ink_Test : MonoBehaviour
 {
@@ -22,6 +23,12 @@ public class DD_Ink_Test : MonoBehaviour
         if (DialogManager == null)
         {
             DialogManager = GameObject.FindObjectOfType<DialogManager>();
+        }
+
+        // override the story if there is one
+        if (Story_selection_mgr.Instance.m_curr_text_asset != null)
+        {
+            inkJSONAsset = Story_selection_mgr.Instance.m_curr_text_asset;
         }
 
         if (inkJSONAsset != null)
@@ -46,6 +53,11 @@ public class DD_Ink_Test : MonoBehaviour
         story = new Story(inkJSONAsset.text);
         // if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();
+    }
+
+    void EndStory()
+    {
+        SceneManager.LoadScene("Scene_ending");
     }
 
     // This is the main function called every time the story changes. It does a few things:
@@ -106,7 +118,9 @@ public class DD_Ink_Test : MonoBehaviour
         // If we've read all the content and there's no choices, the story is finished!
         else
         {
-            dialogTexts.Add(new DialogData("End of story.\nRestart?", "Li", () => StartStory()));
+            // insert ending condition here
+            dialogTexts.Add(new DialogData("That's all for today..", "Blank", null));
+            dialogTexts.Add(new DialogData("Only time will tell \n...", "Blank", () => EndStory()));
         }
 
         DialogManager.Show(dialogTexts);

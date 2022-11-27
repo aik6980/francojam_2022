@@ -46,22 +46,23 @@ If I'm frank, I can't keep up with them at all. #Name_Rusty
  It's even better to see a familiar place. I've so many memories made across so many locations. #Name_Rusty
  * {likes_walks > 7}{active > 7}[One walk to see them all?]Imagine seeing them all in one walk! #Name_Me
  Oho, what a treat that would be! :-D #Name_Rusty
- ~ affinity = affinity + 3
+ ~ affinity = affinity + 2
  -> round_3
  * [I bet you've seen a lot]You sound very well travelled. #Name_Me
  When you reach my age, you've seen everything. #Name_Rusty
  -> round_3
  * [Home is where the heart is]There's nothing quite like home though, right? #Name_Me
  ...I suppose. #Name_Rusty
- ~ affinity = affinity - 3
+ ~ affinity = affinity - 2
 -> round_3
 
 -> round_3
  
  === round_3 ===
  Goodness me, it's like looking into a mirror! #Name_Rusty
- {affinity > 7}Welcome back, old friend. #Name_Rusty
- {affinity <= 7}Welcome back. #Name_Rusty
+ Time's arrow marches onwards, does it not? #Name_Rusty
+ {affinity > 7: Welcome back, old friend.} #Name_Rusty
+ {affinity <= 7: Welcome back.} #Name_Rusty
  * How's life? #Name_Me
  
  -It continues. #Name_Rusty
@@ -72,9 +73,9 @@ If I'm frank, I can't keep up with them at all. #Name_Rusty
  -> END
  * {smart > 8}[We all need a friend]We all need the feeling of companionship. To deny that is to deny our nature. #Name_Me
  Life without a best friend is one I dare not imagine. #Name_Rusty
-  ~ affinity = affinity + 4
+  ~ affinity = affinity + 2
  -> END
  * [I don't know]I don't know. #Name_Me
  ...I see. #Name_Rusty
- ~ affinity = affinity - 4
+ ~ affinity = affinity - 2
  -> END
