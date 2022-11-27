@@ -151,10 +151,10 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638051169212761358
+  lastModified: 638051541442560170
   FileSizes:
   - Name: Desktop
-    Value: 1209216
+    Value: 1295040
   Exists: 1
 --- !u!114 &-6830086864790913883
 MonoBehaviour:
@@ -318,6 +318,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-3358784353694246887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/DialDogPant
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/DialDogPant
+  Guid:
+    Data1: 440901811
+    Data2: 1312644730
+    Data3: -1507037292
+    Data4: -1749249330
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 625
 --- !u!114 &-2695476703283064772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,12 +538,13 @@ MonoBehaviour:
   - {fileID: 4749845114081356349}
   - {fileID: -7608532094960201113}
   - {fileID: -2104044446733465575}
+  - {fileID: -3358784353694246887}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7047892007718214267}
   StringsBanks:
   - {fileID: 9019890182134457837}
-  cacheTime: 638051169212816807
+  cacheTime: 638051541442640882
   cacheVersion: 131593
 --- !u!114 &598705897553963079
 MonoBehaviour:
@@ -881,8 +909,8 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638051169212816807
+  lastModified: 638051541442640882
   FileSizes:
   - Name: Desktop
-    Value: 1490
+    Value: 1654
   Exists: 1

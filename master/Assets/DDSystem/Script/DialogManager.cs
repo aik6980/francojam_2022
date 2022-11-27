@@ -169,8 +169,10 @@ namespace Doublsb.Dialog
         {
             if (_current_Character != null)
             {
-                SEAudio.clip = _current_Character.ChatSE[UnityEngine.Random.Range(0, _current_Character.ChatSE.Length)];
-                SEAudio.Play();
+
+                AudioManager.Instance.PlayDialogue();
+                //SEAudio.clip = _current_Character.ChatSE[UnityEngine.Random.Range(0, _current_Character.ChatSE.Length)];
+                //SEAudio.Play();
             }
         }
 

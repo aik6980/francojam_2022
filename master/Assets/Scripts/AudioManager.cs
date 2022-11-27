@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
 
     //[Header("Music - Scene matching")]
     [SerializeField]
-    string bowWowScene, doggoAdventureScene, dogxcitedScene;        //Could insead do: foreach (scene.name) to add eventref for ever scene
+    string bowWowScene, doggoAdventureScene, dogxcitedScene;        //Could insead do: foreach (scene.name) to add eventref for every scene
     Dictionary<string, EventReference> sceneMusic;
 
     //[Header("UI SFX Events")]
@@ -32,6 +32,10 @@ public class AudioManager : MonoBehaviour
     EventReference woodClickUI, woodClickDownUI, woodClickUpUI, stoneClickDownUI, stoneClickUpUI, popClickUI, hoverUI01,
         hoverUI02, notificationUI01, notificationUI02, squeakToyUI;
 
+    [SerializeField]
+    EventReference dogDialogue;
+    EventInstance dogDialogueEvent;
+
     //[Header("UI SFX Parameters")]
     [SerializeField]
     ParamRef dogRef;
@@ -42,7 +46,8 @@ public class AudioManager : MonoBehaviour
         Wood01,
         Wood02,
         Phone01,
-        Writing01
+        Writing01,
+        Dog01
     }
 
     public static AudioManager Instance
@@ -67,6 +72,7 @@ public class AudioManager : MonoBehaviour
                                                                 { doggoAdventureScene, doggoAdventureMusic },
                                                                 { dogxcitedScene, dogxcitedMusic } };
 
+        dogDialogueEvent = RuntimeManager.CreateInstance(dogDialogue);
         CheckSceneMusic();
     }
 
@@ -107,7 +113,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayHoverUI(ButtonType type)
+    public void PlayHoverUI(ButtonType type, string doggoName = null)
     {
         switch (type)
         {
@@ -116,6 +122,9 @@ public class AudioManager : MonoBehaviour
             break;
         case ButtonType.Wood01:
             RuntimeManager.PlayOneShot(hoverUI02);
+            break;
+        case ButtonType.Dog01:
+            PlayDogBarkUI(doggoName);
             break;
         default:
             RuntimeManager.PlayOneShot(hoverUI02);
@@ -156,10 +165,19 @@ public class AudioManager : MonoBehaviour
 
     public void PlayDogBarkUI(string DoggoName)
     {
+        if (DoggoName == null)
+            return;
+
         var instance = RuntimeManager.CreateInstance(dogBarkUI);
         instance.setParameterByIDWithLabel(dogRef.ID, DoggoName);
         instance.start();
         instance.release();
+    }
+
+    public void PlayDialogue()
+    {
+        if (GetPlaybackState(dogDialogueEvent) != PLAYBACK_STATE.PLAYING)
+            dogDialogueEvent.start();
     }
 
     EventInstance CreateEmitter(EventReference eventRef, GameObject soundSource)

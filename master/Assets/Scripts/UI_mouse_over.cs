@@ -7,28 +7,19 @@ public class UI_mouse_over : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 {
     public Transform Picture;
     [SerializeField] AudioManager.ButtonType buttonType;
+    [SerializeField] string doggoName;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
         if (Picture != null)
             Picture.gameObject.SetActive(true);
 
-        AudioManager.Instance.PlayHoverUI(buttonType);
+        AudioManager.Instance.PlayHoverUI(buttonType, doggoName);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         if (Picture != null)
             Picture.gameObject.SetActive(false);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }

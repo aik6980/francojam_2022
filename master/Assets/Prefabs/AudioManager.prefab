@@ -152,6 +152,13 @@ MonoBehaviour:
       Data3: -1192917119
       Data4: 1709528366
     Path: event:/SFX/UISqueakToy01
+  dogDialogue:
+    Guid:
+      Data1: 440901811
+      Data2: 1312644730
+      Data3: -1507037292
+      Data4: -1749249330
+    Path: event:/Dialogue/DialDogPant
   dogRef:
     Name: Dog_Ref
     Value: 0
