@@ -44,31 +44,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b585c1e6c5cb8d4ca3051f6a94a4b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bowWowMusic:
-    Guid:
-      Data1: -1281489489
-      Data2: 1297773684
-      Data3: -1986801767
-      Data4: 1378301894
-    Path: event:/Music/Music_BowWow
-  doggoAdventureMusic:
-    Guid:
-      Data1: 87755303
-      Data2: 1245984809
-      Data3: -2116184903
-      Data4: -1272932042
-    Path: event:/Music/Music_DoggoAdventure
-  dogxcitedMusic:
-    Guid:
-      Data1: 772008875
-      Data2: 1174197735
-      Data3: -716138072
-      Data4: 1276038557
-    Path: event:/Music/Music_Dogxcited
-  bowWowScene: DD_Ink_Chat_test
-  doggoAdventureScene: Scene_UI_TitleScreen
-  doggoAdventureProgress: Scene_player_profile
-  dogxcitedScene: DD_Ink_Test
+  sceneAudio:
+  - scene: Scene_UI_TitleScreen
+    music:
+      Guid:
+        Data1: 87755303
+        Data2: 1245984809
+        Data3: -2116184903
+        Data4: -1272932042
+      Path: event:/Music/Music_DoggoAdventure
+    environment:
+      Guid:
+        Data1: 5126767
+        Data2: 1231829433
+        Data3: 564227242
+        Data4: -791046241
+      Path: event:/Environments/Env_Park02
+    parameter:
+      Name: Music_Progress
+      Value: 0
+  - scene: Scene_player_profile
+    music:
+      Guid:
+        Data1: 87755303
+        Data2: 1245984809
+        Data3: -2116184903
+        Data4: -1272932042
+      Path: event:/Music/Music_DoggoAdventure
+    environment:
+      Guid:
+        Data1: -329611613
+        Data2: 1289524328
+        Data3: -1601728638
+        Data4: 1106888735
+      Path: event:/Environments/Env_Default
+    parameter:
+      Name: Music_Progress
+      Value: 1
+  - scene: DD_Ink_Test
+    music:
+      Guid:
+        Data1: 772008875
+        Data2: 1174197735
+        Data3: -716138072
+        Data4: 1276038557
+      Path: event:/Music/Music_Dogxcited
+    environment:
+      Guid:
+        Data1: 313405093
+        Data2: 1101287754
+        Data3: 116342691
+        Data4: 1095341348
+      Path: event:/Environments/Env_Park01
+    parameter:
+      Name: 
+      Value: 0
+  - scene: DD_Ink_Chat_test
+    music:
+      Guid:
+        Data1: -1281489489
+        Data2: 1297773684
+        Data3: -1986801767
+        Data4: 1378301894
+      Path: event:/Music/Music_BowWow
+    environment:
+      Guid:
+        Data1: -329611613
+        Data2: 1289524328
+        Data3: -1601728638
+        Data4: 1106888735
+      Path: event:/Environments/Env_Default
+    parameter:
+      Name: 
+      Value: 0
   dogBarkUI:
     Guid:
       Data1: 1161701021

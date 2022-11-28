@@ -96,15 +96,17 @@ MonoBehaviour:
   Name: Dog_Ref
   StudioPath: 
   Min: 0
-  Max: 7
-  Default: 7
+  Max: 14
+  Default: 0
   ID:
     data1: 4091816336
     data2: 4049725934
   Type: 2
   IsGlobal: 0
   Labels:
-  - Player
+  - PlayerF
+  - PlayerM
+  - Squog
   - Ted
   - Pablo
   - Spencer
@@ -112,6 +114,11 @@ MonoBehaviour:
   - Betsy
   - Vega
   - Rusty
+  - Solly
+  - Buddy
+  - Cesar
+  - Chase
+  - Freya
   Exists: 1
 --- !u!114 &-8257880273483117462
 MonoBehaviour:
@@ -237,10 +244,10 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638052320634535168
+  lastModified: 638052675571559274
   FileSizes:
   - Name: Desktop
-    Value: 7152320
+    Value: 7153248
   Exists: 1
 --- !u!114 &-6708705148663618230
 MonoBehaviour:
@@ -482,6 +489,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-628576724343388862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Environments/Env_Default
+  m_EditorClassIdentifier: 
+  Path: event:/Environments/Env_Default
+  Guid:
+    Data1: -329611613
+    Data2: 1289524328
+    Data3: -1601728638
+    Data4: 1106888735
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-612082085370428061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,13 +635,14 @@ MonoBehaviour:
   - {fileID: -2536051843176469019}
   - {fileID: -9114854873497934658}
   - {fileID: 465667816842088049}
+  - {fileID: -628576724343388862}
   EditorParameters:
   - {fileID: 862124909823098601}
   MasterBanks:
   - {fileID: -7047892007718214267}
   StringsBanks:
   - {fileID: 9019890182134457837}
-  cacheTime: 638052320634600554
+  cacheTime: 638052675571614640
   cacheVersion: 131593
 --- !u!114 &226113569560080716
 MonoBehaviour:
@@ -1186,8 +1221,8 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638052320634600554
+  lastModified: 638052675571614640
   FileSizes:
   - Name: Desktop
-    Value: 2036
+    Value: 2086
   Exists: 1

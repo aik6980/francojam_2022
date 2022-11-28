@@ -1,29 +1,28 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using FMOD.Studio;
 using FMODUnity;
-using Ink.Runtime;
 using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class AudioManager : MonoBehaviour
 {
     static AudioManager _instance;
+    public static EventInstance currentMusic, currentEnvironment;
 
-    //[Header("Music Events")]
-    [SerializeField]
-    EventReference bowWowMusic, doggoAdventureMusic, dogxcitedMusic;
-    public static EventInstance currentMusic;
+    [Serializable]
+    public struct SceneMusicSet
+    {
+        public string scene;
+        public EventReference music, environment;
+        public ParamRef parameter;
+    }
 
-    //[Header("Music - Scene matching")]
-    [SerializeField]
-    string bowWowScene, doggoAdventureScene, doggoAdventureProgress, dogxcitedScene;        //Could insead do: foreach (scene.name) to add eventref for every scene
-    Dictionary<string, EventReference> sceneMusic;
+    [SerializeField] 
+    public SceneMusicSet[] sceneAudio;
 
     //[Header("UI SFX Events")]
     [SerializeField]
@@ -75,35 +74,27 @@ public class AudioManager : MonoBehaviour
 
     private void OnEnable()
     {
-        sceneMusic = new Dictionary<string, EventReference>() { { bowWowScene, bowWowMusic },
-                                                                { doggoAdventureScene, doggoAdventureMusic },
-                                                                { dogxcitedScene, dogxcitedMusic } };
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        //var currentScene = SceneManager.GetActiveScene();
-
-        if (scene.name == doggoAdventureProgress)
+        for (var i = 0; i < sceneAudio.Length; i++)
         {
-            currentMusic.setParameterByName("Music_Progress", +1);
-        }
-
-        foreach (var pair in sceneMusic)
-        {
-            if (pair.Key == scene.name)
+            if (sceneAudio[i].scene == scene.name)
             {
-                PlayMusic(pair.Value);
+                PlayMusic(sceneAudio[i].music);
+                PlayEnvironment(sceneAudio[i].environment);
+                currentMusic.setParameterByName(sceneAudio[i].parameter.Name, sceneAudio[i].parameter.Value);     //There has to be a better way to do this?
             }
         }
+
     }
 
     private void Start()
     {
         dogDialogueEvent = RuntimeManager.CreateInstance(dogDialogue);
         volumeSliderObject = GameObject.FindGameObjectWithTag("UI_Master_Volume");
-        Debug.Log("Volume slider object: " + volumeSliderObject);
     }
 
     public void SetMasterVolume()
@@ -209,11 +200,31 @@ public class AudioManager : MonoBehaviour
         if (currentMusicGUID != newMusicGUID)
         {
             currentMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            currentMusic.release();
             currentMusic = RuntimeManager.CreateInstance(musicTrack);
             currentMusic.start();
         }
 
         return currentMusic;
+    }
+
+    public EventInstance PlayEnvironment(EventReference environment)            //this is shoddy, but environments will probably have to do something different later once more are in
+    {
+        currentEnvironment.getDescription(out EventDescription currentEnvironmentDesc);
+        var newEnvironmentDesc = RuntimeManager.GetEventDescription(environment);
+
+        currentEnvironmentDesc.getID(out FMOD.GUID currentEnvironmentGUID);
+        newEnvironmentDesc.getID(out FMOD.GUID newEnvironmentGUID);
+
+        if (currentEnvironmentGUID != newEnvironmentGUID)
+        {
+            currentEnvironment.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            currentEnvironment.release();
+            currentEnvironment = RuntimeManager.CreateInstance(environment);
+            currentEnvironment.start();
+        }
+
+        return currentEnvironment;
     }
 
     public void PlayDogBarkUI(string doggoName)
