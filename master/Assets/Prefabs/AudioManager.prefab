@@ -75,91 +75,105 @@ MonoBehaviour:
       Data2: 1105704925
       Data3: -348811098
       Data4: -822631443
-    Path: event:/SFX/UI_DogBark
+    Path: event:/SFX/UI/UI_DogBark
   woodClickUI:
     Guid:
       Data1: -478444713
       Data2: 1325145318
       Data3: -1870084475
       Data4: -29014692
-    Path: event:/SFX/UIClick_Wood01
+    Path: event:/SFX/UI/UI_Click_Wood01
   woodClickDownUI:
     Guid:
       Data1: 180161945
       Data2: 1122024122
       Data3: -1428089159
       Data4: 2136967250
-    Path: event:/SFX/UIClickDown_Wood01
+    Path: event:/SFX/UI/UI_ClickDown_Wood01
   woodClickUpUI:
     Guid:
       Data1: 2103890927
       Data2: 1233390335
       Data3: -120936775
       Data4: 162777083
-    Path: event:/SFX/UIClickUp_Wood01
+    Path: event:/SFX/UI/UI_ClickUp_Wood01
   stoneClickDownUI:
     Guid:
       Data1: 1906788813
       Data2: 1088571131
       Data3: -508173923
       Data4: -1572282234
-    Path: event:/SFX/UIClickDown_Stone01
+    Path: event:/SFX/UI/UI_ClickDown_Stone01
   stoneClickUpUI:
     Guid:
       Data1: -1794853790
       Data2: 1148161597
       Data3: 1358420625
       Data4: -107390105
-    Path: event:/SFX/UIClickUp_Stone01
+    Path: event:/SFX/UI/UI_ClickUp_Stone01
   popClickUI:
     Guid:
       Data1: -963353910
       Data2: 1219769782
       Data3: -511548507
       Data4: -2032128668
-    Path: event:/SFX/UIClick_Pop01
+    Path: event:/SFX/UI/UI_Click_Pop01
+  PopClickDownUI:
+    Guid:
+      Data1: -2067743103
+      Data2: 1113690863
+      Data3: -1316972901
+      Data4: -964348657
+    Path: event:/SFX/UI/UI_Click_PopDown01
+  popClickUpUI:
+    Guid:
+      Data1: -1037493447
+      Data2: 1087838950
+      Data3: 90055556
+      Data4: -522697973
+    Path: event:/SFX/UI/UI_Click_PopUp01
   hoverUI01:
     Guid:
       Data1: 1768834243
       Data2: 1319306814
       Data3: 534141838
       Data4: 1448897724
-    Path: event:/SFX/UIHover01
+    Path: event:/SFX/UI/UI_Hover01
   hoverUI02:
     Guid:
       Data1: -1711860792
       Data2: 1083209065
       Data3: 1140817072
       Data4: -1899559870
-    Path: event:/SFX/UIHover02
+    Path: event:/SFX/UI/UI_Hover02
   notificationUI01:
     Guid:
       Data1: -2038252376
       Data2: 1111274449
       Data3: 2038594236
       Data4: 348042788
-    Path: event:/SFX/UINotification01
+    Path: event:/SFX/UI/UI_Notification01
   notificationUI02:
     Guid:
       Data1: -76949211
       Data2: 1223830416
       Data3: 1833354373
       Data4: 1291328347
-    Path: event:/SFX/UINotification02
+    Path: event:/SFX/UI/UI_Notification02
   squeakToyUI:
     Guid:
       Data1: 821078158
       Data2: 1171366051
       Data3: -1192917119
       Data4: 1709528366
-    Path: event:/SFX/UISqueakToy01
+    Path: event:/SFX/UI/UI_SqueakToy01
   dogDialogue:
     Guid:
       Data1: 440901811
       Data2: 1312644730
       Data3: -1507037292
       Data4: -1749249330
-    Path: event:/Dialogue/DialDogPant
+    Path: event:/Dialogue/Dial_DogPant
   dogRef:
     Name: Dog_Ref
     Value: 0

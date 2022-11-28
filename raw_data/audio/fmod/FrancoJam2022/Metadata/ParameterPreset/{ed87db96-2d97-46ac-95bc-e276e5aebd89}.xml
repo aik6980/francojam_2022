@@ -16,10 +16,12 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>8</value>
+			<value>15</value>
 		</property>
 		<property name="enumerationLabels">
-			<value>Player</value>
+			<value>PlayerF</value>
+			<value>PlayerM</value>
+			<value>Squog</value>
 			<value>Ted</value>
 			<value>Pablo</value>
 			<value>Spencer</value>
@@ -27,9 +29,14 @@
 			<value>Betsy</value>
 			<value>Vega</value>
 			<value>Rusty</value>
+			<value>Solly</value>
+			<value>Buddy</value>
+			<value>Cesar</value>
+			<value>Chase</value>
+			<value>Freya</value>
 		</property>
 		<property name="initialValue">
-			<value>7</value>
+			<value>0</value>
 		</property>
 	</object>
 </objects>

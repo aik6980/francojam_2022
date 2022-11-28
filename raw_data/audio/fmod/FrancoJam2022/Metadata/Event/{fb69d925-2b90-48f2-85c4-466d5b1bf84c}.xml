@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{fb69d925-2b90-48f2-85c4-466d5b1bf84c}">
 		<property name="name">
-			<value>UINotification02</value>
+			<value>UI_Notification02</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{134dcfde-b584-4aea-a461-c2c7698b1207}</destination>
+			<destination>{f44438cf-aee9-4ac7-8fea-f698566a8b81}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{52ff39a7-6ab6-4e22-abff-8e2e32aea97a}</destination>

@@ -96,7 +96,7 @@ MonoBehaviour:
       Data2: 1231829433
       Data3: 564227242
       Data4: -791046241
-    Path: event:/Environments/EnvPark02
+    Path: event:/Environments/Env_Park02
   Event: 
   PlayEvent: 1
   StopEvent: 2

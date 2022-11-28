@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9203413802307087606
+--- !u!114 &-9114854873497934658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,42 +10,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI_DogBark
+  m_Name: event:/SFX/UI/UI_ClickDown_Stone01
   m_EditorClassIdentifier: 
-  Path: event:/SFX/UI_DogBark
-  Guid:
-    Data1: 1161701021
-    Data2: 1105704925
-    Data3: -348811098
-    Data4: -822631443
-  Banks:
-  - {fileID: -7047892007718214267}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters:
-  - {fileID: -355839403954365357}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1350
---- !u!114 &-9164669546036531869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UIClickDown_Stone01
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UIClickDown_Stone01
+  Path: event:/SFX/UI/UI_ClickDown_Stone01
   Guid:
     Data1: 1906788813
     Data2: 1088571131
     Data3: -508173923
     Data4: -1572282234
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-8947734633986099596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/UI_Hover01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/UI_Hover01
+  Guid:
+    Data1: 1768834243
+    Data2: 1319306814
+    Data3: 534141838
+    Data4: 1448897724
   Banks:
   - {fileID: -7047892007718214267}
   IsStream: 0
@@ -82,6 +81,38 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8717490387290613456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/UI_DogBark/Dog_Ref
+  m_EditorClassIdentifier: 
+  Name: Dog_Ref
+  StudioPath: 
+  Min: 0
+  Max: 7
+  Default: 7
+  ID:
+    data1: 4091816336
+    data2: 4049725934
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - Player
+  - Ted
+  - Pablo
+  - Spencer
+  - Otis
+  - Betsy
+  - Vega
+  - Rusty
+  Exists: 1
 --- !u!114 &-8257880273483117462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +141,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 62666
+--- !u!114 &-8197993824998844446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/UI_Notification01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/UI_Notification01
+  Guid:
+    Data1: -2038252376
+    Data2: 1111274449
+    Data3: 2038594236
+    Data4: 348042788
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-8152919070011596472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,12 +237,12 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638051697255056029
+  lastModified: 638052320634535168
   FileSizes:
   - Name: Desktop
-    Value: 7146112
+    Value: 7152320
   Exists: 1
---- !u!114 &-6946933533761872161
+--- !u!114 &-6708705148663618230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,36 +252,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UINotification01
+  m_Name: event:/SFX/UI/UI_SqueakToy01
   m_EditorClassIdentifier: 
-  Path: event:/SFX/UINotification01
-  Guid:
-    Data1: -2038252376
-    Data2: 1111274449
-    Data3: 2038594236
-    Data4: 348042788
-  Banks:
-  - {fileID: -7047892007718214267}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-6586160247627336891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UISqueakToy01
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UISqueakToy01
+  Path: event:/SFX/UI/UI_SqueakToy01
   Guid:
     Data1: 821078158
     Data2: 1171366051
@@ -238,7 +269,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-4046668461157071097
+--- !u!114 &-4540394616425283272
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,23 +279,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Environments/EnvPark03
+  m_Name: event:/SFX/UI/UI_Click_PopDown01
   m_EditorClassIdentifier: 
-  Path: event:/Environments/EnvPark03
+  Path: event:/SFX/UI/UI_Click_PopDown01
   Guid:
-    Data1: -2066053505
-    Data2: 1268441136
-    Data3: 749235840
-    Data4: 140626781
+    Data1: -2067743103
+    Data2: 1113690863
+    Data3: -1316972901
+    Data4: -964348657
   Banks:
   - {fileID: -7047892007718214267}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 115379
+  Length: 0
 --- !u!114 &-3888426378386613496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,7 +323,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 29285
---- !u!114 &-3782741613925021632
+--- !u!114 &-3548876461669162060
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -302,41 +333,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UIHover01
+  m_Name: event:/SFX/UI/UI_Click_Wood01
   m_EditorClassIdentifier: 
-  Path: event:/SFX/UIHover01
+  Path: event:/SFX/UI/UI_Click_Wood01
   Guid:
-    Data1: 1768834243
-    Data2: 1319306814
-    Data3: 534141838
-    Data4: 1448897724
-  Banks:
-  - {fileID: -7047892007718214267}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-3613561709672993979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UIClickDown_Wood01
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UIClickDown_Wood01
-  Guid:
-    Data1: 180161945
-    Data2: 1122024122
-    Data3: -1428089159
-    Data4: 2136967250
+    Data1: -478444713
+    Data2: 1325145318
+    Data3: -1870084475
+    Data4: -29014692
   Banks:
   - {fileID: -7047892007718214267}
   IsStream: 0
@@ -373,6 +377,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2536051843176469019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/UI_Click_Pop01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/UI_Click_Pop01
+  Guid:
+    Data1: -963353910
+    Data2: 1219769782
+    Data3: -511548507
+    Data4: -2032128668
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-2515648739391375308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,33 +428,6 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-2499937204652680243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UIClickUp_Wood01
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UIClickUp_Wood01
-  Guid:
-    Data1: 2103890927
-    Data2: 1233390335
-    Data3: -120936775
-    Data4: 162777083
-  Banks:
-  - {fileID: -7047892007718214267}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-2318370768614667333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,60 +482,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1424165169781341060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UIClick_Pop01
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UIClick_Pop01
-  Guid:
-    Data1: -963353910
-    Data2: 1219769782
-    Data3: -511548507
-    Data4: -2032128668
-  Banks:
-  - {fileID: -7047892007718214267}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-946965341469961089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Dialogue/DialDogPant
-  m_EditorClassIdentifier: 
-  Path: event:/Dialogue/DialDogPant
-  Guid:
-    Data1: 440901811
-    Data2: 1312644730
-    Data3: -1507037292
-    Data4: -1749249330
-  Banks:
-  - {fileID: -7047892007718214267}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 625
 --- !u!114 &-612082085370428061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,39 +509,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 32678
---- !u!114 &-355839403954365357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/UI_DogBark/Dog_Ref
-  m_EditorClassIdentifier: 
-  Name: Dog_Ref
-  StudioPath: 
-  Min: 0
-  Max: 7
-  Default: 7
-  ID:
-    data1: 4091816336
-    data2: 4049725934
-  Type: 2
-  IsGlobal: 0
-  Labels:
-  - Player
-  - Ted
-  - Pablo
-  - Spencer
-  - Otis
-  - Betsy
-  - Vega
-  - Rusty
-  Exists: 1
---- !u!114 &-293727085555718121
+--- !u!114 &-460988996904159897
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -601,14 +519,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UIClick_Wood01
+  m_Name: event:/Environments/Env_Park02
   m_EditorClassIdentifier: 
-  Path: event:/SFX/UIClick_Wood01
+  Path: event:/Environments/Env_Park02
   Guid:
-    Data1: -478444713
-    Data2: 1325145318
-    Data3: -1870084475
-    Data4: -29014692
+    Data1: 5126767
+    Data2: 1231829433
+    Data3: 564227242
+    Data4: -791046241
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 119897
+--- !u!114 &-344929301813611763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Dial_DogPant
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Dial_DogPant
+  Guid:
+    Data1: 440901811
+    Data2: 1312644730
+    Data3: -1507037292
+    Data4: -1749249330
   Banks:
   - {fileID: -7047892007718214267}
   IsStream: 0
@@ -617,7 +562,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 625
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,34 +579,91 @@ MonoBehaviour:
   - {fileID: 9019890182134457837}
   - {fileID: -7047892007718214267}
   EditorEvents:
-  - {fileID: 6938325830794565352}
   - {fileID: -8257880273483117462}
-  - {fileID: -293727085555718121}
-  - {fileID: 7750961919526850968}
-  - {fileID: -6586160247627336891}
-  - {fileID: -3613561709672993979}
-  - {fileID: -9203413802307087606}
-  - {fileID: -6946933533761872161}
   - {fileID: -612082085370428061}
   - {fileID: 3210866409235338290}
-  - {fileID: -946965341469961089}
-  - {fileID: -3782741613925021632}
-  - {fileID: 4724361549114946735}
-  - {fileID: -1424165169781341060}
-  - {fileID: -9164669546036531869}
   - {fileID: 571027207702609418}
-  - {fileID: -2499937204652680243}
-  - {fileID: 805910083867109900}
-  - {fileID: -4046668461157071097}
-  - {fileID: 4507486519085466901}
+  - {fileID: 7078913751750359243}
+  - {fileID: 7840500347516485988}
+  - {fileID: -3548876461669162060}
+  - {fileID: 2255144931036380271}
+  - {fileID: -460988996904159897}
+  - {fileID: 7480020609719341110}
+  - {fileID: -4540394616425283272}
+  - {fileID: -6708705148663618230}
+  - {fileID: 1878307972051775727}
+  - {fileID: 226113569560080716}
+  - {fileID: 5633290446179554334}
+  - {fileID: -8197993824998844446}
+  - {fileID: -344929301813611763}
+  - {fileID: -8947734633986099596}
+  - {fileID: 6742591197224779319}
+  - {fileID: -2536051843176469019}
+  - {fileID: -9114854873497934658}
+  - {fileID: 465667816842088049}
   EditorParameters:
   - {fileID: 862124909823098601}
   MasterBanks:
   - {fileID: -7047892007718214267}
   StringsBanks:
   - {fileID: 9019890182134457837}
-  cacheTime: 638051697255111421
+  cacheTime: 638052320634600554
   cacheVersion: 131593
+--- !u!114 &226113569560080716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/UI_DogBark
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/UI_DogBark
+  Guid:
+    Data1: 1161701021
+    Data2: 1105704925
+    Data3: -348811098
+    Data4: -822631443
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -8717490387290613456}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1350
+--- !u!114 &465667816842088049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/UI_ClickUp_Wood01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/UI_ClickUp_Wood01
+  Guid:
+    Data1: 2103890927
+    Data2: 1233390335
+    Data3: -120936775
+    Data4: 162777083
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &571027207702609418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -716,33 +718,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &805910083867109900
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Environments/EnvPark02
-  m_EditorClassIdentifier: 
-  Path: event:/Environments/EnvPark02
-  Guid:
-    Data1: 5126767
-    Data2: 1231829433
-    Data3: 564227242
-    Data4: -791046241
-  Banks:
-  - {fileID: -7047892007718214267}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 119897
 --- !u!114 &862124909823098601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -821,6 +796,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1878307972051775727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/UI_ClickDown_Wood01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/UI_ClickDown_Wood01
+  Guid:
+    Data1: 180161945
+    Data2: 1122024122
+    Data3: -1428089159
+    Data4: 2136967250
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2255144931036380271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/UI_ClickUp_Stone01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/UI_ClickUp_Stone01
+  Guid:
+    Data1: -1794853790
+    Data2: 1148161597
+    Data3: 1358420625
+    Data4: -107390105
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &2297165274565995267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -875,60 +904,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 19293
---- !u!114 &4507486519085466901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Environments/EnvPark01
-  m_EditorClassIdentifier: 
-  Path: event:/Environments/EnvPark01
-  Guid:
-    Data1: 313405093
-    Data2: 1101287754
-    Data3: 116342691
-    Data4: 1095341348
-  Banks:
-  - {fileID: -7047892007718214267}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 124502
---- !u!114 &4724361549114946735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UIHover02
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UIHover02
-  Guid:
-    Data1: -1711860792
-    Data2: 1083209065
-    Data3: 1140817072
-    Data4: -1899559870
-  Banks:
-  - {fileID: -7047892007718214267}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &5072019153529638015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1010,7 +985,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 19293
---- !u!114 &6938325830794565352
+--- !u!114 &5633290446179554334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1020,9 +995,63 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UINotification02
+  m_Name: event:/Environments/Env_Park01
   m_EditorClassIdentifier: 
-  Path: event:/SFX/UINotification02
+  Path: event:/Environments/Env_Park01
+  Guid:
+    Data1: 313405093
+    Data2: 1101287754
+    Data3: 116342691
+    Data4: 1095341348
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 124502
+--- !u!114 &6742591197224779319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/UI_Hover02
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/UI_Hover02
+  Guid:
+    Data1: -1711860792
+    Data2: 1083209065
+    Data3: 1140817072
+    Data4: -1899559870
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7078913751750359243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/UI_Notification02
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/UI_Notification02
   Guid:
     Data1: -76949211
     Data2: 1223830416
@@ -1037,7 +1066,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &7750961919526850968
+--- !u!114 &7480020609719341110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1047,18 +1076,45 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UIClickUp_Stone01
+  m_Name: event:/Environments/Env_Park03
   m_EditorClassIdentifier: 
-  Path: event:/SFX/UIClickUp_Stone01
+  Path: event:/Environments/Env_Park03
   Guid:
-    Data1: -1794853790
-    Data2: 1148161597
-    Data3: 1358420625
-    Data4: -107390105
+    Data1: -2066053505
+    Data2: 1268441136
+    Data3: 749235840
+    Data4: 140626781
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 115379
+--- !u!114 &7840500347516485988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/UI_Click_PopUp01
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/UI_Click_PopUp01
+  Guid:
+    Data1: -1037493447
+    Data2: 1087838950
+    Data3: 90055556
+    Data4: -522697973
   Banks:
   - {fileID: -7047892007718214267}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -1130,8 +1186,8 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638051697255111421
+  lastModified: 638052320634600554
   FileSizes:
   - Name: Desktop
-    Value: 1946
+    Value: 2036
   Exists: 1

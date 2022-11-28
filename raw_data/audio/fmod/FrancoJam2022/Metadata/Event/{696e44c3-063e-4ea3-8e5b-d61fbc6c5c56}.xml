@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{696e44c3-063e-4ea3-8e5b-d61fbc6c5c56}">
 		<property name="name">
-			<value>UIHover01</value>
+			<value>UI_Hover01</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{134dcfde-b584-4aea-a461-c2c7698b1207}</destination>
+			<destination>{f44438cf-aee9-4ac7-8fea-f698566a8b81}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{eff00775-5db8-4c41-8193-cbd528daa264}</destination>
@@ -81,7 +81,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{ce602029-b45f-4265-af35-36ee48554b1a}">
 		<property name="volume">
-			<value>-2.5</value>
+			<value>-3.5</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{b1669852-b849-4bac-93cb-3a21fd42bd66}</destination>

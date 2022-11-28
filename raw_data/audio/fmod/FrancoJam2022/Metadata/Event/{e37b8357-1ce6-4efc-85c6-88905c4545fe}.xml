@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{e37b8357-1ce6-4efc-85c6-88905c4545fe}">
 		<property name="name">
-			<value>UIClick_Wood01</value>
+			<value>UI_Click_Wood01</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
 		</property>
 		<relationship name="folder">
-			<destination>{134dcfde-b584-4aea-a461-c2c7698b1207}</destination>
+			<destination>{f44438cf-aee9-4ac7-8fea-f698566a8b81}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{88bc2d92-48f3-405c-aa60-c00d03ab80cf}</destination>

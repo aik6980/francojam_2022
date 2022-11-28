@@ -31,7 +31,7 @@ public class AudioManager : MonoBehaviour
 
     //[Header("UI SFX OneShot Events")]
     [SerializeField]
-    EventReference woodClickUI, woodClickDownUI, woodClickUpUI, stoneClickDownUI, stoneClickUpUI, popClickUI, hoverUI01,
+    EventReference woodClickUI, woodClickDownUI, woodClickUpUI, stoneClickDownUI, stoneClickUpUI, popClickUI, PopClickDownUI, popClickUpUI, hoverUI01,
         hoverUI02, notificationUI01, notificationUI02, squeakToyUI;
 
     [SerializeField]
@@ -231,27 +231,6 @@ public class AudioManager : MonoBehaviour
     {
         if (GetPlaybackState(dogDialogueEvent) != PLAYBACK_STATE.PLAYING)
             dogDialogueEvent.start();
-    }
-
-    EventInstance CreateEmitter(EventReference eventRef, GameObject soundSource)
-    {
-        // gizmo for min/max dist?
-        var instance = RuntimeManager.CreateInstance(eventRef);
-        RuntimeManager.AttachInstanceToGameObject(instance, soundSource.transform);
-        instance.start();
-
-        DrawSoundDistance(instance, soundSource);
-
-        return instance;
-    }
-
-    void DrawSoundDistance(EventInstance instance, GameObject soundSource)
-    {
-        instance.getDescription(out EventDescription description);
-        description.getMinMaxDistance(out float minDist, out float maxDist);
-
-        Gizmos.DrawWireSphere(soundSource.transform.position, minDist);
-        Gizmos.DrawWireSphere(soundSource.transform.position, maxDist);
     }
 
     public PLAYBACK_STATE GetPlaybackState(EventInstance instance)
