@@ -1,12 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using FMOD.Studio;
 using FMODUnity;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static UnityEngine.ParticleSystem;
 
 public class AudioManager : MonoBehaviour
 {
@@ -20,24 +17,16 @@ public class AudioManager : MonoBehaviour
         public EventReference music, environment;
         public ParamRef parameter;
     }
-
-    [SerializeField] 
     public SceneMusicSet[] sceneAudio;
 
-    //[Header("UI SFX Events")]
     [SerializeField]
-    EventReference dogBarkUI;
-
-    //[Header("UI SFX OneShot Events")]
-    [SerializeField]
-    EventReference woodClickUI, woodClickDownUI, woodClickUpUI, stoneClickDownUI, stoneClickUpUI, popClickUI, PopClickDownUI, popClickUpUI, hoverUI01,
+    EventReference dogBarkUI, woodClickUI, woodClickDownUI, woodClickUpUI, stoneClickDownUI, stoneClickUpUI, 
+        popClickUI, PopClickDownUI, popClickUpUI, hoverUI01,
         hoverUI02, notificationUI01, notificationUI02, squeakToyUI;
 
     [SerializeField]
     EventReference dogDialogue;
-    EventInstance dogDialogueEvent;
 
-    //[Header("Parameters")]
     [SerializeField]
     ParamRef dogRef;
 
@@ -93,7 +82,6 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        dogDialogueEvent = RuntimeManager.CreateInstance(dogDialogue);
         volumeSliderObject = GameObject.FindGameObjectWithTag("UI_Master_Volume");
     }
 
@@ -233,7 +221,7 @@ public class AudioManager : MonoBehaviour
             return;
 
         var instance = RuntimeManager.CreateInstance(dogBarkUI);
-        instance.setParameterByIDWithLabel(dogRef.ID, doggoName);
+        instance.setParameterByNameWithLabel(dogRef.Name, doggoName);
         instance.start();
         instance.release();
     }
@@ -245,8 +233,7 @@ public class AudioManager : MonoBehaviour
 
     public PLAYBACK_STATE GetPlaybackState(EventInstance instance)
     {
-        PLAYBACK_STATE playbackState;
-        instance.getPlaybackState(out playbackState);
+        instance.getPlaybackState(out PLAYBACK_STATE playbackState);
         return playbackState;
     }
 }

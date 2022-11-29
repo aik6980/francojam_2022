@@ -117,6 +117,24 @@ MonoBehaviour:
     parameter:
       Name: 
       Value: 0
+  - scene: Scene_selection
+    music:
+      Guid:
+        Data1: 87755303
+        Data2: 1245984809
+        Data3: -2116184903
+        Data4: -1272932042
+      Path: event:/Music/Music_DoggoAdventure
+    environment:
+      Guid:
+        Data1: -329611613
+        Data2: 1289524328
+        Data3: -1601728638
+        Data4: 1106888735
+      Path: event:/Environments/Env_Default
+    parameter:
+      Name: 
+      Value: 0
   dogBarkUI:
     Guid:
       Data1: 1161701021
