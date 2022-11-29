@@ -24,17 +24,14 @@ You seem like a friendly person. #Name_Cesar
 I like to be friendly, but trust is difficult. How do you make trust easy? #Name_Cesar
  * [That's a tough question]Oh, that's a tough one. At the very least, it certainly takes time! #Name_Me
  But how to reduce time? That we do not know. #Name_Cesar
- -> round_2
  * {playful > 5}[Good times build bonds]I find both dogs and humans enjoy a good play together! #Name_Me
  This makes sense to me. Maybe we try one day? :) #Name_Cesar
   ~ affinity = affinity + 2
- -> round_2
  * [Tough love]Owner knows best, in my opinion. Strict rules and tough love means less disobedience! #Name_Me
  I can tell you, this does not work with me. #Name_Cesar
  ~ affinity = affinity - 2
- -> round_2
 
--> round_2
+- -> DONE
 
 === round_2 ===
  Hello again! #Name_Cesar
@@ -48,16 +45,13 @@ I like to be friendly, but trust is difficult. How do you make trust easy? #Name
  * {smart > 7}[Actually, it's an idiom]It's an idiom! "A group of words established by usage as having a meaning not deducible from those of the individual words." #Name_Me
  I understand even less now. #Name_Cesar
  ~ affinity = affinity - 2
- -> round_3
  * [It doesn't matter]Don't worry. What matters is you're enjoying yourself! #Name_Me
  This is true! Unlike having a shell. As I say, I do not have one. #Name_Cesar
--> round_3
  * [It's a saying]It's something English-speaking people say that means you're more social, or less shy! #Name_Me
  Aha! Like a snail! I understand now! #Name_Cesar
  ~ affinity = affinity + 2
- -> round_3
 
--> round_3
+- -> DONE
  
  === round_3 ===
  Hello once more! #Name_Cesar

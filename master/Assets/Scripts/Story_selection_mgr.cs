@@ -20,6 +20,8 @@ public enum Doggo
     Pablo,
     Rusty,
     Betsy,
+    Cesar,
+    Freya,
     Nums
 }
 
