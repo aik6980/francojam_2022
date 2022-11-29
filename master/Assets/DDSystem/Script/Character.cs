@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using FMODUnity;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Doublsb.Dialog
@@ -9,5 +10,7 @@ namespace Doublsb.Dialog
         public Emotion Emotion;
         public AudioClip[] ChatSE;
         public AudioClip[] CallSE;
+
+        public EventReference charVoice;
     }
 }

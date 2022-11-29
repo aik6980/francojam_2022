@@ -96,7 +96,7 @@ MonoBehaviour:
   Name: Dog_Ref
   StudioPath: 
   Min: 0
-  Max: 14
+  Max: 15
   Default: 0
   ID:
     data1: 4091816336
@@ -119,6 +119,7 @@ MonoBehaviour:
   - Cesar
   - Chase
   - Freya
+  - Default
   Exists: 1
 --- !u!114 &-8257880273483117462
 MonoBehaviour:
@@ -244,10 +245,10 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638052675571559274
+  lastModified: 638053140561838299
   FileSizes:
   - Name: Desktop
-    Value: 7153248
+    Value: 7143328
   Exists: 1
 --- !u!114 &-6708705148663618230
 MonoBehaviour:
@@ -267,6 +268,33 @@ MonoBehaviour:
     Data2: 1171366051
     Data3: -1192917119
     Data4: 1709528366
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-4592614894312010446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Dial_PlayerM
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Dial_PlayerM
+  Guid:
+    Data1: -671598250
+    Data2: 1155360274
+    Data3: -1931958598
+    Data4: -1247041562
   Banks:
   - {fileID: -7047892007718214267}
   IsStream: 0
@@ -543,6 +571,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 32678
+--- !u!114 &-594319110459025823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Dial_PlayerF
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Dial_PlayerF
+  Guid:
+    Data1: -1933350265
+    Data2: 1093990991
+    Data3: 2121171346
+    Data4: -874728508
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-460988996904159897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,7 +651,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 625
+  Length: 750
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,13 +691,16 @@ MonoBehaviour:
   - {fileID: -9114854873497934658}
   - {fileID: 465667816842088049}
   - {fileID: -628576724343388862}
+  - {fileID: 5097950583920610026}
+  - {fileID: -4592614894312010446}
+  - {fileID: -594319110459025823}
   EditorParameters:
   - {fileID: 862124909823098601}
   MasterBanks:
   - {fileID: -7047892007718214267}
   StringsBanks:
   - {fileID: 9019890182134457837}
-  cacheTime: 638052675571614640
+  cacheTime: 638053140561898660
   cacheVersion: 131593
 --- !u!114 &226113569560080716
 MonoBehaviour:
@@ -671,7 +729,7 @@ MonoBehaviour:
   - {fileID: -8717490387290613456}
   MinDistance: 1
   MaxDistance: 20
-  Length: 1350
+  Length: 388
 --- !u!114 &465667816842088049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -966,6 +1024,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5097950583920610026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Dialogue/Dial_Narrator
+  m_EditorClassIdentifier: 
+  Path: event:/Dialogue/Dial_Narrator
+  Guid:
+    Data1: 303326585
+    Data2: 1160273049
+    Data3: 1254700684
+    Data4: 397281836
+  Banks:
+  - {fileID: -7047892007718214267}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5269492521183303355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1221,8 +1306,8 @@ MonoBehaviour:
   Path: ../raw_data/audio/fmod/FrancoJam2022/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638052675571614640
+  lastModified: 638053140561898660
   FileSizes:
   - Name: Desktop
-    Value: 2086
+    Value: 2218
   Exists: 1

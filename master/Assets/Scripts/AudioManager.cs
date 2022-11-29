@@ -238,10 +238,9 @@ public class AudioManager : MonoBehaviour
         instance.release();
     }
 
-    public void PlayDialogue()
+    public void PlayDialogue(EventReference charVoice)
     {
-        if (GetPlaybackState(dogDialogueEvent) != PLAYBACK_STATE.PLAYING)
-            dogDialogueEvent.start();
+        RuntimeManager.PlayOneShot(charVoice);
     }
 
     public PLAYBACK_STATE GetPlaybackState(EventInstance instance)

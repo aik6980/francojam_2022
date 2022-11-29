@@ -16,7 +16,7 @@
 			<value>2</value>
 		</property>
 		<property name="maximum">
-			<value>15</value>
+			<value>16</value>
 		</property>
 		<property name="enumerationLabels">
 			<value>PlayerF</value>
@@ -34,6 +34,7 @@
 			<value>Cesar</value>
 			<value>Chase</value>
 			<value>Freya</value>
+			<value>Default</value>
 		</property>
 		<property name="initialValue">
 			<value>0</value>
