@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class Dog_ImageStatus : MonoBehaviour
@@ -37,6 +38,9 @@ public class Dog_ImageStatus : MonoBehaviour
 			{
 				i.color = available ? Color.white : Color.black;
 			}
+
+			GetComponent<UI_mouse_over>().enabled = false;
+			GetComponent<Button>().enabled = false;
 		}
 	}
 }
