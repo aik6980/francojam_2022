@@ -92,6 +92,7 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         }
         else
         {
+            // update player data
             SceneManager.LoadScene("Scene_selection");
         }
     }

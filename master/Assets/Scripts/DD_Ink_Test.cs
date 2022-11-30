@@ -65,6 +65,7 @@ public class DD_Ink_Test : MonoBehaviour
     {
         if (Is_intro_scene)
         {
+            Player_data_mgr.Instance.read_from_ink(story);
             SceneManager.LoadScene("Scene_selection");
         }
         else
