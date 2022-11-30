@@ -14,20 +14,9 @@ public enum Round_enum
     round_3,
 }
 
-public enum Doggo
-{
-    Otis,
-    Pablo,
-    Rusty,
-    Betsy,
-    Cesar,
-    Freya,
-    Nums
-}
-
 public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
 {
-    public TextAsset m_curr_text_asset;
+    public Dog_enum m_curr_dog;
     public Round_enum m_round_index;
 
     public UInt32 m_num_date_counter;
@@ -37,7 +26,7 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
 
     private void Start()
     {
-        m_round_available = new bool[(int)Doggo.Nums];
+        m_round_available = new bool[(int)Dog_enum.Nums];
         Array.Fill(m_round_available, true);
 
         Reset_round(Round_enum.round_1);
@@ -76,9 +65,7 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         // Debug.Log(m_num_date_counter);
         m_num_date_counter--;
         // disable the doggo until next round
-        Doggo doggo_enum;
-        Enum.TryParse(m_curr_text_asset.name, out doggo_enum);
-        m_round_available[(int)doggo_enum] = false;
+        m_round_available[(int)m_curr_dog] = false;
 
         if (m_num_date_counter <= 0)
         {
@@ -120,17 +107,9 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         Array.Fill(m_round_available, true);
     }
 
-    public bool Is_available_for_chat(Doggo doggo_enum)
+    public bool Is_available_for_chat(Dog_enum doggo_enum)
     {
         return m_round_available[(int)doggo_enum];
-    }
-
-    public Doggo From_string(string name)
-    {
-        Doggo doggo_enum;
-        Enum.TryParse(name, out doggo_enum);
-
-        return doggo_enum;
     }
 
     public string Get_round_progression_string()

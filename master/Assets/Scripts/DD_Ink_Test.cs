@@ -28,12 +28,12 @@ public class DD_Ink_Test : MonoBehaviour
         }
 
         // override the story if there is one
-        if (Story_selection_mgr.Instance.m_curr_text_asset != null)
+        if (Story_selection_mgr.Instance.m_curr_dog != Dog_enum.Nums)
         {
-            inkJSONAsset = Story_selection_mgr.Instance.m_curr_text_asset;
+            story = Dog_stat_mgr.Instance.Story_map[Story_selection_mgr.Instance.m_curr_dog];
         }
 
-        if (inkJSONAsset != null)
+        if (!story && inkJSONAsset != null)
         {
             story = new Story(inkJSONAsset.text);
         }
@@ -52,11 +52,9 @@ public class DD_Ink_Test : MonoBehaviour
     // Creates a new Story object with the compiled story which we can then play!
     void StartStory()
     {
-        story = new Story(inkJSONAsset.text);
-        if (Story_selection_mgr.Instance.m_curr_text_asset != null)
-        {
-            story.ChoosePathString(Story_selection_mgr.Instance.m_round_index.ToString());
-        }
+        // story = new Story(inkJSONAsset.text);
+
+        story.ChoosePathString(Story_selection_mgr.Instance.m_round_index.ToString());
         // if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();
     }

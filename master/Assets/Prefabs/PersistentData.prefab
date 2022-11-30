@@ -60,14 +60,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb276a337371c83489ffe73c7043e4f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dog_image_tbl:
+  Image_map:
     _name:
     - Otis
     - Pablo
     - Rusty
     - Betsy
+    - Cesar
+    - Freya
     _sprite:
     - {fileID: 21300000, guid: b20a46ad684ce8044a46337e99276faf, type: 3}
     - {fileID: 21300000, guid: 90419bca1773ecf448970048f28e001c, type: 3}
     - {fileID: 21300000, guid: 05f8dab3cd694904e919c43d23ba9c97, type: 3}
     - {fileID: 21300000, guid: a0781c75cf5ccc344a5f787755223ab6, type: 3}
+    - {fileID: 21300000, guid: 66004452dcd700e4382561d76694eaa2, type: 3}
+    - {fileID: 21300000, guid: fb3c63f7e81e8a74fb4abbd00078bdbc, type: 3}
+  JSONStory_map:
+    _name:
+    - Otis
+    - Pablo
+    - Rusty
+    - Betsy
+    - Cesar
+    - Freya
+    _sprite:
+    - {fileID: 4900000, guid: be01acddf51bae74c8038c05bd34839f, type: 3}
+    - {fileID: 4900000, guid: c1409dee8ff702046a25d93bbae3186e, type: 3}
+    - {fileID: 4900000, guid: 8f2153d09717c2d459feb23767ea01b8, type: 3}
+    - {fileID: 4900000, guid: f84c89ec5fd9cc249adc8a16909ad622, type: 3}
+    - {fileID: 4900000, guid: bf223ab22be59d743865ddac4dcd6cba, type: 3}
+    - {fileID: 4900000, guid: f19d4fbcdc7efda4094fcda6e4c1f829, type: 3}
