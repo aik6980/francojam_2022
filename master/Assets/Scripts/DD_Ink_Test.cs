@@ -161,12 +161,6 @@ public class DD_Ink_Test : MonoBehaviour
         if (tag_name == null)
             return "Blank";
 
-        // Fixme: hack for #Player tag
-        if (tag_name == "Me")
-        {
-            tag_name = "Li";
-        }
-
         return tag_name;
     }
 

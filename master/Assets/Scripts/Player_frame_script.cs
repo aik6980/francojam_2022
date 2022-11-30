@@ -14,7 +14,7 @@ public class Player_frame_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Display_player_photo(Player_status_mgr.Instance.m_curr_player_age);
+        Display_player_photo(Player_data_mgr.Instance.m_curr_player_age);
     }
 
     void Display_player_photo(Player_age age)
