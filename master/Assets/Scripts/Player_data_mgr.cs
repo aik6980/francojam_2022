@@ -1,3 +1,4 @@
+using Ink.Runtime;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.FullSerializer;
@@ -18,13 +19,13 @@ public class Player_data_mgr : MonoSingleton<Player_data_mgr>
     private static Player_data_mgr persistence_obj;
 
     // scores
-    uint m_likes_dogs = 5;
-    uint m_likes_cats = 5;
-    uint m_likes_kids = 5;
-    uint m_likes_walks = 5;
-    uint m_smart = 5;
-    uint m_active = 5;
-    uint m_playful = 5;
+    int m_likes_dogs = 5;
+    int m_likes_cats = 5;
+    int m_likes_kids = 5;
+    int m_likes_walks = 5;
+    int m_smart = 5;
+    int m_active = 5;
+    int m_playful = 5;
     bool m_has_dog = false;
 
     List<string> m_adopted_dogs;
@@ -48,6 +49,8 @@ public class Player_data_mgr : MonoSingleton<Player_data_mgr>
     {
         m_curr_player_age = Player_age.low;
         m_adopted_dogs = new List<string>();
+
+        debug_print();
     }
 
     // Update is called once per frame
@@ -69,16 +72,23 @@ public class Player_data_mgr : MonoSingleton<Player_data_mgr>
 
     public void debug_print()
     {
-        uint likes_dogs = 5;
-        uint likes_cats = 5;
-        uint likes_kids = 5;
-        uint likes_walks = 5;
-        uint smart = 5;
-        uint active = 5;
-        uint playful = 5;
-        bool has_dog = false;
-
-        Debug.LogFormat("", m_likes_dogs, m_likes_cats, m_likes_kids, m_likes_walks, m_smart, m_active, m_playful,
+        Debug.LogFormat("likes_dogs:{0}\n " + "likes_cats:{1}\n " + "likes_kids:{2}\n " + "likes_walks:{3}\n " +
+                            "smart:{4}\n active:{5}\n playful:{6}\n has_dog:{7}\n",
+                        m_likes_dogs, m_likes_cats, m_likes_kids, m_likes_walks, m_smart, m_active, m_playful,
                         m_has_dog);
+    }
+
+    public void read_from_ink(Story story)
+    {
+        m_likes_dogs = (int)story.variablesState["likes_dogs"];
+        m_likes_cats = (int)story.variablesState["likes_cats"];
+        m_likes_kids = (int)story.variablesState["likes_kids"];
+        m_likes_walks = (int)story.variablesState["likes_walks"];
+        m_smart = (int)story.variablesState["smart"];
+        m_active = (int)story.variablesState["active"];
+        m_playful = (int)story.variablesState["playful"];
+        m_has_dog = (bool)story.variablesState["has_dog"];
+
+        debug_print();
     }
 }
