@@ -28,6 +28,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using FMODUnity;
 
 namespace Doublsb.Dialog
 {
@@ -115,23 +116,32 @@ namespace Doublsb.Dialog
 			}
 
 			Selector.SetActive(false);
+			Selector.SetActive(false);
 		}
 
 		public void Click_Window()
         {
+            AudioManager.Instance.PlayClickDownUI(AudioManager.ButtonType.Phone01);
+
             switch (state)
             {
                 case State.Active:
-                    StartCoroutine(_skip()); break;
+                    {
+                        StartCoroutine(_skip()); break;
+                    }
 
                 case State.Wait:
-                    if(_current_Data.SelectList.Count <= 0) Hide(); break;
+                    {
+                        if (_current_Data.SelectList.Count <= 0) Hide(); break;
+                    }
             }
         }
 
         public void Hide()
         {
-            if(_textingRoutine != null)
+            AudioManager.Instance.PlayClickDownUI(AudioManager.ButtonType.Phone02);
+
+            if (_textingRoutine != null)
                 StopCoroutine(_textingRoutine);
 
             if(_printingRoutine != null)
@@ -296,8 +306,8 @@ namespace Doublsb.Dialog
 
 		private void _clear_chat()
 		{
-			//backup the original
-			ChatItem.transform.SetParent(null, false);
+            //backup the original
+            ChatItem.transform.SetParent(null, false);
 
 			for (int i = 1; i < Chat.transform.childCount; i++)
 			{
@@ -309,7 +319,7 @@ namespace Doublsb.Dialog
 
 		private void _add_chatItem(string text)
 		{
-			ChatItemText.text = text;
+            ChatItemText.text = text;
 			//ChatItemText.GetComponent<ContentSizeFitter>().SetLayoutVertical();
 
 			var NewItem = Instantiate(ChatItem, Chat.transform);
@@ -347,9 +357,11 @@ namespace Doublsb.Dialog
             foreach (var Data in DataList)
             {
                 Show(Data);
+
                 //_init_selector();
 
-                while (state != State.Deactivate) { yield return null; }
+                while (state != State.Deactivate) { yield return null; };
+                
             }
         }
 
@@ -364,12 +376,12 @@ namespace Doublsb.Dialog
                 switch (item.Command)
                 {
                     case Command.print:
-						if (UseChat)
+                        if (UseChat)
 						{
-							_add_chatItem(item.Context);
+                            _add_chatItem(item.Context);
 						} else
 						{
-							yield return _printingRoutine = StartCoroutine(_print(item.Context));
+                            yield return _printingRoutine = StartCoroutine(_print(item.Context));
 						}
                         break;
 

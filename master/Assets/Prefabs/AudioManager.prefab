@@ -184,7 +184,7 @@ MonoBehaviour:
       Data3: -511548507
       Data4: -2032128668
     Path: event:/SFX/UI/UI_Click_Pop01
-  PopClickDownUI:
+  popClickDownUI:
     Guid:
       Data1: -2067743103
       Data2: 1113690863

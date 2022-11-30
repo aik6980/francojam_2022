@@ -21,7 +21,7 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField]
     EventReference dogBarkUI, woodClickUI, woodClickDownUI, woodClickUpUI, stoneClickDownUI, stoneClickUpUI, 
-        popClickUI, PopClickDownUI, popClickUpUI, hoverUI01,
+        popClickUI, popClickDownUI, popClickUpUI, hoverUI01,
         hoverUI02, notificationUI01, notificationUI02, squeakToyUI;
 
     [SerializeField]
@@ -119,7 +119,7 @@ public class AudioManager : MonoBehaviour
             RuntimeManager.PlayOneShot(woodClickUI);
             break;
         case ButtonType.Phone01:
-            RuntimeManager.PlayOneShot(popClickUI);
+            RuntimeManager.PlayOneShot(popClickDownUI);
             break;
         case ButtonType.Phone02:
             RuntimeManager.PlayOneShot(notificationUI01);

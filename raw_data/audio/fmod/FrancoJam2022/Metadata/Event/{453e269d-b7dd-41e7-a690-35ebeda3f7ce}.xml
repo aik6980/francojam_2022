@@ -61,7 +61,7 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{5700af3f-1a58-43d9-84ab-4d9f227abf26}">
 		<property name="maxVoices">
-			<value>4</value>
+			<value>1</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{47353640-a427-4eb5-9735-471658b86f02}" />
@@ -153,6 +153,9 @@
 	<object class="SingleSound" id="{73078c05-5b77-493f-9277-8dcfc039f885}">
 		<property name="length">
 			<value>0.32808333333333334</value>
+		</property>
+		<property name="volume">
+			<value>-2.5</value>
 		</property>
 		<relationship name="triggerConditions">
 			<destination>{062263ed-b6b5-428d-885b-fff6a2fdbd45}</destination>

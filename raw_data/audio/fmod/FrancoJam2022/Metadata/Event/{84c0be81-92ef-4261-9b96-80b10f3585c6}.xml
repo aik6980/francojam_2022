@@ -5,7 +5,7 @@
 			<value>UI_Click_PopDown01</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{f44438cf-aee9-4ac7-8fea-f698566a8b81}</destination>
@@ -85,7 +85,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{f5218c26-3a92-482e-8925-1826ba900372}">
 		<property name="volume">
-			<value>4.5</value>
+			<value>-10</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{e831c6df-08fa-431b-a2b8-2bd565ca1da2}</destination>
@@ -125,7 +125,6 @@
 	<object class="MixerBusEffectChain" id="{e831c6df-08fa-431b-a2b8-2bd565ca1da2}">
 		<relationship name="effects">
 			<destination>{c5cef5f8-c154-4b0e-8f60-167973fa0e89}</destination>
-			<destination>{69dcee08-053a-4493-8e63-32229434ad3c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{2085445d-2583-4cf6-a393-d0eaa38ef7c9}" />
@@ -142,6 +141,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{e109e94c-d567-4acd-bb24-b69001ee470b}" />
 	<object class="MixerBusFader" id="{c5cef5f8-c154-4b0e-8f60-167973fa0e89}" />
-	<object class="SpatialiserEffect" id="{69dcee08-053a-4493-8e63-32229434ad3c}" />
 	<object class="MixerBusFader" id="{c6e16bc1-ed98-4766-89ba-097aa679afdd}" />
 </objects>
