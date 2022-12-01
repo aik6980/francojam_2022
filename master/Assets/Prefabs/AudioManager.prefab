@@ -55,11 +55,11 @@ MonoBehaviour:
       Path: event:/Music/Music_DoggoAdventure
     environment:
       Guid:
-        Data1: 5126767
-        Data2: 1231829433
-        Data3: 564227242
-        Data4: -791046241
-      Path: event:/Environments/Env_Park02
+        Data1: 1552345385
+        Data2: 1161914261
+        Data3: -1069319523
+        Data4: 2103223450
+      Path: event:/Environments/Env_Dogs
     parameter:
       Name: Music_Progress
       Value: 0
@@ -73,11 +73,11 @@ MonoBehaviour:
       Path: event:/Music/Music_DoggoAdventure
     environment:
       Guid:
-        Data1: -329611613
-        Data2: 1289524328
-        Data3: -1601728638
-        Data4: 1106888735
-      Path: event:/Environments/Env_Default
+        Data1: -291641988
+        Data2: 1080853628
+        Data3: -1989704817
+        Data4: -1583372070
+      Path: event:/Environments/Env_Office01
     parameter:
       Name: Music_Progress
       Value: 1

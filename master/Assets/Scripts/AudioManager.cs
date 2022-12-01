@@ -209,6 +209,7 @@ public class AudioManager : MonoBehaviour
             currentEnvironment.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             currentEnvironment.release();
             currentEnvironment = RuntimeManager.CreateInstance(environment);
+            RuntimeManager.AttachInstanceToGameObject(currentEnvironment, Instance.transform);
             currentEnvironment.start();
         }
 

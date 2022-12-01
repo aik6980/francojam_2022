@@ -28,7 +28,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-using FMODUnity;
 
 namespace Doublsb.Dialog
 {
@@ -132,7 +131,9 @@ namespace Doublsb.Dialog
 
                 case State.Wait:
                     {
-                        if (_current_Data.SelectList.Count <= 0) Hide(); break;
+                        if (_current_Data.SelectList.Count <= 0) 
+                            Hide(); 
+                        break;
                     }
             }
         }
