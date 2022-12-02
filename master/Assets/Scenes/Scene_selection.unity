@@ -428,7 +428,10 @@ PrefabInstance:
       propertyPath: doggoName
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 361246164, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
+    - {fileID: 6541578254067275329, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
+    - {fileID: 4120037581050073063, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8960bffa0736f524ab96f4ac48c445d4, type: 3}
 --- !u!224 &28501991 stripped
 RectTransform:
