@@ -27,12 +27,6 @@ public class DD_Ink_Test : MonoBehaviour
             DialogManager = GameObject.FindObjectOfType<DialogManager>();
         }
 
-        // override the story if there is one
-        if (Story_selection_mgr.Instance.m_curr_dog != Dog_enum.Nums)
-        {
-            story = Dog_stat_mgr.Instance.Story_map[Story_selection_mgr.Instance.m_curr_dog];
-        }
-
         if (!story && inkJSONAsset != null)
         {
             story = new Story(inkJSONAsset.text);
@@ -41,6 +35,12 @@ public class DD_Ink_Test : MonoBehaviour
 
     void Start()
     {
+        // override the story if there is one
+        if (Is_intro_scene == false && Story_selection_mgr.Instance.m_curr_dog != Dog_enum.Nums)
+        {
+            story = Dog_stat_mgr.Instance.Story_map[Story_selection_mgr.Instance.m_curr_dog];
+        }
+
         StartStory();
     }
 
@@ -53,8 +53,10 @@ public class DD_Ink_Test : MonoBehaviour
     void StartStory()
     {
         // story = new Story(inkJSONAsset.text);
-
-        story.ChoosePathString(Story_selection_mgr.Instance.m_round_index.ToString());
+        if (!Is_intro_scene)
+        {
+            story.ChoosePathString(Story_selection_mgr.Instance.m_round_index.ToString());
+        }
         // if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();
     }
