@@ -133,8 +133,8 @@ MonoBehaviour:
         Data4: 1106888735
       Path: event:/Environments/Env_Default
     parameter:
-      Name: 
-      Value: 0
+      Name: Music_Progress
+      Value: 2
   dogBarkUI:
     Guid:
       Data1: 1161701021
