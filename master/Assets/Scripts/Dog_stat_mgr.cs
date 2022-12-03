@@ -60,21 +60,9 @@ public class Dog_stat_mgr : MonoSingleton<Dog_stat_mgr>
         get => m_story_map;
     }
 
-    // global persistent variable
-    private static Dog_stat_mgr persistence_obj;
-    private void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
-        DontDestroyOnLoad(this.gameObject);
-
-        if (persistence_obj == null)
-        {
-            persistence_obj = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
         m_story_map = new Dictionary<Dog_enum, Story>();
 
         foreach (var txt_asset in JSONStory_map.Data)
@@ -82,11 +70,6 @@ public class Dog_stat_mgr : MonoSingleton<Dog_stat_mgr>
             var story = new Story(txt_asset.Value.text);
             m_story_map.Add(From_string(txt_asset.Key), story);
         }
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
     }
 
     public Dog_enum From_string(string name)

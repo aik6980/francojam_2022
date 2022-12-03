@@ -15,8 +15,8 @@ VAR affinity=4
 
 === round_1 ===
 omg hi!!! #Name_Pablo
-im pablo n im HYPED TO MEET YOU :DDD #Name_Pablo
-its not every day u get to make a new friend <3333 #Name_Pablo
+I'm Pablo n im HYPED TO MEET YOU :DDD #Name_Pablo
+It's not every day u get to make a new friend <3333 #Name_Pablo
 *[You seem happy]Whoa, you seem happy! #Name_Me
 
 - u would be too if u sniffed a few things around here!! #Name_Pablo

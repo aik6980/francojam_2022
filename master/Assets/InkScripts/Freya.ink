@@ -24,18 +24,15 @@ Do you spend a lot of time outside? #Name_Freya
     *{likes_walks > 5}[I love walks]I do, there are a lot of paths you can walk around, would love to take you along one day! #Name_Me
         That sounds amazing! Would love to! #Name_Freya
         ~affinity = affinity + 2
-        -> round_2
     *{active > 4}[I'm active]I like to play football in Horsham park, it's great on sunny days! #Name_Me
         That sounds fun! Would love to see that! #Name_Freya
         ~affinity = affinity + 1
-        -> round_2
     *[Chill in my garden]When the weather allows it I like to read a book outside in my garden #Name_Me
         That's a nice thing to have. #Name_Freya
-        -> round_2
     *[Not really]Not really, I prefer staying home and watch movies most of the time #Name_Me
         That's a shame. #Name_Freya
         ~affinity = affinity - 2
-        -> round_2
+- -> DONE
         
 === round_2 ===
 Nice to see you in person! And right on time! #Name_Freya
@@ -49,19 +46,16 @@ What kind of people do you know and hang around with at home? #Name_Freya
     *{smart > 4}[Grill parties]I love to organize these barbeque parties at home and I have all sorts of friends coming. It's great fun and I'm sure we can share the food too! #Name_Me
         This sounds amazing! I can already imagine the smell of the grilled sausages! #Name_Freya
         ~affinity = affinity + 1
-        -> round_3
     *{likes_kids > 4}[Lots of children] Yes! We have a lot of children in our home of all ages, and I'm sure you will be able to find yourself friends among them! #Name_Me
         Children? Aren't they like small humans that don't listen to any rules and keep breaking stuff all the time? Huh.. #Name_Freya
         ~affinity = affinity - 2
-        -> round_3
     *{likes_dogs > 4}[Friends with dogs]We often meet with these friends of ours who have their own dogs. It's always great fun and you'll see you'll love playing with them too! #Name_Me
         Other dogs? And they play with each other at any time? That's amazing! #Name_Freya
         ~affinity = affinity + 2
-        -> round_3
     *[Watch a lot of TV]I usually prefer staying home and watch some TV after work. There are some great shows on display and this series I love to watch.. #Name_Me
         That sounds a little dull.. #Name_Freya
         ~affinity = affinity - 1
-        -> round_3
+- -> DONE
 
 === round_3 ===
 So nice to be outside of the shelter and see all these people! #Name_Freya

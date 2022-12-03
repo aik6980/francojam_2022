@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5173282841737530981}
   - component: {fileID: 5173282841737530980}
   - component: {fileID: 4126681860953696161}
+  - component: {fileID: 1940528569}
   m_Layer: 0
   m_Name: PersistentData
   m_TagString: Untagged
@@ -45,9 +46,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5519d902cd8e8874984f872c2003c863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_curr_text_asset: {fileID: 0}
-  m_round_index: 0
-  m_num_date_counter: 0
+  m_curr_dog: 0
+  m_day_id: 0
+  m_num_chat_counter: 0
+  m_day_title_texts:
+  - Day 0
+  - Day 1
+  - Day 2
+  - Day 3
+  - You and me
+  m_day_subtitle_texts:
+  - Making an application
+  - New dogs at the office
+  - Meeting at the park
+  - Third tiime's a charm
+  - Friend forever
 --- !u!114 &4126681860953696161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,3 +103,16 @@ MonoBehaviour:
     - {fileID: 4900000, guid: f84c89ec5fd9cc249adc8a16909ad622, type: 3}
     - {fileID: 4900000, guid: bf223ab22be59d743865ddac4dcd6cba, type: 3}
     - {fileID: 4900000, guid: f19d4fbcdc7efda4094fcda6e4c1f829, type: 3}
+--- !u!114 &1940528569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173282841737530983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28286900b56940c478e64d2681b3f98a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_curr_player_age: 0

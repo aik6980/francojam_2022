@@ -30,20 +30,6 @@ public class Player_data_mgr : MonoSingleton<Player_data_mgr>
 
     List<string> m_adopted_dogs;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-
-        if (persistence_obj == null)
-        {
-            persistence_obj = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
     // Start is called before the first frame update
     void Start()
     {

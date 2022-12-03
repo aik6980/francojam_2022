@@ -75,7 +75,7 @@ crashlytics-build.properties
 !/master/[Aa]ssets/Editor Default Resources/FMOD/*
                     
 # Ignore the Cache folder since it is updated locally.
-/master/[Aa]ssets/Plugins/FMOD/Cache/*
+/master/[Aa]ssets/Plugins/FMOD/Cache/**
                     
 # Ignore bank files in the StreamingAssets folder.
 /master/[Aa]ssets/StreamingAssets/**/*.bank
@@ -88,5 +88,5 @@ fmod_editor.log
 raw_data/audio/fmod/FrancoJam2022/.cache/fsbcache/Desktop/F973FB25.fobj
 *.fobj
 *.pdc
-master/UserSettings/EditorUserSettings.asset
+master/UserSettings/**
 master/fmod_editor.log

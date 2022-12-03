@@ -5,6 +5,7 @@ using Doublsb.Dialog;
 using Ink.Runtime;
 using FMOD;
 using UnityEngine.SceneManagement;
+using UnityEngine.Rendering;
 
 public class DD_Ink_Test : MonoBehaviour
 {
@@ -55,7 +56,7 @@ public class DD_Ink_Test : MonoBehaviour
         // story = new Story(inkJSONAsset.text);
         if (!Is_intro_scene)
         {
-            story.ChoosePathString(Story_selection_mgr.Instance.m_round_index.ToString());
+            story.ChoosePathString(Story_selection_mgr.Instance.Get_curr_round_string());
         }
         // if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();
@@ -66,7 +67,8 @@ public class DD_Ink_Test : MonoBehaviour
         if (Is_intro_scene)
         {
             Player_data_mgr.Instance.read_from_ink(story);
-            SceneManager.LoadScene("Scene_selection");
+            // SceneManager.LoadScene("Scene_selection");
+            Story_selection_mgr.Instance.Scene_transition("Scene_transition", "Scene_selection");
         }
         else
         {

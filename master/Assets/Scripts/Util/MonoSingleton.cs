@@ -1,55 +1,90 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public abstract class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
+/// <summary>
+/// Inherit from this base class to create a singleton.
+/// e.g. public class MyClassName : Singleton<MyClassName> {}
+/// </summary>
+public class MonoSingleton<T> : MonoBehaviour
+    where T : MonoBehaviour
 {
-    protected static T s_instance;
-    public static T Instance
-    {
-        get
-        {
-            if (s_instance == null)
-            {
-                //first try to find it in the existing scene
-                s_instance = FindObjectOfType<T>();
-                if (s_instance == null)
-                {
-                    s_instance = GetOrCreateInstance();
-                    //Debug.LogErrorFormat("No instance of {0} found.  This should be instantiated at runtime.", typeof(T).ToString());
-                }
-            }
-            return s_instance;
-        }
-    }
+    // Check to see if we're about to be destroyed.
+    protected static bool m_ShuttingDown = false;
+    protected static object m_Lock = new object();
+    protected static T m_Instance;
 
     /// <summary>
-    /// This version does not use FindObjectOfType and should be used when not on the main thread
+    /// Access singleton instance through this propriety.
     /// </summary>
-    public static T DirectInstance
+    public static T Instance
     {
-        get
-        {
-            return s_instance;
+        get {
+            if (m_ShuttingDown)
+                return null;
+
+            lock (m_Lock)
+            {
+                if (m_Instance == null)
+                {
+                    // Search for existing instance.
+                    m_Instance = (T)FindObjectOfType(typeof(T));
+
+                    // Create new instance if one doesn't already exist.
+                    if (m_Instance == null)
+                    {
+                        // Need to create a new GameObject to attach the singleton to.
+                        var singletonObject = new GameObject();
+                        m_Instance = singletonObject.AddComponent<T>();
+                        singletonObject.name = typeof(T).ToString() + " (Singleton)";
+
+                        // Make instance persistent.
+                        DontDestroyOnLoad(singletonObject);
+                    }
+                }
+
+                return m_Instance;
+            }
         }
     }
 
-    public static bool HasInstance
+    protected virtual void Awake()
     {
-        get
+        if (m_Instance != null && m_Instance != this)
         {
-            return s_instance != null || FindObjectOfType<T>() != null;
+            DestroyImmediate(gameObject);
+            return;
         }
+
+        m_Instance = GetComponent<T>();
+        DontDestroyOnLoad(gameObject);
+        InitAfterAwake();
     }
 
-    public static T GetOrCreateInstance()
+    protected virtual void InitAfterAwake()
     {
-        if (!HasInstance)
-        {
-            //first try to find it in the existing scene
-            GameObject createdGameObject = new GameObject(typeof(T).ToString(), typeof(T));
-            s_instance = createdGameObject.GetComponent<T>();
-        }
-        return Instance;
+    }
+
+    protected virtual void OnApplicationQuit()
+    {
+        m_ShuttingDown = true;
+    }
+
+    protected virtual void OnDestroy()
+    {
+        m_ShuttingDown = true;
+    }
+
+    protected virtual void Log(object message)
+    {
+        Debug.Log($"[{gameObject.name}] {message}");
+    }
+
+    protected virtual void LogWarning(object message)
+    {
+        Debug.LogWarning($"[{gameObject.name}] {message}");
+    }
+
+    protected virtual void LogError(object message)
+    {
+        Debug.LogError($"[{gameObject.name}] {message}");
     }
 }

@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/DD_Ink_Test.unity
     guid: b38046e796773c14696c436a9a84d97f
   - enabled: 1
+    path: Assets/Scenes/Scene_transition.unity
+    guid: 12efcf35407382441b7804f8dee1623f
+  - enabled: 1
     path: Assets/Scenes/Scene_ending.unity
     guid: 511d6b01b3f009b469a78a0dfa544b62
   m_configObjects: {}
