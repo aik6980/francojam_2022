@@ -27,14 +27,18 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
     public List<string> m_day_subtitle_texts;
 
     // round availability
-    bool[] m_round_available;
+    bool[] m_available_dogs;
+    bool[] m_selected_dogs;
 
     int m_chat_count = 4;
 
     private void Start()
     {
-        m_round_available = new bool[(int)Dog_enum.Nums];
-        Array.Fill(m_round_available, true);
+        m_available_dogs = new bool[(int)Dog_enum.Nums];
+        Array.Fill(m_available_dogs, true);
+
+        m_selected_dogs = new bool[(int)Dog_enum.Nums];
+        Array.Fill(m_selected_dogs, false);
 
         Reset_round(Day_enum.day_1);
     }
@@ -76,7 +80,8 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         // Debug.Log(m_num_chat_counter);
         m_num_chat_counter--;
         // disable the doggo until next round
-        m_round_available[(int)m_curr_dog] = false;
+        m_available_dogs[(int)m_curr_dog] = false;
+        m_selected_dogs[(int)m_curr_dog] = true;
 
         var need_transition = false;
         if (m_num_chat_counter <= 0)
@@ -89,6 +94,12 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         if (m_day_id > Day_enum.day_3)
         {
             SceneManager.LoadScene("Scene_ending");
+
+            // enable only selected dogs from last round
+            for (int i = 0; i < (int)Dog_enum.Nums; ++i)
+            {
+                m_available_dogs[i] = Player_data_mgr.Instance.Dogs[i];
+            }
         }
         else
         {
@@ -136,6 +147,9 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         {
         case Day_enum.day_1:
             m_num_chat_counter = 4;
+            // make all doggo available again for chat
+            Array.Fill(m_available_dogs, true);
+            Array.Fill(m_selected_dogs, false);
             break;
         case Day_enum.day_2:
             m_num_chat_counter = 2;
@@ -148,13 +162,21 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
             break;
         }
 
-        // make all doggo available again for chat
-        Array.Fill(m_round_available, true);
+        if (d != Day_enum.day_1)
+        {
+            // enable only selected dogs from last round
+            for (int i = 0; i < (int)Dog_enum.Nums; ++i)
+            {
+                m_available_dogs[i] = m_selected_dogs[i];
+            }
+
+            Array.Fill(m_selected_dogs, false);
+        }
     }
 
     public bool Is_available_for_chat(Dog_enum doggo_enum)
     {
-        return m_round_available[(int)doggo_enum];
+        return m_available_dogs[(int)doggo_enum];
     }
 
     public string Get_round_progression_string()

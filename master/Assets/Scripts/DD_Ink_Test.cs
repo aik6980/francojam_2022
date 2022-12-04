@@ -135,8 +135,7 @@ public class DD_Ink_Test : MonoBehaviour
         else
         {
             // insert ending condition here
-            dialogTexts.Add(new DialogData("That's all for today..", "Blank", null));
-            dialogTexts.Add(new DialogData("Only time will tell \n...", "Blank", () => EndStory()));
+            dialogTexts.Add(new DialogData("That's all for today..", "Blank", () => EndStory()));
         }
 
         DialogManager.Show(dialogTexts);

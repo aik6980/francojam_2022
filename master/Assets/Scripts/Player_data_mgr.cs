@@ -1,4 +1,5 @@
 using Ink.Runtime;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.FullSerializer;
@@ -28,13 +29,18 @@ public class Player_data_mgr : MonoSingleton<Player_data_mgr>
     int m_playful = 5;
     bool m_has_dog = false;
 
-    List<string> m_adopted_dogs;
+    bool[] m_dogs;
+    public bool[] Dogs
+    {
+        get => m_dogs;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         m_curr_player_age = Player_age.low;
-        m_adopted_dogs = new List<string>();
+        bool[] m_dogs = new bool[(int)Dog_enum.Nums];
+        Array.Fill(m_dogs, false);
 
         debug_print();
     }
@@ -48,12 +54,9 @@ public class Player_data_mgr : MonoSingleton<Player_data_mgr>
         m_curr_player_age++;
     }
 
-    public void Add_dog(string name)
+    public void Add_dog(Dog_enum dog_enum)
     {
-        if (m_adopted_dogs.Contains(name) == false)
-        {
-            m_adopted_dogs.Add(name);
-        }
+        m_dogs[(int)dog_enum] = true;
     }
 
     public void debug_print()
