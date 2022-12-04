@@ -16,9 +16,6 @@ public class Player_data_mgr : MonoSingleton<Player_data_mgr>
 {
     public Player_age m_curr_player_age;
 
-    // global persistent variable
-    private static Player_data_mgr persistence_obj;
-
     // scores
     int m_likes_dogs = 5;
     int m_likes_cats = 5;
@@ -38,8 +35,8 @@ public class Player_data_mgr : MonoSingleton<Player_data_mgr>
     // Start is called before the first frame update
     void Start()
     {
-        m_curr_player_age = Player_age.low;
-        bool[] m_dogs = new bool[(int)Dog_enum.Nums];
+        m_curr_player_age = Player_age.mid;
+        m_dogs = new bool[(int)Dog_enum.Nums];
         Array.Fill(m_dogs, false);
 
         debug_print();
@@ -79,5 +76,29 @@ public class Player_data_mgr : MonoSingleton<Player_data_mgr>
         m_has_dog = (bool)story.variablesState["has_dog"];
 
         debug_print();
+    }
+
+    public string get_emote_code_for_player_picture()
+    {
+        var emo_code = "";
+        switch (m_curr_player_age)
+        {
+        case Player_age.low:
+            emo_code = "";
+            break;
+        case Player_age.mid:
+            emo_code = "Fe_1";
+            break;
+        case Player_age.high:
+            emo_code = "Fe_2";
+            break;
+        }
+
+        if (emo_code == "")
+        {
+            return "";
+        }
+
+        return "/emote:" + emo_code + "/";
     }
 }

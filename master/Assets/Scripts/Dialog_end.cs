@@ -7,15 +7,12 @@ using FMOD;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 
-public class DD_Ink_Test : MonoBehaviour
+public class Dialog_end : MonoBehaviour
 {
     public DialogManager DialogManager;
 
     // just to check if the dialog system is not blocking (so we can animate, play VFX, etc)
     public float test_time;
-
-    // a hack to check if we are in the intro screen :[
-    public bool Is_intro_scene;
 
     [SerializeField]
     private TextAsset inkJSONAsset = null;
@@ -36,12 +33,6 @@ public class DD_Ink_Test : MonoBehaviour
 
     void Start()
     {
-        // override the story if there is one
-        if (Is_intro_scene == false && Story_selection_mgr.Instance.m_curr_dog != Dog_enum.Nums)
-        {
-            story = Dog_stat_mgr.Instance.Story_map[Story_selection_mgr.Instance.m_curr_dog];
-        }
-
         StartStory();
     }
 
@@ -53,27 +44,15 @@ public class DD_Ink_Test : MonoBehaviour
     // Creates a new Story object with the compiled story which we can then play!
     void StartStory()
     {
-        // story = new Story(inkJSONAsset.text);
-        if (!Is_intro_scene)
-        {
-            story.ChoosePathString(Story_selection_mgr.Instance.Get_curr_round_string());
-        }
         // if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();
     }
 
     void EndStory()
     {
-        if (Is_intro_scene)
-        {
-            Player_data_mgr.Instance.read_from_ink(story);
-            // SceneManager.LoadScene("Scene_selection");
-            Story_selection_mgr.Instance.Scene_transition("Scene_transition", "Scene_selection", Day_txt_display.day_1);
-        }
-        else
-        {
-            Story_selection_mgr.Instance.Finishing_round();
-        }
+        // Story_selection_mgr.Instance.Finishing_round();
+        Story_selection_mgr.Instance.Reset_round(Day_enum.day_1);
+        Story_selection_mgr.Instance.Scene_transition("Scene_transition", "Scene_selection", Day_txt_display.day_1);
     }
 
     // This is the main function called every time the story changes. It does a few things:
@@ -103,6 +82,7 @@ public class DD_Ink_Test : MonoBehaviour
             var tags = story.currentTags;
             var tag_name = Find_speaker_name(tags);
 
+            // var tag_emote = Find_emote_name(tags);
             if (tag_name == "Me")
             {
                 var tag_emote = Player_data_mgr.Instance.get_emote_code_for_player_picture();
@@ -137,8 +117,7 @@ public class DD_Ink_Test : MonoBehaviour
         // If we've read all the content and there's no choices, the story is finished!
         else
         {
-            // insert ending condition here
-            dialogTexts.Add(new DialogData("That's all for today..", "Blank", () => EndStory()));
+            dialogTexts.Add(new DialogData("See you around", "Blank", () => EndStory()));
         }
 
         DialogManager.Show(dialogTexts);

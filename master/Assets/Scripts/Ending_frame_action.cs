@@ -23,9 +23,8 @@ public class Ending_frame_action : MonoBehaviour
     }
     public void Activate_newbegining()
     {
-        Story_selection_mgr.Instance.Reset_round(Day_enum.day_1);
         Player_data_mgr.Instance.Increase_player_age();
-
-        SceneManager.LoadScene("Scene_selection");
+        Story_selection_mgr.Instance.Scene_transition("Scene_transition", "Scene_ending_choice",
+                                                      Day_txt_display.ending_2);
     }
 }

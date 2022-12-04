@@ -16,6 +16,16 @@ public enum Day_enum
     day_3,
 }
 
+public enum Day_txt_display
+{
+    day_0,
+    day_1,
+    day_2,
+    day_3,
+    ending_1,
+    ending_2,
+}
+
 public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
 {
     public Dog_enum m_curr_dog;
@@ -31,6 +41,9 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
     bool[] m_selected_dogs;
 
     int m_chat_count = 4;
+
+    // day text display
+    Day_txt_display day_txt_display_enum;
 
     private void Start()
     {
@@ -52,8 +65,8 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         var loc_txt_obj = GameObject.Find("Loc_txt");
         if (day_txt_obj && loc_txt_obj)
         {
-            day_txt_obj.GetComponent<TMP_Text>().text = Get_day_txt(m_day_id);
-            loc_txt_obj.GetComponent<TMP_Text>().text = Get_loc_txt(m_day_id);
+            day_txt_obj.GetComponent<TMP_Text>().text = Get_day_txt(day_txt_display_enum);
+            loc_txt_obj.GetComponent<TMP_Text>().text = Get_loc_txt(day_txt_display_enum);
         }
 
         // update display
@@ -93,8 +106,9 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
 
         if (m_day_id > Day_enum.day_3)
         {
-            SceneManager.LoadScene("Scene_ending");
+            Story_selection_mgr.Instance.Scene_transition("Scene_transition", "Scene_ending", Day_txt_display.ending_1);
 
+            Player_data_mgr.Instance.Add_dog(m_curr_dog);
             // enable only selected dogs from last round
             for (int i = 0; i < (int)Dog_enum.Nums; ++i)
             {
@@ -106,7 +120,8 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
             // update player data
             if (need_transition)
             {
-                Story_selection_mgr.Instance.Scene_transition("Scene_transition", "Scene_selection");
+                Story_selection_mgr.Instance.Scene_transition("Scene_transition", "Scene_selection",
+                                                              (Day_txt_display)m_day_id);
             }
             else
             {
@@ -115,12 +130,12 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         }
     }
 
-    public string Get_day_txt(Day_enum day_enum)
+    public string Get_day_txt(Day_txt_display day_enum)
     {
         return m_day_title_texts[(int)day_enum];
     }
 
-    public string Get_loc_txt(Day_enum day_enum)
+    public string Get_loc_txt(Day_txt_display day_enum)
     {
         return m_day_subtitle_texts[(int)day_enum];
     }
@@ -162,6 +177,9 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
             break;
         }
 
+        // for fast forward testing
+        m_num_chat_counter = 1;
+
         if (d != Day_enum.day_1)
         {
             // enable only selected dogs from last round
@@ -183,12 +201,13 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
     {
         return "Day " + (int)(m_day_id) + "\nRemaining chat " + m_num_chat_counter;
     }
-    public void Scene_transition(string scene_src, string scene_dst)
+    public void Scene_transition(string scene_src, string scene_dst, Day_txt_display e)
     {
-        StartCoroutine(Process_transition(scene_src, scene_dst));
+        StartCoroutine(Process_transition(scene_src, scene_dst, e));
     }
-    IEnumerator Process_transition(string src, string dst)
+    IEnumerator Process_transition(string src, string dst, Day_txt_display e)
     {
+        day_txt_display_enum = e;
         SceneManager.LoadScene(src);
 
         yield return new WaitForSeconds(5.0f);
