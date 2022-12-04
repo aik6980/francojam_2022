@@ -5,7 +5,6 @@ using System.ComponentModel;
 using System.Drawing;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -25,6 +24,7 @@ public enum Day_txt_display
     day_3,
     ending_1,
     ending_2,
+    ending_thanks,
 }
 
 public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
@@ -185,6 +185,15 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
             // make all doggo available again for chat
             Array.Fill(m_available_dogs, true);
             Array.Fill(m_selected_dogs, false);
+
+            // mask out the dog that already adopted
+            for (int i = 0; i < (int)Dog_enum.Nums; ++i)
+            {
+                if (Player_data_mgr.Instance.Dogs[i])
+                {
+                    m_available_dogs[i] = false;
+                }
+            }
             break;
         case Day_enum.day_2:
             m_num_chat_counter = 2;

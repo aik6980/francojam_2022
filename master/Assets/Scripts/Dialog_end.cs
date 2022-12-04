@@ -67,6 +67,11 @@ public class Dialog_end : MonoBehaviour
             }
             else
             {
+                // reset game
+                Player_data_mgr.Instance.Reset_game();
+                Dog_stat_mgr.Instance.Reset_game();
+                Story_selection_mgr.Instance.Reset_game();
+
                 SceneManager.LoadScene("Scene_UI_TitleScreen");
             }
         }
