@@ -63,6 +63,11 @@ public class Dog_stat_mgr : MonoSingleton<Dog_stat_mgr>
     // Start is called before the first frame update
     void Start()
     {
+        Reset_game();
+    }
+
+    public void Reset_game()
+    {
         m_story_map = new Dictionary<Dog_enum, Story>();
 
         foreach (var txt_asset in JSONStory_map.Data)

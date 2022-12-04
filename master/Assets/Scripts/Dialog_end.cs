@@ -6,6 +6,7 @@ using Ink.Runtime;
 using FMOD;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class Dialog_end : MonoBehaviour
 {
@@ -44,15 +45,35 @@ public class Dialog_end : MonoBehaviour
     // Creates a new Story object with the compiled story which we can then play!
     void StartStory()
     {
+        if (story)
+        {
+            story.variablesState["dog_names"] = Player_data_mgr.Instance.get_adopted_dog_names();
+        }
+
         // if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();
     }
 
     void EndStory()
     {
-        // Story_selection_mgr.Instance.Finishing_round();
-        Story_selection_mgr.Instance.Reset_round(Day_enum.day_1);
-        Story_selection_mgr.Instance.Scene_transition("Scene_transition", "Scene_selection", Day_txt_display.day_1);
+        if (story)
+        {
+            var back_to_sel_scene = (int)story.variablesState["back_to_selection"];
+            if (back_to_sel_scene > 0)
+            {
+                Story_selection_mgr.Instance.Reset_round(Day_enum.day_1);
+                Story_selection_mgr.Instance.Scene_transition("Scene_transition", "Scene_selection",
+                                                              Day_txt_display.day_1);
+            }
+            else
+            {
+                SceneManager.LoadScene("Scene_UI_TitleScreen");
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene("Scene_UI_TitleScreen");
+        }
     }
 
     // This is the main function called every time the story changes. It does a few things:

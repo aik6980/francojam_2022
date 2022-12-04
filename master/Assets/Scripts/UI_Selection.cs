@@ -6,6 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class UI_Selection : MonoBehaviour
 {
+    public void Start()
+    {
+        // at the begining of each day, enable all available dogs
+        if (Story_selection_mgr.Instance.New_day_start())
+        {
+            Story_selection_mgr.Instance.Enable_available_dogs();
+        }
+    }
+
     public void Play_story(string dog_name)
     {
         var dog_enum = Dog_stat_mgr.Instance.From_string(dog_name);

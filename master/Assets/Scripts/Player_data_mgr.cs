@@ -35,11 +35,16 @@ public class Player_data_mgr : MonoSingleton<Player_data_mgr>
     // Start is called before the first frame update
     void Start()
     {
+        Reset_game();
+
+        debug_print();
+    }
+
+    public void Reset_game()
+    {
         m_curr_player_age = Player_age.low;
         m_dogs = new bool[(int)Dog_enum.Nums];
         Array.Fill(m_dogs, false);
-
-        debug_print();
     }
 
     // Update is called once per frame
@@ -100,5 +105,38 @@ public class Player_data_mgr : MonoSingleton<Player_data_mgr>
         }
 
         return "/emote:" + emo_code + "/";
+    }
+
+    public string get_adopted_dog_names()
+    {
+        List<string> name_ls = new List<string>();
+        for (int i = 0; i < (int)Dog_enum.Nums; ++i)
+        {
+            if (m_dogs[i])
+            {
+                name_ls.Add(((Dog_enum)i).ToString());
+            }
+        }
+
+        string name_str = "";
+        for (int i = 0; i < name_ls.Count; ++i)
+        {
+            var prefix = "";
+            if (i > 0)
+            {
+                if (i == name_ls.Count - 1)
+                {
+                    prefix = " and ";
+                }
+                else
+                {
+                    prefix = ", ";
+                }
+            }
+
+            name_str += prefix + name_ls[i];
+        }
+
+        return name_str;
     }
 }

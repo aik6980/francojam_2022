@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Drawing;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -36,6 +37,8 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
     public List<string> m_day_title_texts;
     public List<string> m_day_subtitle_texts;
 
+    public bool Debug_quick_round;
+
     // round availability
     bool[] m_available_dogs;
     bool[] m_selected_dogs;
@@ -47,6 +50,11 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
 
     private void Start()
     {
+        Reset_game();
+    }
+
+    public void Reset_game()
+    {
         m_available_dogs = new bool[(int)Dog_enum.Nums];
         Array.Fill(m_available_dogs, true);
 
@@ -54,6 +62,18 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         Array.Fill(m_selected_dogs, false);
 
         Reset_round(Day_enum.day_1);
+    }
+
+    public void Enable_available_dogs()
+    {
+        for (int i = 0; i < (int)Dog_enum.Nums; ++i)
+        {
+            var game_obj = GameObject.Find(((Dog_enum)i).ToString());
+            if (game_obj)
+            {
+                game_obj.SetActive(m_available_dogs[i]);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -178,7 +198,10 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         }
 
         // for fast forward testing
-        // m_num_chat_counter = 1;
+        if (Debug_quick_round)
+        {
+            m_num_chat_counter = 1;
+        }
 
         if (d != Day_enum.day_1)
         {
@@ -190,6 +213,38 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
 
             Array.Fill(m_selected_dogs, false);
         }
+    }
+
+    int get_max_chat_per_day(Day_enum d)
+    {
+        int max_chat = 0;
+        switch (d)
+        {
+        case Day_enum.day_1:
+            max_chat = 4;
+            break;
+        case Day_enum.day_2:
+            max_chat = 2;
+            break;
+        case Day_enum.day_3:
+            max_chat = 1;
+            break;
+        default:
+            max_chat = 1;
+            break;
+        }
+
+        // for fast forward testing
+        if (Debug_quick_round)
+        {
+            max_chat = 1;
+        }
+
+        return max_chat;
+    }
+    public bool New_day_start()
+    {
+        return m_num_chat_counter == get_max_chat_per_day(m_day_id);
     }
 
     public bool Is_available_for_chat(Dog_enum doggo_enum)

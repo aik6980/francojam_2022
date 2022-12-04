@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Awake()
+    {
+        Player_data_mgr.Instance.Reset_game();
+        Dog_stat_mgr.Instance.Reset_game();
+        Story_selection_mgr.Instance.Reset_game();
+    }
+
     public void PlayGame()
     {
         // Play the scene that are assigned in the Build Setttings "ctrl + shift + b" to open in order.
