@@ -35,7 +35,7 @@ public class Player_data_mgr : MonoSingleton<Player_data_mgr>
     // Start is called before the first frame update
     void Start()
     {
-        m_curr_player_age = Player_age.mid;
+        m_curr_player_age = Player_age.low;
         m_dogs = new bool[(int)Dog_enum.Nums];
         Array.Fill(m_dogs, false);
 

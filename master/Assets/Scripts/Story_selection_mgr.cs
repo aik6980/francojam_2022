@@ -178,7 +178,7 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         }
 
         // for fast forward testing
-        m_num_chat_counter = 1;
+        // m_num_chat_counter = 1;
 
         if (d != Day_enum.day_1)
         {
