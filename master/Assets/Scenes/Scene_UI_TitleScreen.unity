@@ -783,26 +783,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5173282841737530980, guid: 9e6fa7c82d916554db2e5345a06eba20, type: 3}
-      propertyPath: Debug_quick_round
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173282841737530980, guid: 9e6fa7c82d916554db2e5345a06eba20, type: 3}
-      propertyPath: m_day_title_texts.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173282841737530980, guid: 9e6fa7c82d916554db2e5345a06eba20, type: 3}
-      propertyPath: m_day_subtitle_texts.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173282841737530980, guid: 9e6fa7c82d916554db2e5345a06eba20, type: 3}
-      propertyPath: m_day_title_texts.Array.data[6]
-      value: Thank you
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173282841737530980, guid: 9e6fa7c82d916554db2e5345a06eba20, type: 3}
-      propertyPath: m_day_subtitle_texts.Array.data[6]
-      value: Thank you for playing
-      objectReference: {fileID: 0}
     - target: {fileID: 5173282841737530981, guid: 9e6fa7c82d916554db2e5345a06eba20, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -850,10 +830,6 @@ PrefabInstance:
     - target: {fileID: 5173282841737530983, guid: 9e6fa7c82d916554db2e5345a06eba20, type: 3}
       propertyPath: m_Name
       value: PersistentData
-      objectReference: {fileID: 0}
-    - target: {fileID: 5173282841737530983, guid: 9e6fa7c82d916554db2e5345a06eba20, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e6fa7c82d916554db2e5345a06eba20, type: 3}
