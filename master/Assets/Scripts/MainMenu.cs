@@ -7,11 +7,10 @@ public class MainMenu : MonoBehaviour
 {
     private void Awake()
     {
-        // crash when coming back to main menu?
         // reset game
-        // Player_data_mgr.Instance.Reset_game();
-        // Dog_stat_mgr.Instance.Reset_game();
-        // Story_selection_mgr.Instance.Reset_game();
+        Player_data_mgr.Instance.Reset_game();
+        Dog_stat_mgr.Instance.Reset_game();
+        Story_selection_mgr.Instance.Reset_game();
     }
 
     public void PlayGame()

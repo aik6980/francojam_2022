@@ -39,7 +39,10 @@ public class DD_Ink_Test : MonoBehaviour
         // override the story if there is one
         if (Is_intro_scene == false && Story_selection_mgr.Instance.m_curr_dog != Dog_enum.Nums)
         {
-            story = Dog_stat_mgr.Instance.Story_map[Story_selection_mgr.Instance.m_curr_dog];
+            // [note]hmm.. storing story in a map seems to crash when we replay the story, but loading new is ok
+            // interesting bug
+            // story = Dog_stat_mgr.Instance.Story_map[Story_selection_mgr.Instance.m_curr_dog];
+            story = Dog_stat_mgr.Instance.get_story(Story_selection_mgr.Instance.m_curr_dog);
         }
 
         StartStory();
