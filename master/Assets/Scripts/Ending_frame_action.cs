@@ -10,7 +10,7 @@ public class Ending_frame_action : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Story_selection_mgr.Instance.Enable_available_dogs();
+        Story_selection_mgr.Instance.Enable_player_dogs();
     }
 
     // Update is called once per frame

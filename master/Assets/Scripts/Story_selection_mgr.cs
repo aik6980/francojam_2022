@@ -42,6 +42,7 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
     // round availability
     bool[] m_available_dogs;
     bool[] m_selected_dogs;
+    bool[] m_remaining_dogs;
 
     int m_chat_count = 4;
 
@@ -61,10 +62,25 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         m_selected_dogs = new bool[(int)Dog_enum.Nums];
         Array.Fill(m_selected_dogs, false);
 
+        m_remaining_dogs = new bool[(int)Dog_enum.Nums];
+        Array.Fill(m_remaining_dogs, true);
+
         Reset_round(Day_enum.day_1);
     }
 
     public void Enable_available_dogs()
+    {
+        for (int i = 0; i < (int)Dog_enum.Nums; ++i)
+        {
+            var game_obj = GameObject.Find(((Dog_enum)i).ToString());
+            if (game_obj)
+            {
+                game_obj.SetActive(m_remaining_dogs[i]);
+            }
+        }
+    }
+
+    public void Enable_player_dogs()
     {
         for (int i = 0; i < (int)Dog_enum.Nums; ++i)
         {
@@ -121,6 +137,9 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
         {
             m_day_id++;
             Reset_round(m_day_id);
+
+            Array.Copy(m_available_dogs, m_remaining_dogs, m_selected_dogs.Length);
+
             need_transition = true;
         }
 
@@ -194,6 +213,8 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
                     m_available_dogs[i] = false;
                 }
             }
+
+            Array.Copy(m_available_dogs, m_remaining_dogs, m_selected_dogs.Length);
             break;
         case Day_enum.day_2:
             m_num_chat_counter = 2;

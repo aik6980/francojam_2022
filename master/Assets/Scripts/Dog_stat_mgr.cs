@@ -77,6 +77,14 @@ public class Dog_stat_mgr : MonoSingleton<Dog_stat_mgr>
         }
     }
 
+    public Story get_story(Dog_enum dog_enum)
+    {
+        var txt_asset = JSONStory_map.Data[dog_enum.ToString()];
+        var story = new Story(txt_asset.text);
+
+        return story;
+    }
+
     public Dog_enum From_string(string name)
     {
         Dog_enum doggo_enum;
