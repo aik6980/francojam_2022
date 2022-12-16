@@ -60,6 +60,8 @@ public class Dog_stat_mgr : MonoSingleton<Dog_stat_mgr>
         get => m_story_map;
     }
 
+    int[] m_dog_stats;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,12 +70,16 @@ public class Dog_stat_mgr : MonoSingleton<Dog_stat_mgr>
 
     public void Reset_game()
     {
+        m_dog_stats = new int[(int)Dog_enum.Nums];
         m_story_map = new Dictionary<Dog_enum, Story>();
 
         foreach (var txt_asset in JSONStory_map.Data)
         {
             var story = new Story(txt_asset.Value.text);
             m_story_map.Add(From_string(txt_asset.Key), story);
+
+            var dog_enum = From_string(txt_asset.Key);
+            m_dog_stats[(int)dog_enum] = (int)story.variablesState["affinity"];
         }
     }
 
@@ -96,5 +102,26 @@ public class Dog_stat_mgr : MonoSingleton<Dog_stat_mgr>
     // Update is called once per frame
     void Update()
     {
+    }
+
+    public void read_from_ink(Story story, Dog_enum dog_enum)
+    {
+        m_dog_stats[(int)dog_enum] = (int)story.variablesState["affinity"];
+    }
+
+    public void write_to_ink(Story story, Dog_enum dog_enum)
+    {
+        story.variablesState["affinity"] = m_dog_stats[(int)dog_enum];
+    }
+
+    public void debug_print()
+    {
+        string dbg_txt = "";
+
+        for (int i = 0; i < (int)Dog_enum.Nums; ++i)
+        {
+            dbg_txt += ((Dog_enum)i).ToString() + ":" + m_dog_stats[i] + "\n";
+        }
+        Debug.Log(dbg_txt);
     }
 }

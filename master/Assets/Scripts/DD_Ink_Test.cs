@@ -62,7 +62,8 @@ public class DD_Ink_Test : MonoBehaviour
             story.ChoosePathString(Story_selection_mgr.Instance.Get_curr_round_string());
             // update player stat to ink
             Player_data_mgr.Instance.write_to_ink(story);
-            Player_data_mgr.Instance.debug_print();
+            // Player_data_mgr.Instance.debug_print();
+            Dog_stat_mgr.Instance.write_to_ink(story, Story_selection_mgr.Instance.m_curr_dog);
         }
         // if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();
@@ -78,6 +79,8 @@ public class DD_Ink_Test : MonoBehaviour
         }
         else
         {
+            Dog_stat_mgr.Instance.read_from_ink(story, Story_selection_mgr.Instance.m_curr_dog);
+            Dog_stat_mgr.Instance.debug_print();
             Story_selection_mgr.Instance.Finishing_round();
         }
     }

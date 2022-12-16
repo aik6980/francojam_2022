@@ -56,8 +56,7 @@ Oh I just know I could rack your brains for hours, partner! #Name_Betsy
 === round_3 ===
 Look what the cat dragged in! #Name_Betsy
 Aw, I'm jus' teasin' you, partner. #Name_Betsy
-{affinity > 7: It's a fine day with you around!} #Name_Betsy
-{affinity <=7: ...or am I?} #Name_Betsy
+{affinity > 7: It's a fine day with you around! | ...or am I?} #Name_Betsy
 *[Cat? Here?]I can't imagine a cat dragging anything around here! #Name_Me
 
 -You're quite right, and it's a darn shame. #Name_Betsy
