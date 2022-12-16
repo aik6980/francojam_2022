@@ -117,6 +117,9 @@
 		<property name="maxVoices">
 			<value>1</value>
 		</property>
+		<property name="volume">
+			<value>1</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{9482101d-f84f-4cda-968c-476c133c9aaa}</destination>
 			<destination>{fa627ba1-7ac4-45a6-a7e2-cfa929d06ee2}</destination>
@@ -189,9 +192,6 @@
 		<property name="nameOfPropertyBeingModulated">
 			<value>volume</value>
 		</property>
-		<property name="amount">
-			<value>7</value>
-		</property>
 	</object>
 	<object class="RandomizerModulator" id="{08ec6639-5791-42b4-8d6d-8caa59ea767a}">
 		<property name="nameOfPropertyBeingModulated">
@@ -255,7 +255,7 @@
 	</object>
 	<object class="SingleSound" id="{ba5b0730-59d9-40ba-96e9-d253b79865ec}">
 		<property name="volume">
-			<value>-2</value>
+			<value>-8.5</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{5704ed46-4f5a-431f-a82a-3dc9f14be1b2}</destination>
