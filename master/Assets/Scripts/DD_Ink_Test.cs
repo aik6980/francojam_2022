@@ -60,6 +60,9 @@ public class DD_Ink_Test : MonoBehaviour
         if (!Is_intro_scene)
         {
             story.ChoosePathString(Story_selection_mgr.Instance.Get_curr_round_string());
+            // update player stat to ink
+            Player_data_mgr.Instance.write_to_ink(story);
+            Player_data_mgr.Instance.debug_print();
         }
         // if (OnCreateStory != null) OnCreateStory(story);
         RefreshView();

@@ -83,6 +83,18 @@ public class Player_data_mgr : MonoSingleton<Player_data_mgr>
         debug_print();
     }
 
+    public void write_to_ink(Story story)
+    {
+        story.variablesState["likes_dogs"] = m_likes_dogs;
+        story.variablesState["likes_cats"] = m_likes_cats;
+        story.variablesState["likes_kids"] = m_likes_kids;
+        story.variablesState["likes_walks"] = m_likes_walks;
+        story.variablesState["smart"] = m_smart;
+        story.variablesState["active"] = m_active;
+        story.variablesState["playful"] = m_playful;
+        story.variablesState["has_dog"] = m_has_dog;
+    }
+
     public string get_emote_code_for_player_picture()
     {
         var emo_code = "";
