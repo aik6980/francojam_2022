@@ -164,7 +164,7 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
             }
             else
             {
-                SceneManager.LoadScene("Scene_selection");
+                SceneManager.LoadSceneAsync("Scene_selection");
             }
         }
     }
@@ -293,10 +293,10 @@ public class Story_selection_mgr : MonoSingleton<Story_selection_mgr>
     IEnumerator Process_transition(string src, string dst, Day_txt_display e)
     {
         day_txt_display_enum = e;
-        SceneManager.LoadScene(src);
+        SceneManager.LoadSceneAsync(src);
 
         yield return new WaitForSeconds(5.0f);
         //
-        SceneManager.LoadScene(dst);
+        SceneManager.LoadSceneAsync(dst);
     }
 }

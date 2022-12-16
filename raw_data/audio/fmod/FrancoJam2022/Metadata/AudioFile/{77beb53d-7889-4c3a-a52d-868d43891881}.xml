@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{77beb53d-7889-4c3a-a52d-868d43891881}">
+		<property name="assetPath">
+			<value>RoomSFX-Silent-Men-Toilet-Denver-USA.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>71.654041666666672</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{5b1fb0ac-5b9b-4d0f-96e8-739c1f41d6b0}</destination>
+		</relationship>
+	</object>
+</objects>

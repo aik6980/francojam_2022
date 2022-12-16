@@ -20,7 +20,7 @@ public class UI_Selection : MonoBehaviour
             Story_selection_mgr.Instance.m_curr_dog = dog_enum;
 
             // Play the scene that are assigned in the Build Setttings "ctrl + shift + b" to open in order.
-            SceneManager.LoadScene("DD_Ink_Test");
+            SceneManager.LoadSceneAsync("DD_Ink_Test");
         }
         else
         {

@@ -1,6 +1,8 @@
 using System;
+using System.Threading.Tasks;
 using FMOD.Studio;
 using FMODUnity;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static UnityEngine.ParticleSystem;
@@ -58,6 +60,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
+        DontDestroyOnLoad(this);
         _instance = this;
     }
 
@@ -83,6 +86,16 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         volumeSliderObject = GameObject.FindGameObjectWithTag("UI_Master_Volume");
+    }
+
+    public Task LoadSoundBanks()
+    {
+        RuntimeManager.LoadBank("Master");
+        RuntimeManager.WaitForAllSampleLoading();
+        //do { RuntimeManager.CoreSystem.mixerSuspend(); }
+        //while (!RuntimeManager.HasBankLoaded("Master"));
+        //RuntimeManager.CoreSystem.mixerResume();
+        return Task.CompletedTask;
     }
 
     public void SetMasterVolume()

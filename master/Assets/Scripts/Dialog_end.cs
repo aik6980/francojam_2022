@@ -67,12 +67,12 @@ public class Dialog_end : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene("Scene_UI_TitleScreen");
+                SceneManager.LoadSceneAsync("Scene_UI_TitleScreen");
             }
         }
         else
         {
-            SceneManager.LoadScene("Scene_UI_TitleScreen");
+            SceneManager.LoadSceneAsync("Scene_UI_TitleScreen");
         }
     }
 

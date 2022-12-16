@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         // Play the scene that are assigned in the Build Setttings "ctrl + shift + b" to open in order.
-        SceneManager.LoadScene("Scene_player_profile");
+        SceneManager.LoadSceneAsync("Scene_player_profile");
     }
 
     public void QuitGame()
@@ -26,11 +26,11 @@ public class MainMenu : MonoBehaviour
 
     public void Settings()
     {
-        SceneManager.LoadScene("Scene_UI_Settings");
+        SceneManager.LoadSceneAsync("Scene_UI_Settings");
     }
 
     public void BackButton()
     {
-        SceneManager.LoadScene("Scene_UI_TitleScreen");
+        SceneManager.LoadSceneAsync("Scene_UI_TitleScreen");
     }
 }
